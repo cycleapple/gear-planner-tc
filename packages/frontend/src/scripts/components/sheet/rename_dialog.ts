@@ -40,25 +40,25 @@ class RenameModal extends BaseModal {
     constructor(private itemBeingRenamed: { name: string, description: string }) {
         super();
 
-        this.headerText = 'Sheet Name/Description';
+        this.headerText = '配裝表名稱/說明';
 
         this.nameInput = document.createElement('input');
         this.nameInput.type = 'text';
-        this.nameInput.placeholder = 'Sheet Name';
+        this.nameInput.placeholder = '配裝表名稱';
         this.nameInput.value = itemBeingRenamed.name ?? '';
 
         this.descriptionInput = document.createElement('textarea');
-        this.descriptionInput.placeholder = 'You can enter a description here';
+        this.descriptionInput.placeholder = '你可以在此輸入說明';
         this.descriptionInput.value = itemBeingRenamed.description ?? '';
 
         this.applyButton = document.createElement('button');
-        this.applyButton.textContent = 'Apply';
+        this.applyButton.textContent = '套用';
         this.applyButton.type = 'submit';
         this.applyButton.addEventListener('click', () => this.apply());
         // this.applyButton.addEventListener('click', () => this.apply());
 
         this.cancelButton = document.createElement('button');
-        this.cancelButton.textContent = 'Cancel';
+        this.cancelButton.textContent = '取消';
         this.cancelButton.addEventListener('click', () => this.close());
 
         const form = quickElement('form', [], [

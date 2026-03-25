@@ -3,7 +3,7 @@ import {Ability, Buff, BuffController, OgcdAbility} from "../sim_types";
 export const SwiftcastBuff: Buff = {
     duration: 10,
     effects: {},
-    name: "Swiftcast",
+    name: "即刻詠唱",
     selfOnly: true,
     descriptionOverride: "Next GCD has no cast time",
     beforeAbility<X extends Ability>(controller: BuffController, ability: X): X | null {
@@ -22,7 +22,7 @@ export const SwiftcastBuff: Buff = {
 export const Swiftcast: OgcdAbility = {
     activatesBuffs: [SwiftcastBuff],
     id: 7561,
-    name: "Swiftcast",
+    name: "即刻詠唱",
     potency: null,
     type: "ogcd",
     attackType: 'Ability',

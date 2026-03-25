@@ -12,13 +12,13 @@ export function showNewVersionModal() {
 export class NewVersionModal extends BaseModal {
     constructor() {
         super();
-        this.headerText = 'New Version Available';
+        this.headerText = '有新版本可用';
         const description = el('p', {}, [
-            'A new version of the site is available. We recommend you reload the page.',
+            '網站有新版本可用。建議你重新載入頁面。',
         ]);
         this.contentArea.append(description);
-        this.addActionButton('Reload', () => this.reload());
-        this.addCloseButton('Close');
+        this.addActionButton('重新載入', () => this.reload());
+        this.addCloseButton('關閉');
     }
 
     private reload(): void {

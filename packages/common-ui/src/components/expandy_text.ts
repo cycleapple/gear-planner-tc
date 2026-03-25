@@ -15,7 +15,7 @@ export class ExpandableText extends HTMLElement {
     constructor() {
         super();
         this.inner = quickElement('div', ['truncatable-text-area-inner'], []);
-        const expandButton = makeActionButton('Show More', () => {
+        const expandButton = makeActionButton('顯示更多', () => {
             this.expanded = true;
             this.checkHeight();
         });

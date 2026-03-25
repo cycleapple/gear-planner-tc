@@ -154,7 +154,7 @@ export function showLoadingScreen() {
 
 export function showNewSheetForm() {
     setPath('newsheet');
-    const section = new NamedSection('New Gear Planning Sheet');
+    const section = new NamedSection('新增配裝表');
     const form = new NewSheetForm(openSheet, SHEET_MANAGER, GRAPHICAL_SHEET_PROVIDER);
     section.contentArea.replaceChildren(form);
     setMainContent('New Sheet', section);
@@ -355,7 +355,7 @@ ACCOUNT_STATE_TRACKER.addAccountStateListener((tracker, stateNow, stateBefore) =
 
 export function showSheetPickerMenu() {
     const picker = new SheetPickerTable(SHEET_MANAGER, USER_DATA_SYNCER);
-    const section = new NamedSection('My Sheets', false);
+    const section = new NamedSection('我的配裝表', false);
     section.classList.add('my-sheets-section');
     section.contentArea.replaceChildren(picker);
     // const holderDiv = quickElement('div', ['sheet-picker-holder'], [new SheetPickerTable()]);
@@ -394,7 +394,7 @@ export function earlyUiSetup() {
     devMenu.appendChild(header);
     const nukeButton = document.createElement("button");
     nukeButton.addEventListener('click', (ev) => {
-        if (confirm('This will DELETE ALL sheets, sets, and settings.')) {
+        if (confirm('這將刪除所有配裝表、套裝和設定。')) {
             localStorage.clear();
             setPath();
             location.reload();

@@ -8,7 +8,7 @@ export type PasswordFieldWithRepeat = {
     checkValid: () => boolean
 };
 
-export function passwordWithRepeat(passLabel: string = 'Password', validationField: string = 'password'): PasswordFieldWithRepeat {
+export function passwordWithRepeat(passLabel: string = '密碼', validationField: string = 'password'): PasswordFieldWithRepeat {
     const passwordField = quickElement('input', ['password-field'], []);
     passwordField.type = 'password';
     passwordField.placeholder = passLabel;
@@ -16,7 +16,7 @@ export function passwordWithRepeat(passLabel: string = 'Password', validationFie
     passwordField.setAttribute('validation-field', validationField);
     const passwordRepeatField = quickElement('input', ['password-field'], []);
     passwordRepeatField.type = 'password';
-    passwordRepeatField.placeholder = 'Repeat Password';
+    passwordRepeatField.placeholder = '確認密碼';
     passwordRepeatField.autocomplete = 'new-password';
     passwordRepeatField.setAttribute('validation-field', validationField);
 
@@ -30,7 +30,7 @@ export function passwordWithRepeat(passLabel: string = 'Password', validationFie
 
     function checkValid(): boolean {
         if (!isValid()) {
-            passwordRepeatField.setCustomValidity('Passwords do not match');
+            passwordRepeatField.setCustomValidity('密碼不一致');
             return false;
         }
         return true;

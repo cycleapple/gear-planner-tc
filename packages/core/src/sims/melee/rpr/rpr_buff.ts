@@ -3,7 +3,7 @@ import {removeSelf} from "@xivgear/core/sims/common/utils";
 import * as Actions from "./rpr_actions";
 
 export const DeathsDesign: PersonalBuff = {
-    name: "Death's Design",
+    name: "致死一擊's Design",
     saveKey: "Death's Design",
     duration: 30,
     selfOnly: true,
@@ -15,7 +15,7 @@ export const DeathsDesign: PersonalBuff = {
 };
 
 export const IdealHost: PersonalBuff = {
-    name: "Ideal Host",
+    name: "夜遊魂衣預備",
     selfOnly: true,
     descriptionExtras: ["Able to execute actions normally only available while hidden"],
     effects: {

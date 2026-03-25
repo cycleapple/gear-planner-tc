@@ -12,7 +12,7 @@ export class DrkSimGui extends BaseMultiCycleSimGui<DrkSimResult, DrkSettings> {
     protected extraAbilityUsedColumns(_: DrkSimResult): CustomColumnSpec<DisplayRecordFinalized, unknown, unknown>[] {
         return [col({
             shortName: 'bloodGauge',
-            displayName: 'Blood',
+            displayName: '暗血',
             getter: used => isFinalizedAbilityUse(used) ? used.original : null,
             renderer: (usedAbility?: PreDmgUsedAbility) => {
                 if (usedAbility?.extraData !== undefined) {
@@ -31,7 +31,7 @@ export class DrkSimGui extends BaseMultiCycleSimGui<DrkSimResult, DrkSettings> {
             },
         }), col({
             shortName: 'darkside',
-            displayName: 'Darkside',
+            displayName: '暗黑',
             getter: used => isFinalizedAbilityUse(used) ? used.original : null,
             renderer: (usedAbility?: PreDmgUsedAbility) => {
                 if (usedAbility?.extraData !== undefined) {
@@ -49,7 +49,7 @@ export class DrkSimGui extends BaseMultiCycleSimGui<DrkSimResult, DrkSettings> {
             },
         }), col({
             shortName: 'darkArts',
-            displayName: 'Dark Arts',
+            displayName: '暗黑技',
             getter: used => isFinalizedAbilityUse(used) ? used.original : null,
             renderer: (usedAbility?: PreDmgUsedAbility) => {
                 if (usedAbility?.extraData !== undefined) {
@@ -90,11 +90,11 @@ export class DrkSimGui extends BaseMultiCycleSimGui<DrkSimResult, DrkSettings> {
 
         const potCb = new FieldBoundCheckBox(settings, "usePotion");
 
-        configDiv.appendChild(labeledCheckbox("Use Potion", potCb));
+        configDiv.appendChild(labeledCheckbox("使用藥水", potCb));
 
         const prepullTBNCB = new FieldBoundCheckBox(settings, "prepullTBN");
 
-        configDiv.appendChild(labeledCheckbox("Use The Blackest Night prepull", prepullTBNCB));
+        configDiv.appendChild(labeledCheckbox("開怪前使用至黑之夜", prepullTBNCB));
         return configDiv;
     }
 

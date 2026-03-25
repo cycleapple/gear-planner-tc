@@ -30,7 +30,7 @@ export class SetIssuesModal extends BaseModal {
     // future TODO: this would also be a good place to add a UI for warning suppression.
     constructor(set: CharacterGearSet) {
         super();
-        this.headerText = 'Issues';
+        this.headerText = '問題';
         const issues = set.issues;
         if (issues.length > 0) {
             this.classList.add('has-issues');
@@ -43,7 +43,7 @@ export class SetIssuesModal extends BaseModal {
         }
         else {
             this.classList.add('no-issues');
-            const text = document.createTextNode('This set has no issues.');
+            const text = document.createTextNode('此套裝沒有問題。');
             this.contentArea.appendChild(text);
         }
         this.addCloseButton();

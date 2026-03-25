@@ -19,7 +19,7 @@ export class GnbSimGui extends BaseMultiCycleSimGui<GnbSimResult, GnbSettings> {
         return [
             {
                 shortName: 'cartridges',
-                displayName: 'Cartridges',
+                displayName: '晶壤',
                 getter: used => isFinalizedAbilityUse(used) ? used.original : null,
                 renderer: extraDataDiscreteGaugeRenderer<GnbExtraData>((_, extra) => {
                     const cartridges = extra.gauge.cartridges;
@@ -47,7 +47,7 @@ export class GnbSimGui extends BaseMultiCycleSimGui<GnbSimResult, GnbSettings> {
             },
             {
                 shortName: 'no-mercy',
-                displayName: 'No Mercy',
+                displayName: '無情',
                 getter: used => isFinalizedAbilityUse(used) ? used.original : null,
                 renderer: (usedAbility?: PreDmgUsedAbility) => {
                     if (usedAbility?.extraData !== undefined) {
@@ -71,11 +71,11 @@ export class GnbSimGui extends BaseMultiCycleSimGui<GnbSimResult, GnbSettings> {
 
         const potCb = new FieldBoundCheckBox(settings, "usePotion");
         const unrealisticGcdClip = new FieldBoundCheckBox(settings, 'unrealisticGcdClipRotation', {id: 'unrealisticGcdClipRotation'});
-        const unrealisticGcdClipLabel = labelFor('Unrealistic GCD Clip Rotation for 2.49/2.48', unrealisticGcdClip);
+        const unrealisticGcdClipLabel = labelFor('2.49/2.48 不切實際的GCD卡轉循環', unrealisticGcdClip);
         unrealisticGcdClipLabel.classList.add('non-expanding-block');
 
         return el("div", {}, [
-            labeledCheckbox("Use Potion", potCb),
+            labeledCheckbox("使用藥水", potCb),
             el('br'),
             unrealisticGcdClip,
             unrealisticGcdClipLabel,

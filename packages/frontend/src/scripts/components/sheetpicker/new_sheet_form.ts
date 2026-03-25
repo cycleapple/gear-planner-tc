@@ -69,11 +69,11 @@ export class NewSheetFormFieldSet extends HTMLFieldSetElement {
         this.appendChild(spacer());
 
         this.multiJobCb = new FieldBoundCheckBox(this.newSheetSettings, 'multiJob');
-        this.append(labeledCheckbox('Multi Job', this.multiJobCb));
+        this.append(labeledCheckbox('多職業', this.multiJobCb));
         this.appendChild(spacer());
 
         // Sheet Name
-        this.appendChild(labelFor("Sheet Name: ", this.nameInput));
+        this.appendChild(labelFor("配裝表名稱: ", this.nameInput));
         this.appendChild(this.nameInput);
         this.appendChild(spacer());
 
@@ -90,18 +90,18 @@ export class NewSheetFormFieldSet extends HTMLFieldSetElement {
         }, settings?.level);
         this.levelDropdown.id = "new-sheet-level-dropdown";
         this.levelDropdown.required = true;
-        this.appendChild(labelFor('Level: ', this.levelDropdown));
+        this.appendChild(labelFor('等級: ', this.levelDropdown));
         this.appendChild(this.levelDropdown);
         this.appendChild(spacer());
         this.ilvlSyncCheckbox = new FieldBoundCheckBox(this.newSheetSettings, 'ilvlSyncEnabled');
         this.ilvlSyncCheckbox.id = 'new-sheet-ilvl-sync-enable';
-        this.append(quickElement('div', [], [this.ilvlSyncCheckbox, labelFor("Sync Item Level", this.ilvlSyncCheckbox)]));
+        this.append(quickElement('div', [], [this.ilvlSyncCheckbox, labelFor("同步裝備等級", this.ilvlSyncCheckbox)]));
         this.ilvlSyncValue = new FieldBoundIntField(this.newSheetSettings, 'ilvlSync', {
             postValidators: [
                 nonNegative,
                 (ctx) => {
                     if (ctx.newValue > MAX_ILVL) {
-                        ctx.failValidation("Enter a valid item level (too high)");
+                        ctx.failValidation("請輸入有效的裝備等級（數值過高）");
                     }
                 },
             ],
@@ -127,7 +127,7 @@ export class NewSheetFormFieldSet extends HTMLFieldSetElement {
         if (ilvlSyncEnabled) {
             const expectedMaxIlvl = LEVEL_ITEMS[level]?.defaultIlvlSync ?? MAX_ILVL;
             if (ilvlSync > expectedMaxIlvl) {
-                return confirm(`Are you sure you want to create a sheet with an ilvl sync of ${ilvlSync} but a level of ${level}?`);
+                return confirm(`確定要建立裝備等級同步為 ${ilvlSync} 但等級為 ${level} 的配裝表嗎？`);
             }
         }
         return true;
@@ -155,7 +155,7 @@ export class NewSheetForm extends HTMLFormElement {
 
         this.submitButton = document.createElement("button");
         this.submitButton.type = 'submit';
-        this.submitButton.textContent = "New Sheet";
+        this.submitButton.textContent = "新增配裝表";
         this.appendChild(this.submitButton);
 
         this.addEventListener('submit', (ev) => {
@@ -182,7 +182,7 @@ export class NewSheetForm extends HTMLFormElement {
         }
         const job = this.fieldSet.jobPicker.selectedJob;
         if (job === null) {
-            alert("Please select a job");
+            alert("請選擇一個職業");
             ev.preventDefault();
             return;
         }
@@ -275,13 +275,13 @@ export abstract class BaseSheetSettingsModal extends BaseModal {
 
     protected confirmJobMultiChange(currentJob: JobName, currentIsMultiJob: boolean, newJob: JobName, newIsMultiJob: boolean): boolean {
         if (newJob !== currentJob && !newIsMultiJob) {
-            const result = confirm(`You are attempting to change a sheet from ${currentJob} to ${newJob}. Weapons and other class-specific items will be de-selected if they are not equippable as ${newJob}.`);
+            const result = confirm(`你正在將配裝表從 ${currentJob} 變更為 ${newJob}。不適用於 ${newJob} 的武器及職業專屬裝備將會被取消選擇。`);
             if (!result) {
                 return false;
             }
         }
         else if (currentIsMultiJob && !newIsMultiJob) {
-            const result = confirm(`You are attempting to change a sheet from multi-job to single-job. Items may need to be re-selected if they are not equippable as ${newJob}.`);
+            const result = confirm(`你正在將配裝表從多職業變更為單一職業。不適用於 ${newJob} 的裝備可能需要重新選擇。`);
             if (!result) {
                 return false;
             }
@@ -307,8 +307,8 @@ export class SaveAsModal extends BaseSheetSettingsModal {
             ilvlSyncLevel: existingSheet.ilvlSync,
             allowedRoles: [JOB_DATA[existingSheet.classJobName].role],
             multiJob: existingSheet.isMultiJob,
-        }, 'New Sheet');
-        this.headerText = 'Save As';
+        }, '新增配裝表');
+        this.headerText = '另存為';
     }
 
     protected onSubmit(): void {
@@ -436,8 +436,8 @@ export class ChangePropsModal extends BaseSheetSettingsModal {
             ilvlSyncLevel: sheet.ilvlSync,
             allowedRoles: [JOB_DATA[sheet.classJobName].role],
             multiJob: sheet.isMultiJob,
-        }, 'Apply');
-        this.headerText = 'Change Sheet Properties';
+        }, '套用');
+        this.headerText = '更改配裝表屬性';
     }
 
     protected onSubmit(): void {

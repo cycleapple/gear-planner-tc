@@ -32,7 +32,7 @@ export interface DrkSettingsExternal extends ExternalCycleSettings<DrkSettings> 
 
 export const drkSpec: SimSpec<DrkSim, DrkSettingsExternal> = {
     stub: "drk-sheet-sim",
-    displayName: "DRK Sim",
+    displayName: "暗騎模擬",
     description: `Simulates a DRK rotation for level 100/90/80/70.
 If potions are enabled, pots in the burst window every 6m (i.e. 0m, 6m, 12m, etc).
 Defaults to simulating a killtime of 8m 30s (510s).`,

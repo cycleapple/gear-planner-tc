@@ -7,7 +7,7 @@ import {PctGcdAbility, PctOgcdAbility, PctPaletteAbility, PctPaintAbility} from 
 
 export const Red : PctGcdAbility = {
     type: 'gcd',
-    name: "Fire in Red",
+    name: "火焰之紅",
     id: Consts.RedID,
     attackType: "Spell",
     potency: 440,
@@ -18,7 +18,7 @@ export const Red : PctGcdAbility = {
 };
 export const Green : PctGcdAbility = {
     type: 'gcd',
-    name: "Aero in Green",
+    name: "勁風之綠",
     id: Consts.GreenID,
     attackType: "Spell",
     potency: 480,
@@ -29,7 +29,7 @@ export const Green : PctGcdAbility = {
 };
 export const Blue : PctGcdAbility = {
     type: 'gcd',
-    name: "Water in Blue",
+    name: "水花之藍",
     id: Consts.BlueID,
     attackType: "Spell",
     potency: 520,
@@ -47,7 +47,7 @@ export const Blue : PctGcdAbility = {
 
 export const Cyan : PctGcdAbility = {
     type: 'gcd',
-    name: "Blizzard in Cyan",
+    name: "暴雪之藍青",
     id: Consts.CyanID,
     attackType: "Spell",
     potency: 800,
@@ -58,7 +58,7 @@ export const Cyan : PctGcdAbility = {
 };
 export const Yellow : PctGcdAbility = {
     type: 'gcd',
-    name: "Stone in Yellow",
+    name: "巨岩之純黃",
     id: Consts.YellowID,
     attackType: "Spell",
     potency: 840,
@@ -69,7 +69,7 @@ export const Yellow : PctGcdAbility = {
 };
 export const Magenta : PctGcdAbility = {
     type: 'gcd',
-    name: "Thunder in Magenta",
+    name: "雷電之品紅",
     id: Consts.MagentaID,
     attackType: "Spell",
     potency: 880,
@@ -84,7 +84,7 @@ export const Magenta : PctGcdAbility = {
 
 export const Holy : PctPaintAbility = {
     type: 'gcd',
-    name: "Holy in White",
+    name: "神聖之白",
     id: Consts.HolyID,
     attackType: "Spell",
     potency: 520,
@@ -96,7 +96,7 @@ export const Holy : PctPaintAbility = {
 };
 export const Comet : PctPaintAbility = {
     type: 'gcd',
-    name: "Comet in Black",
+    name: "隕星之黑",
     id: Consts.CometID,
     attackType: "Spell",
     potency: 880,
@@ -109,7 +109,7 @@ export const Comet : PctPaintAbility = {
 
 export const RainbowDrip : PctGcdAbility = {
     type: 'gcd',
-    name: "Rainbow Drip",
+    name: "彩虹點滴",
     id: Consts.RainbowDripID,
     attackType: "Spell",
     potency: 1000,
@@ -121,7 +121,7 @@ export const RainbowDrip : PctGcdAbility = {
 
 export const StarPrism : PctGcdAbility = {
     type: 'gcd',
-    name: "Star Prism",
+    name: "天星棱光",
     id: Consts.StarPrismID,
     attackType: "Spell",
     potency: 1400,
@@ -134,7 +134,7 @@ export const StarPrism : PctGcdAbility = {
 // TODO : Add logic to simplify the Creature motif into a single action.
 export const PomMotif : PctGcdAbility = {
     type: 'gcd',
-    name: "Pom Motif",
+    name: "絨球彩繪",
     id: Consts.PomMotifID,
     attackType: "Spell",
     potency: null,
@@ -144,7 +144,7 @@ export const PomMotif : PctGcdAbility = {
 };
 export const WingMotif : PctGcdAbility = {
     type: 'gcd',
-    name: "Wing Motif",
+    name: "翅膀彩繪",
     id: Consts.WingMotifID,
     attackType: "Spell",
     potency: null,
@@ -154,7 +154,7 @@ export const WingMotif : PctGcdAbility = {
 };
 export const ClawMotif : PctGcdAbility = {
     type: 'gcd',
-    name: "Claw Motif",
+    name: "獸爪彩繪",
     id: Consts.ClawMotifID,
     attackType: "Spell",
     potency: null,
@@ -164,7 +164,7 @@ export const ClawMotif : PctGcdAbility = {
 };
 export const MawMotif : PctGcdAbility = {
     type: 'gcd',
-    name: "Maw Motif",
+    name: "尖牙彩繪",
     id: Consts.MawMotifID,
     attackType: "Spell",
     potency: null,
@@ -174,7 +174,7 @@ export const MawMotif : PctGcdAbility = {
 };
 export const HammerMotif : PctGcdAbility = {
     type: 'gcd',
-    name: "Hammer Motif",
+    name: "重錘彩繪",
     id: Consts.HammerMotifID,
     attackType: "Spell",
     potency: null,
@@ -184,7 +184,7 @@ export const HammerMotif : PctGcdAbility = {
 };
 export const StarryMotif : PctGcdAbility = {
     type: 'gcd',
-    name: "Starry Sky Motif",
+    name: "星空彩繪",
     id: Consts.StarryMotifID,
     attackType: "Spell",
     potency: null,
@@ -195,7 +195,7 @@ export const StarryMotif : PctGcdAbility = {
 
 export const Mog : PctOgcdAbility & OriginCdAbility = {
     type: 'ogcd',
-    name: "Mog of the Ages",
+    name: "莫古利激流",
     id: Consts.MogID,
     attackType: "Ability",
     potency: 1300,
@@ -207,7 +207,7 @@ export const Mog : PctOgcdAbility & OriginCdAbility = {
 };
 export const Madeen : PctOgcdAbility & SharedCdAbility = {
     type: 'ogcd',
-    name: "Retribution of the Madeen",
+    name: "馬蒂恩懲罰",
     id: Consts.MadeenID,
     attackType: "Ability",
     potency: 1400,
@@ -221,7 +221,7 @@ export const Madeen : PctOgcdAbility & SharedCdAbility = {
 // TODO: Since all creature Muses are the same potency and effect (other than the buff) can these be collapsed into a single action?
 export const Pom : PctOgcdAbility & OriginCdAbility = {
     type: 'ogcd',
-    name: "Pom Muse",
+    name: "絨球構想",
     id: Consts.PomMuseID,
     attackType: "Ability",
     potency: 1100,
@@ -233,7 +233,7 @@ export const Pom : PctOgcdAbility & OriginCdAbility = {
 };
 export const Wing : PctOgcdAbility & SharedCdAbility = {
     type: 'ogcd',
-    name: "Winged Muse",
+    name: "翅膀構想",
     id: Consts.WingMuseID,
     attackType: "Ability",
     potency: 1100,
@@ -247,7 +247,7 @@ export const Wing : PctOgcdAbility & SharedCdAbility = {
 };
 export const Claw : PctOgcdAbility & SharedCdAbility = {
     type: 'ogcd',
-    name: "Clawed Muse",
+    name: "獸爪構想",
     id: Consts.ClawMuseID,
     attackType: "Ability",
     potency: 1100,
@@ -261,7 +261,7 @@ export const Claw : PctOgcdAbility & SharedCdAbility = {
 };
 export const Fang : PctOgcdAbility & SharedCdAbility = {
     type: 'ogcd',
-    name: "Fanged Muse",
+    name: "尖牙構想",
     id: Consts.FangMuseID,
     attackType: "Ability",
     potency: 1100,
@@ -276,7 +276,7 @@ export const Fang : PctOgcdAbility & SharedCdAbility = {
 
 export const Striking : PctOgcdAbility = {
     type: 'ogcd',
-    name: "Striking Muse",
+    name: "重錘構想",
     id: Consts.StrikingMuseID,
     attackType: "Ability",
     potency: null,
@@ -290,7 +290,7 @@ export const Striking : PctOgcdAbility = {
 
 export const Starry : PctOgcdAbility = {
     type: 'ogcd',
-    name: "Starry Muse",
+    name: "星空構想",
     id: Consts.StarryMuseID,
     attackType: "Ability",
     potency: null,
@@ -308,7 +308,7 @@ export const Starry : PctOgcdAbility = {
 
 export const SubtractivePalette : PctPaletteAbility = {
     type: 'ogcd',
-    name: "Subtractive Palette",
+    name: "減色混合",
     id: Consts.SubtractivePaletteID,
     attackType: "Ability",
     potency: null,
@@ -321,7 +321,7 @@ export const SubtractivePalette : PctPaletteAbility = {
 //       drop when the hammer stamp buff drops.
 export const HStamp : PctGcdAbility = {
     type: 'gcd',
-    name: "Hammer Stamp",
+    name: "重錘敲章",
     id: Consts.HStampID,
     attackType: "Spell",
     potency: 560,
@@ -334,7 +334,7 @@ export const HStamp : PctGcdAbility = {
 };
 export const HBrush : PctGcdAbility = {
     type: 'gcd',
-    name: "Hammer Brush",
+    name: "重錘掠刷",
     id: Consts.HBrushID,
     attackType: "Spell",
     potency: 620,
@@ -347,7 +347,7 @@ export const HBrush : PctGcdAbility = {
 };
 export const HPolish : PctGcdAbility = {
     type: 'gcd',
-    name: "Polishing Hammer",
+    name: "重錘拋光",
     id: Consts.HPolishID,
     attackType: "Spell",
     potency: 680,

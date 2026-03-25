@@ -12,7 +12,7 @@ export class WarSimGui extends BaseMultiCycleSimGui<WarSimResult, WarSettings> {
     protected extraAbilityUsedColumns(result: WarSimResult): CustomColumnSpec<DisplayRecordFinalized, unknown, unknown>[] {
         return [{
             shortName: 'beastGauge',
-            displayName: 'Beast Gauge',
+            displayName: '獸魂量表',
             getter: used => isFinalizedAbilityUse(used) ? used.original : null,
             renderer: (usedAbility?: PreDmgUsedAbility) => {
                 if (usedAbility?.extraData !== undefined) {
@@ -30,7 +30,7 @@ export class WarSimGui extends BaseMultiCycleSimGui<WarSimResult, WarSettings> {
             },
         }, {
             shortName: 'surgingTempest',
-            displayName: 'Surging Tempest',
+            displayName: '暴風碎',
             getter: used => isFinalizedAbilityUse(used) ? used.original : null,
             renderer: (usedAbility?: PreDmgUsedAbility) => {
                 if (usedAbility?.extraData !== undefined) {
@@ -55,7 +55,7 @@ export class WarSimGui extends BaseMultiCycleSimGui<WarSimResult, WarSettings> {
 
         const potCb = new FieldBoundCheckBox(settings, "usePotion");
 
-        configDiv.appendChild(labeledCheckbox("Use Potion", potCb));
+        configDiv.appendChild(labeledCheckbox("使用藥水", potCb));
         return configDiv;
     }
 }

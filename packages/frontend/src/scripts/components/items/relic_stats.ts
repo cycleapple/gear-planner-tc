@@ -31,7 +31,7 @@ export function makeRelicStatEditor(equipment: EquippedItem, stat: Substat, set:
     if (gearItem.relicStatModel.type && gearItem.relicStatModel.excludedStats.includes(stat) && !equipment.relicStats[stat]) {
         const out = document.createElement('span');
         out.classList.add('relic-stat-excluded');
-        out.title = 'You cannot use this relic stat on this class';
+        out.title = '此職業無法使用此肝武屬性';
         out.textContent = '-';
         return out;
     }

@@ -21,7 +21,7 @@ function makePotion(name: string, stat: Mainstat, itemId: number, bonus: number,
         },
         activatesBuffs: [
             {
-                name: 'Medicated',
+                name: '強化藥',
                 duration: 30,
                 statusId: 0x31,
                 effects: {
@@ -61,7 +61,8 @@ const gradeToStatCap: number[] & {
  * @param grade
  */
 export function makeGemdraught(stat: PotionStat, grade: GemdraughtGrade): Readonly<OgcdAbility> {
-    return makePotion(`Grade ${grade} Gemdraught of ${camel2title(stat)}`, stat, statToPotItemId[stat], 0.1, gradeToStatCap[grade - 1]);
+    const statNames: Record<string, string> = {strength: '力量', dexterity: '靈巧', intelligence: '智力', mind: '精神'};
+    return makePotion(`${grade}級強化藥（${statNames[stat] ?? stat}）`, stat, statToPotItemId[stat], 0.1, gradeToStatCap[grade - 1]);
 }
 
 // 6.x

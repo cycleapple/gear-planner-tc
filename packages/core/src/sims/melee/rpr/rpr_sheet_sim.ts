@@ -28,7 +28,7 @@ export interface RprSimSettingsExternal extends ExternalCycleSettings<RprSimSett
 
 export const rprSheetSpec: SimSpec<RprSheetSim, RprSimSettingsExternal> = {
     stub: "rpr-sheet-sim",
-    displayName: "RPR Sim",
+    displayName: "奪魂模擬",
     makeNewSimInstance: function (): RprSheetSim {
         return new RprSheetSim();
     },

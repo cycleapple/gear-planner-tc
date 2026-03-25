@@ -6,7 +6,7 @@ export class SgeSheetSimGui extends BaseMultiCycleSimGui<SgeSheetSimResult, SgeN
     makeCustomConfigInterface(settings: SgeNewSheetSettings, updateCallback: () => void): HTMLElement | null {
         const configDiv = document.createElement("div");
         const potCb = new FieldBoundCheckBox(settings, "usePotion");
-        configDiv.appendChild(labeledCheckbox("Use Potion", potCb));
+        configDiv.appendChild(labeledCheckbox("使用藥水", potCb));
         return configDiv;
     }
 }

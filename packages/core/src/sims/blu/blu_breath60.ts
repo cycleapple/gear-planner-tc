@@ -14,7 +14,7 @@ export interface BluBreath60SettingsExternal extends ExternalCycleSettings<BluBr
 }
 
 export const BluBreath60Spec: SimSpec<BluBreath60Sim, BluBreath60SettingsExternal> = {
-    displayName: "BLU Breath 60s",
+    displayName: "青魔吐息60秒",
     stub: "blu-breath60",
     supportedJobs: ["BLU"],
     isDefaultSim: false,

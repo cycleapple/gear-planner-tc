@@ -22,7 +22,7 @@ export class AddSimDialog extends BaseModal {
     constructor(private sheet: GearPlanSheet) {
         super();
         this.id = 'add-sim-dialog';
-        this.headerText = 'Add Simulation';
+        this.headerText = '新增模擬';
         const form = document.createElement("form");
         form.method = 'dialog';
         this.table = new CustomTable();
@@ -62,15 +62,15 @@ export class AddSimDialog extends BaseModal {
 
         const descriptionArea = document.createElement('div');
         descriptionArea.classList.add('add-sim-description');
-        descriptionArea.textContent = 'Select a simulation to see a description';
+        descriptionArea.textContent = '選擇一個模擬以查看說明';
 
         const contactArea = quickElement('div', ['add-sim-contact-info-holder'], []);
         const descriptionContactArea = quickElement('div', ['add-sim-lower-area'], [descriptionArea, contactArea]);
 
         form.appendChild(descriptionContactArea);
 
-        const submitButton = makeActionButton("Add", () => this.submit());
-        const cancelButton = makeActionButton("Cancel", () => this.close());
+        const submitButton = makeActionButton("新增", () => this.submit());
+        const cancelButton = makeActionButton("取消", () => this.close());
         this.addButton(submitButton);
         this.addButton(cancelButton);
 
@@ -84,7 +84,7 @@ export class AddSimDialog extends BaseModal {
                         descriptionArea.classList.remove('no-desc');
                     }
                     else {
-                        descriptionArea.textContent = '(No Description)';
+                        descriptionArea.textContent = '（無說明）';
                         descriptionArea.classList.add('no-desc');
                     }
                     const maintainersElement = simMaintainersInfoElement(newSelection.dataItem);

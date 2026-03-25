@@ -15,11 +15,11 @@ export class ImportSetsModal extends BaseModal {
 
     constructor(private sheet: GearPlanSheetGui) {
         super();
-        this.headerText = 'Import Gear Set(s)';
+        this.headerText = '匯入套裝';
 
         const explanation = document.createElement('p');
-        explanation.textContent = 'This is for importing gear set(s) into this sheet. If you would like to import a full sheet export (including sim settings) to a new sheet, use the "Import Sheet" at the top of the page. '
-            + 'You can import a gear planner URL or JSON, or an Etro URL.';
+        explanation.textContent = '此功能用於將套裝匯入此配裝表。如果你想匯入完整的配裝表（包含模擬設定）到新的配裝表，請使用頁面頂部的「匯入配裝表」。'
+            + '你可以匯入配裝規劃器的 URL 或 JSON，或 Etro URL。';
         this.contentArea.appendChild(explanation);
 
         const textAreaDiv = document.createElement("div");
@@ -36,7 +36,7 @@ export class ImportSetsModal extends BaseModal {
         this.contentArea.appendChild(textAreaDiv);
         // textAreaDiv.appendChild(document.createElement("br"));
 
-        this.importButton = makeActionButton("Import", () => this.doImport());
+        this.importButton = makeActionButton("匯入", () => this.doImport());
         this.addButton(this.importButton);
         this.addCloseButton();
         this.ready = true;
@@ -88,7 +88,7 @@ export class ImportSetsModal extends BaseModal {
                     }
                     catch (e) {
                         console.error('Import error', e);
-                        alert('Error importing');
+                        alert('匯入錯誤');
                     }
                     return;
                 case "shortlink":
@@ -109,7 +109,7 @@ export class ImportSetsModal extends BaseModal {
                     }, err => {
                         this.ready = true;
                         console.error("Error loading set from Etro", err);
-                        alert('Error loading Etro set');
+                        alert('載入 Etro 套裝時發生錯誤');
                     });
                     return;
                 case "bis":
@@ -118,7 +118,7 @@ export class ImportSetsModal extends BaseModal {
             }
         }
         console.error("Error loading imported data", text);
-        alert('That doesn\'t look like a valid import.');
+        alert('這看起來不是有效的匯入資料。');
     }
 
     doAsyncImport(provider: () => Promise<string>, onlySetIndex: number | undefined) {
@@ -129,7 +129,7 @@ export class ImportSetsModal extends BaseModal {
         }, err => {
             this.ready = true;
             console.error("Error importing set/sheet", err);
-            alert('Error loading set/sheet');
+            alert('載入套裝/配裝表時發生錯誤');
         });
     }
 
@@ -144,7 +144,7 @@ export class ImportSetsModal extends BaseModal {
                 const theSet = sets[onlySetIndex];
                 if (!theSet) {
                     console.error(`Index ${onlySetIndex} is not valid with sets length of ${sets.length}`);
-                    alert("Not valid");
+                    alert("無效");
                 }
                 const imported = this.sheet.importGearSet(theSet);
                 this.sheet.addGearSet(imported, undefined, true);
@@ -170,7 +170,7 @@ export class ImportSetsModal extends BaseModal {
             this.close();
         }
         else {
-            alert("That doesn't look like a valid sheet or set");
+            alert("這看起來不是有效的配裝表或套裝");
         }
 
     }

@@ -288,48 +288,48 @@ export class StatTierDisplay extends HTMLDivElement {
             case "mind":
                 return [{
                     label: abbrev,
-                    fullName: stat + ' multiplier',
-                    description: 'Damage multiplier from primary stat',
+                    fullName: stat + ' 倍率',
+                    description: '主屬性的傷害倍率',
                     tieringFunc: makeTiering(value => mainStatMulti(levelStats, jobStats, value)),
                     extraOffsets: extraOffsets,
                 }];
             case "vitality":
                 return [{
                     label: abbrev,
-                    fullName: 'Hit Points',
-                    description: 'Hit Points (affected by Vitality)',
+                    fullName: 'HP',
+                    description: 'HP（受耐力影響）',
                     tieringFunc: makeTiering(value => vitToHp(levelStats, jobStats, value)),
                     extraOffsets: extraOffsets,
                 }];
             case "determination":
                 return [{
                     label: abbrev,
-                    fullName: stat + ' multiplier',
-                    description: 'Damage multiplier from Determination',
+                    fullName: stat + ' 倍率',
+                    description: '信念的傷害倍率',
                     tieringFunc: makeTiering(value => detDmg(levelStats, value)),
                     extraOffsets: extraOffsets,
                 }];
             case "piety":
                 return [{
                     label: abbrev,
-                    fullName: 'MP Regen',
-                    description: 'MP Regen (affected by Piety)',
+                    fullName: 'MP回復',
+                    description: 'MP回復（受信仰影響）',
                     tieringFunc: makeTiering(value => mpTick(levelStats, value)),
                     extraOffsets: extraOffsets,
                 }];
             case "crit":
                 return [{
                     label: abbrev,
-                    fullName: 'critical hit',
-                    description: 'Critical hit (chance and multiplier)',
+                    fullName: '暴擊',
+                    description: '暴擊（機率和倍率）',
                     tieringFunc: makeTiering(value => critDmg(levelStats, value)),
                     extraOffsets: extraOffsets,
                 }];
             case "dhit":
                 return [{
                     label: abbrev,
-                    fullName: 'direct hit chance',
-                    description: 'Chance to land a direct hit',
+                    fullName: '直擊機率',
+                    description: '打出直擊的機率',
                     tieringFunc: makeTiering(value => dhitChance(levelStats, value)),
                     extraOffsets: extraOffsets,
                 }];
@@ -354,8 +354,8 @@ export class StatTierDisplay extends HTMLDivElement {
                     tierDisplays.push({
                         label: abbrev + ' GCD',
                         shortLabel: 'GCD',
-                        fullName: 'GCD for spells',
-                        description: 'Global cooldown (recast) time for spells',
+                        fullName: '法術GCD',
+                        description: '法術的全域冷卻（複唱）時間',
                         tieringFunc: makeTiering(value => {
                             const haste = computed.haste('Spell', 0, 0);
                             return spsToGcd(2.5, levelStats, value, haste);
@@ -366,8 +366,8 @@ export class StatTierDisplay extends HTMLDivElement {
                 return [...tierDisplays, {
                     label: abbrev + ' DoT',
                     shortLabel: 'DoT',
-                    fullName: 'DoT scalar for spells',
-                    description: 'DoT damage multiplier for spells',
+                    fullName: '法術DoT係數',
+                    description: '法術DoT傷害倍率',
                     tieringFunc: makeTiering(value => spsTickMulti(levelStats, value)),
                     extraOffsets: extraOffsets,
                 }];
@@ -393,8 +393,8 @@ export class StatTierDisplay extends HTMLDivElement {
                     tierDisplays.push({
                         label: abbrev + ' GCD',
                         shortLabel: 'GCD',
-                        fullName: 'GCD for weaponskills',
-                        description: 'Global cooldown (recast) time for weaponskills',
+                        fullName: '戰技GCD',
+                        description: '戰技的全域冷卻（複唱）時間',
                         tieringFunc: makeTiering(value => {
                             const haste = computed.haste('Weaponskill', 0, 0);
                             return sksToGcd(2.5, levelStats, value, haste);
@@ -406,23 +406,23 @@ export class StatTierDisplay extends HTMLDivElement {
                 return [...tierDisplays, {
                     label: abbrev + ' DoT',
                     shortLabel: 'DoT',
-                    fullName: 'DoT scalar for weaponskills',
-                    description: 'DoT damage multiplier for weaponskills',
+                    fullName: '戰技DoT係數',
+                    description: '戰技DoT傷害倍率',
                     tieringFunc: makeTiering(value => sksTickMulti(levelStats, value)),
                     extraOffsets: extraOffsets,
                 }];
             }
             case "tenacity":
                 return [{
-                    label: abbrev + ' Dmg',
-                    fullName: stat + ' multiplier',
-                    description: 'Damage multiplier from Tenacity',
+                    label: abbrev + ' 傷',
+                    fullName: stat + ' 倍率',
+                    description: '堅韌的傷害倍率',
                     tieringFunc: makeTiering(value => tenacityDmg(levelStats, value)),
                     extraOffsets: extraOffsets,
                 }, {
-                    label: abbrev + ' Def',
-                    fullName: stat + ' mitigation',
-                    description: 'Damage reduction from Tenacity',
+                    label: abbrev + ' 防',
+                    fullName: stat + ' 減傷',
+                    description: '堅韌的傷害減免',
                     tieringFunc: makeTiering(value => tenacityIncomingDmg(levelStats, value)),
                     extraOffsets: extraOffsets,
                 },

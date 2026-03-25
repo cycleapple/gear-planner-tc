@@ -13,13 +13,13 @@ export class BlmPpsGui extends SimulationGui<BlmPpsResult, BlmPpsSettings, BlmPp
     makeMainResultDisplay(result: BlmPpsResult): HTMLElement {
         // noinspection JSNonASCIINames
         const mainResultsTable = simpleKvTable({
-            "Expected DPS": result.mainDpsFull.expected,
-            "Std Deviation": result.mainDpsFull.stdDev,
-            "Expected +1σ": applyStdDev(result.mainDpsFull, 1),
-            "Expected +2σ": applyStdDev(result.mainDpsFull, 2),
-            "Expected +3σ": applyStdDev(result.mainDpsFull, 3),
+            "預期DPS": result.mainDpsFull.expected,
+            "標準差": result.mainDpsFull.stdDev,
+            "預期+1σ": applyStdDev(result.mainDpsFull, 1),
+            "預期+2σ": applyStdDev(result.mainDpsFull, 2),
+            "預期+3σ": applyStdDev(result.mainDpsFull, 3),
             "PPS": result.pps,
-            "PPS with Enochian": result.ppsWithEno,
+            "含天語PPS": result.ppsWithEno,
         });
         mainResultsTable.classList.add('main-results-table');
         return quickElement('div', ['count-sim-results-area'], [mainResultsTable]);
@@ -35,13 +35,13 @@ export class BlmPpsGui extends SimulationGui<BlmPpsResult, BlmPpsSettings, BlmPp
         const simSettings = new NamedSection('Sim Settings');
 
         const useStandardF3PCB = new FieldBoundCheckBox(settings, "useStandardF3P");
-        simSettings.appendChild(labeledCheckbox("Use AF1 F3P consistently to enter Astral Fire. (ignored at levels 80 and below)", useStandardF3PCB));
+        simSettings.appendChild(labeledCheckbox("固定使用AF1 F3P進入靈極火（80級及以下忽略）", useStandardF3PCB));
 
         const useColdB3CB = new FieldBoundCheckBox(settings, "useColdB3");
-        simSettings.appendChild(labeledCheckbox("Use instant cast UI1 B3 when possible. (ignored at level 70)", useColdB3CB));
+        simSettings.appendChild(labeledCheckbox("盡可能使用瞬發UI1 B3（70級忽略）", useColdB3CB));
 
         const spendManafontF3PCB = new FieldBoundCheckBox(settings, "spendManafontF3P");
-        simSettings.appendChild(labeledCheckbox("Spend the free F3P granted by Manafont. (ignored at levels 80 and below)", spendManafontF3PCB));
+        simSettings.appendChild(labeledCheckbox("使用魔泉賦予的免費F3P（80級及以下忽略）", spendManafontF3PCB));
 
         configDiv.appendChild(simSettings);
 

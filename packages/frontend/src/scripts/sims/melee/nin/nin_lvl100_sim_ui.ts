@@ -11,7 +11,7 @@ export class NinSheetSimGui extends BaseMultiCycleSimGui<NinSimResult, NinSettin
     protected extraAbilityUsedColumns(result: NinSimResult): CustomColumnSpec<DisplayRecordFinalized, unknown, unknown>[] {
         return [{
             shortName: 'ninkiGauge',
-            displayName: 'Ninki',
+            displayName: '忍氣',
             getter: used => isFinalizedAbilityUse(used) ? used.original : null,
             renderer: (usedAbility?: PreDmgUsedAbility) => {
                 if (usedAbility?.extraData !== undefined) {
@@ -29,7 +29,7 @@ export class NinSheetSimGui extends BaseMultiCycleSimGui<NinSimResult, NinSettin
             },
         }, {
             shortName: 'kazematoi',
-            displayName: 'Kazematoi',
+            displayName: '風遁鏢',
             getter: used => isFinalizedAbilityUse(used) ? used.original : null,
             renderer: (usedAbility?: PreDmgUsedAbility) => {
                 let textContent = "";

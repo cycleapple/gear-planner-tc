@@ -11,7 +11,7 @@ export class BlmSimGui extends BaseMultiCycleSimGui<BlmSimResult, BlmSettings> {
     protected extraAbilityUsedColumns(result: CycleSimResult): CustomColumn<DisplayRecordFinalized, unknown, unknown>[] {
         return [col({
             shortName: 'astral-fire-umbral-ice',
-            displayName: 'AF/UI',
+            displayName: '靈極/冰極',
             getter: used => isFinalizedAbilityUse(used) ? used.original : null,
             renderer: (usedAbility?: PreDmgUsedAbility<BlmGaugeState>) => {
                 if (usedAbility === null) {
@@ -46,7 +46,7 @@ export class BlmSimGui extends BaseMultiCycleSimGui<BlmSimResult, BlmSettings> {
             },
         }), col({
             shortName: 'umbral-hearts',
-            displayName: 'Umbral Hearts',
+            displayName: '冰心',
             getter: used => isFinalizedAbilityUse(used) ? used.original : null,
             renderer: (usedAbility?: PreDmgUsedAbility<BlmGaugeState>) => {
                 if (usedAbility === null) {
@@ -65,7 +65,7 @@ export class BlmSimGui extends BaseMultiCycleSimGui<BlmSimResult, BlmSettings> {
             },
         }), col({
             shortName: 'polyglot',
-            displayName: 'Polyglot',
+            displayName: '通曉',
             getter: used => isFinalizedAbilityUse(used) ? used.original : null,
             renderer: (usedAbility?: PreDmgUsedAbility<BlmGaugeState>) => {
                 if (usedAbility === null) {
@@ -84,7 +84,7 @@ export class BlmSimGui extends BaseMultiCycleSimGui<BlmSimResult, BlmSettings> {
             },
         }), col({
             shortName: 'astral-soul',
-            displayName: 'Astral Soul',
+            displayName: '靈魂',
             getter: used => isFinalizedAbilityUse(used) && ((used.original.gaugeAfter as BlmGaugeState).level === 100) ? used.original : null,
             renderer: (usedAbility?: PreDmgUsedAbility<BlmGaugeState>) => {
                 if (usedAbility === null || usedAbility.gaugeAfter.level < 100) {
@@ -151,23 +151,23 @@ export class BlmSimGui extends BaseMultiCycleSimGui<BlmSimResult, BlmSettings> {
 
         const prepullLLCB = new FieldBoundCheckBox(settings, "prepullLL");
 
-        configDiv.appendChild(labeledCheckbox("Pre-pull Ley Lines", prepullLLCB));
+        configDiv.appendChild(labeledCheckbox("開怪前放黑土", prepullLLCB));
 
         const potCb = new FieldBoundCheckBox(settings, "usePotion");
 
-        configDiv.appendChild(labeledCheckbox("Use Potion", potCb));
+        configDiv.appendChild(labeledCheckbox("使用藥水", potCb));
 
         const flareOpenerCB = new FieldBoundCheckBox(settings, "useFlareOpener");
 
-        configDiv.appendChild(labeledCheckbox("Use alternative single-target Flare opener", flareOpenerCB));
+        configDiv.appendChild(labeledCheckbox("使用替代單體核爆起手", flareOpenerCB));
 
         const transposeFromUICB = new FieldBoundCheckBox(settings, "transposeFromUmbralIce");
 
-        configDiv.appendChild(labeledCheckbox("Transpose out of Umbral Ice (standard AF1 F3P)", transposeFromUICB));
+        configDiv.appendChild(labeledCheckbox("星極超越退出冰階段（標準AF1 F3P）", transposeFromUICB));
 
         const transposeFromAFCB = new FieldBoundCheckBox(settings, "transposeFromAstralFire");
 
-        configDiv.appendChild(labeledCheckbox("Transpose out of Astral Fire (instant UI1 B3)", transposeFromAFCB));
+        configDiv.appendChild(labeledCheckbox("星極超越退出火階段（瞬發UI1 B3）", transposeFromAFCB));
 
         return configDiv;
     }

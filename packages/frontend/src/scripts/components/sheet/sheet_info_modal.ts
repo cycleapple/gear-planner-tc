@@ -9,7 +9,7 @@ import {flp} from "@xivgear/xivmath/xivmath";
 export class SheetInfoModal extends BaseModal {
     constructor(sheet: GearPlanSheet, selectedGearSet: CharacterGearSet | null) {
         super();
-        this.headerText = 'Sheet Info';
+        this.headerText = '配裝表資訊';
 
         const data: AnyStringIndex = {
             "Sheet Name: ": sheet.sheetName,

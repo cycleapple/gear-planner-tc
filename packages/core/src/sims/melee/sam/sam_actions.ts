@@ -7,7 +7,7 @@ import {KenkiAbility, SamGcdAbility, SamOgcdAbility} from "./sam_types";
  */
 export const Gyofu: SamGcdAbility = {
     type: 'gcd',
-    name: "Gyofu",
+    name: "曉風",
     id: 36963,
     attackType: "Weaponskill",
     potency: 240,
@@ -20,7 +20,7 @@ export const Gyofu: SamGcdAbility = {
 
 export const Yukikaze: SamGcdAbility = {
     type: 'gcd',
-    name: "Yukikaze",
+    name: "雪風",
     id: 7480,
     attackType: "Weaponskill",
     potency: 340,
@@ -34,7 +34,7 @@ export const Yukikaze: SamGcdAbility = {
 
 export const Jinpu: SamGcdAbility = {
     type: 'gcd',
-    name: "Jinpu",
+    name: "陣風",
     id: 7478,
     attackType: "Weaponskill",
     potency: 300,
@@ -48,7 +48,7 @@ export const Jinpu: SamGcdAbility = {
 
 export const Shifu: SamGcdAbility = {
     type: 'gcd',
-    name: "Shifu",
+    name: "士風",
     id: 7479,
     attackType: "Weaponskill",
     potency: 300,
@@ -62,7 +62,7 @@ export const Shifu: SamGcdAbility = {
 
 export const Gekko: SamGcdAbility = {
     type: 'gcd',
-    name: "Gekko",
+    name: "月光",
     id: 7481,
     attackType: "Weaponskill",
     potency: 420,
@@ -76,7 +76,7 @@ export const Gekko: SamGcdAbility = {
 
 export const Kasha: SamGcdAbility = {
     type: 'gcd',
-    name: "Kasha",
+    name: "花車",
     id: 7482,
     attackType: "Weaponskill",
     potency: 420,
@@ -90,7 +90,7 @@ export const Kasha: SamGcdAbility = {
 
 export const MidareSetsugekka: SamGcdAbility = {
     type: 'gcd',
-    name: "Midare Setsugekka",
+    name: "紛亂雪月花",
     id: 7487,
     attackType: "Weaponskill",
     potency: 640,
@@ -105,7 +105,7 @@ export const MidareSetsugekka: SamGcdAbility = {
 
 export const KaeshiSetsugekka: SamGcdAbility = {
     type: 'gcd',
-    name: "Kaeshi: Setsugekka",
+    name: "回返雪月花",
     id: 16486,
     attackType: "Weaponskill",
     potency: 640,
@@ -116,7 +116,7 @@ export const KaeshiSetsugekka: SamGcdAbility = {
 
 export const TendoSetsugekka: SamGcdAbility = {
     type: 'gcd',
-    name: "Tendo Setsugekka",
+    name: "天道雪月花",
     id: 36966,
     attackType: "Weaponskill",
     potency: 1100,
@@ -131,7 +131,7 @@ export const TendoSetsugekka: SamGcdAbility = {
 
 export const TendoKaeshiSetsugekka: SamGcdAbility = {
     type: 'gcd',
-    name: "Tendo Kaeshi Setsugekka",
+    name: "天道回返雪月花",
     id: 36968,
     attackType: "Weaponskill",
     potency: 1100,
@@ -142,7 +142,7 @@ export const TendoKaeshiSetsugekka: SamGcdAbility = {
 
 export const Higanbana: SamGcdAbility = {
     type: 'gcd',
-    name: "Higanbana",
+    name: "彼岸花",
     id: 7489,
     attackType: "Weaponskill",
     potency: 200,
@@ -161,7 +161,7 @@ export const Higanbana: SamGcdAbility = {
 
 export const OgiNamikiri: SamGcdAbility = {
     type: 'gcd',
-    name: "Ogi Namikiri",
+    name: "奧義斬浪",
     id: 25781,
     attackType: "Weaponskill",
     potency: 1000,
@@ -173,7 +173,7 @@ export const OgiNamikiri: SamGcdAbility = {
 
 export const KaeshiNamikiri: SamGcdAbility = {
     type: 'gcd',
-    name: "Kaeshi: Namikiri",
+    name: "回返斬浪",
     id: 25782,
     attackType: "Weaponskill",
     potency: 1000,
@@ -185,7 +185,7 @@ export const KaeshiNamikiri: SamGcdAbility = {
 
 export const Enpi: SamGcdAbility = {
     type: 'gcd',
-    name: "Enpi",
+    name: "燕飛",
     id: 7486,
     attackType: "Weaponskill",
     potency: 270,
@@ -199,7 +199,7 @@ export const Enpi: SamGcdAbility = {
  */
 export const Shoha: SamOgcdAbility = {
     type: 'ogcd',
-    name: "Shoha",
+    name: "照破",
     id: 16487,
     attackType: "Ability",
     potency: 640,
@@ -208,7 +208,7 @@ export const Shoha: SamOgcdAbility = {
 
 export const Zanshin: KenkiAbility = {
     type: 'ogcd',
-    name: "Zanshin",
+    name: "殘心",
     id: 36964,
     attackType: "Ability",
     potency: 940,
@@ -218,7 +218,7 @@ export const Zanshin: KenkiAbility = {
 
 export const HissatsuShinten: KenkiAbility = {
     type: 'ogcd',
-    name: "Hissatsu: Shinten",
+    name: "必殺劍·震天",
     id: 7490,
     attackType: "Ability",
     potency: 250,
@@ -228,7 +228,7 @@ export const HissatsuShinten: KenkiAbility = {
 
 export const HissatsuSenei: KenkiAbility = {
     type: 'ogcd',
-    name: "Hissatsu: Senei",
+    name: "必殺劍·閃影",
     id: 16481,
     attackType: "Ability",
     potency: 800,
@@ -241,7 +241,7 @@ export const HissatsuSenei: KenkiAbility = {
 
 export const HissatsuGyoten: KenkiAbility = {
     type: 'ogcd',
-    name: "Hissatsu: Gyoten",
+    name: "必殺劍·曉天",
     id: 7492,
     attackType: "Ability",
     potency: 100,
@@ -254,7 +254,7 @@ export const HissatsuGyoten: KenkiAbility = {
 
 export const HissatsuYaten: KenkiAbility = {
     type: 'ogcd',
-    name: "Hissatsu: Yaten",
+    name: "必殺劍·夜天",
     id: 7493,
     attackType: "Ability",
     potency: 100,
@@ -267,7 +267,7 @@ export const HissatsuYaten: KenkiAbility = {
 
 export const Ikishoten: SamOgcdAbility = {
     type: 'ogcd',
-    name: "Ikishoten",
+    name: "意氣衝天",
     id: 16482,
     attackType: "Ability",
     potency: null,
@@ -280,7 +280,7 @@ export const Ikishoten: SamOgcdAbility = {
 
 export const MeikyoShisui: SamOgcdAbility = {
     type: 'ogcd',
-    name: "Meikyo Shisui",
+    name: "明鏡止水",
     id: 7499,
     attackType: "Ability",
     potency: null,
@@ -293,7 +293,7 @@ export const MeikyoShisui: SamOgcdAbility = {
 
 export const Hagakure: SamOgcdAbility = {
     type: 'ogcd',
-    name: "Hagakure",
+    name: "葉隱",
     id: 7495,
     attackType: "Ability",
     potency: null,

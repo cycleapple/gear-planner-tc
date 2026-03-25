@@ -38,7 +38,7 @@ export interface VprSimSettingsExternal extends ExternalCycleSettings<VprSimSett
 
 export const vprSheetSpec: SimSpec<VprSheetSim, VprSimSettingsExternal> = {
     stub: "vpr-sheet-sim",
-    displayName: "VPR Sim",
+    displayName: "毒蛇模擬",
     makeNewSimInstance: function (): VprSheetSim {
         return new VprSheetSim();
     },

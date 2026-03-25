@@ -130,7 +130,7 @@ export class BisBrowser {
         this.namedSection.classList.add('bis-browser');
         this.table = new BisTable(navCallback, (dir) => this.setData(dir));
 
-        this.upButton = makeActionButton('Up', () => {
+        this.upButton = makeActionButton('返回', () => {
             this.setData(this.currentNode.parent);
         });
         this.upButton.classList.add('up-button');

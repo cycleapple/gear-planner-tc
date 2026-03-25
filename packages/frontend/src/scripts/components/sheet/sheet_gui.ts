@@ -35,6 +35,7 @@ import {CharacterGearSet, SyncInfo} from "@xivgear/core/gear";
 import {
     getClassJobStats,
     MAX_PARTY_BONUS,
+    RACE_DISPLAY_NAMES,
     RACE_STATS,
     RaceName,
     SpecialStatKey,
@@ -379,7 +380,7 @@ class GearPlanTable extends CustomTable<CharacterGearSet, SingleCellRowOrHeaderS
                     }
                     // colHeader.append(span);
                     colHeader.classList.add('hoverable');
-                    colHeader.title = 'Click to configure simulation settings';
+                    colHeader.title = '點擊配置模擬設定';
                 },
                 rowCondition: noSeparators,
             });
@@ -399,9 +400,9 @@ class GearPlanTable extends CustomTable<CharacterGearSet, SingleCellRowOrHeaderS
                             this.sheet.delGearSet(gearSet);
                         }
                     }, 'Delete this set'));
-                    div.appendChild(makeActionButton([makeCopyIcon()], () => this.sheet.cloneAndAddGearSet(gearSet, true), 'Clone this set'));
+                    div.appendChild(makeActionButton([makeCopyIcon()], () => this.sheet.cloneAndAddGearSet(gearSet, true), '複製此套裝'));
                     const dragger = document.createElement('button');
-                    dragger.title = 'Drag to re-order this set';
+                    dragger.title = '拖動以重新排序此套裝';
                     dragger.textContent = '≡';
                     dragger.classList.add('drag-handle');
                     let rowBeingDragged: null | CustomRow<CharacterGearSet> = null;
@@ -464,7 +465,7 @@ class GearPlanTable extends CustomTable<CharacterGearSet, SingleCellRowOrHeaderS
             },
             {
                 shortName: "setname",
-                displayName: "Set Name",
+                displayName: "套裝名稱",
                 getter: (gearSet => gearSet),
                 renderer: (value: CharacterGearSet) => {
                     const nameSpan = document.createElement('span');
@@ -524,7 +525,7 @@ class GearPlanTable extends CustomTable<CharacterGearSet, SingleCellRowOrHeaderS
             ...gcdColumns,
             {
                 shortName: "wd",
-                displayName: "WD",
+                displayName: "武傷",
                 getter: gearSet => ({
                     stat: Math.max(gearSet.computedStats.wdMag, gearSet.computedStats.wdPhys),
                     multiplier: gearSet.computedStats.wdMulti,
@@ -557,7 +558,7 @@ class GearPlanTable extends CustomTable<CharacterGearSet, SingleCellRowOrHeaderS
             },
             {
                 shortName: "crit",
-                displayName: "CRT",
+                displayName: "暴擊",
                 getter: gearSet => ({
                     stat: gearSet.computedStats.crit,
                     chance: gearSet.computedStats.critChance,
@@ -570,7 +571,7 @@ class GearPlanTable extends CustomTable<CharacterGearSet, SingleCellRowOrHeaderS
             },
             {
                 shortName: "dhit",
-                displayName: "DHT",
+                displayName: "直擊",
                 getter: gearSet => ({
                     stat: gearSet.computedStats.dhit,
                     chance: gearSet.computedStats.dhitChance,
@@ -583,7 +584,7 @@ class GearPlanTable extends CustomTable<CharacterGearSet, SingleCellRowOrHeaderS
             },
             {
                 shortName: "det",
-                displayName: "DET",
+                displayName: "信念",
                 getter: gearSet => ({
                     stat: gearSet.computedStats.determination,
                     multiplier: gearSet.computedStats.detMulti,
@@ -596,16 +597,16 @@ class GearPlanTable extends CustomTable<CharacterGearSet, SingleCellRowOrHeaderS
             {
                 ...tooltipMultiStatCol(this.sheet, 'skillspeed', 'sksDotMulti'),
                 shortName: "sks",
-                displayName: "SKS",
+                displayName: "技速",
             },
             {
                 ...tooltipMultiStatCol(this.sheet, 'spellspeed', 'spsDotMulti'),
                 shortName: "sps",
-                displayName: "SPS",
+                displayName: "詠速",
             },
             col({
                 shortName: "piety",
-                displayName: "PIE",
+                displayName: "信仰",
                 getter: gearSet => gearSet.computedStats.piety,
                 initialWidth: statColWidth,
                 condition: () => this.sheet.isStatRelevant('piety'),
@@ -614,7 +615,7 @@ class GearPlanTable extends CustomTable<CharacterGearSet, SingleCellRowOrHeaderS
             }),
             col({
                 shortName: "tenacity",
-                displayName: "TNC",
+                displayName: "堅韌",
                 getter: gearSet => ({
                     stat: gearSet.computedStats.tenacity,
                     multiplier: gearSet.computedStats.tncMulti,
@@ -806,12 +807,12 @@ class SimResultMiniDisplay extends HTMLElement {
             const result = this._result.result;
             if (result === undefined || result.mainDpsResult === undefined) {
                 console.error("Result was undefined");
-                this.textContent = "Error!";
+                this.textContent = "錯誤！";
                 return;
             }
             if (Number.isNaN(result.mainDpsResult)) {
                 console.error("Result was undefined");
-                this.textContent = "Error!";
+                this.textContent = "錯誤！";
                 return;
             }
             this.textContent = result.mainDpsResult.toFixed(2);
@@ -868,7 +869,7 @@ class SeparatorEditor extends HTMLElement {
         this.formatTitleDesc();
 
         const buttonArea = quickElement('div', ['gear-set-editor-button-area', 'button-row'], [
-            makeActionButton('Change Name/Description', () => {
+            makeActionButton('更改名稱/說明', () => {
                 startRenameSet(writeProxy(this.gearSet, () => this.formatTitleDesc()));
             }),
         ]);
@@ -934,15 +935,15 @@ function formatSimulationConfigArea<SettingsType extends SimSettings>(
             refreshHeaders();
         });
         titleEditor.classList.add('sim-name-editor');
-        titleEditor.title = 'Rename this simulation';
+        titleEditor.title = '重新命名此模擬';
         outerDiv.appendChild(titleEditor);
-        const deleteButton = makeActionButton("Delete", () => deleteColumn(simGui));
+        const deleteButton = makeActionButton("刪除", () => deleteColumn(simGui));
         outerDiv.appendChild(deleteButton);
     }
     const auto = !simGui.sim.manualRun;
     const rerunAction = () => refreshColumn(simGui);
     if (!auto) {
-        const rerunButton = makeActionButton("Rerun", rerunAction);
+        const rerunButton = makeActionButton("重新執行", rerunAction);
         outerDiv.appendChild(rerunButton);
     }
     // Specific sub-UIs can make their own proxy with a shorter debounce time, e.g. buff settings.
@@ -1126,7 +1127,7 @@ export class GearPlanSheetGui extends GearPlanSheet {
                         const existing = this._openSetPopouts.get(item);
                         if (existing && !existing.closed) {
                             const header = el('h3', {}, [`${item.name} editor is open in a popout`]);
-                            const focusBtn = makeActionButton('Focus Popout', () => {
+                            const focusBtn = makeActionButton('聚焦彈出窗口', () => {
                                 try {
                                     existing.focus();
                                 }
@@ -1134,7 +1135,7 @@ export class GearPlanSheetGui extends GearPlanSheet {
                                     // ignore
                                 }
                             });
-                            const closeBtn = makeActionButton('Close Popout', () => {
+                            const closeBtn = makeActionButton('關閉彈出窗口', () => {
                                 this.closePopoutForSet(item);
                                 this.refreshGearEditor(item);
                             });
@@ -1161,7 +1162,7 @@ export class GearPlanSheetGui extends GearPlanSheet {
         }
         catch (e) {
             console.error("Error in selection change: ", e);
-            this.setupEditorArea(document.createTextNode("Error!"));
+            this.setupEditorArea(document.createTextNode("錯誤！"));
         }
     }
 
@@ -1178,7 +1179,7 @@ export class GearPlanSheetGui extends GearPlanSheet {
         this._gearPlanTable = new GearPlanTable(this, item => this.editorItem = item);
         this.showAdvancedStats = SETTINGS.viewDetailedStats ?? false;
 
-        const sheetOptions = new DropdownActionMenu('More Actions...');
+        const sheetOptions = new DropdownActionMenu('更多操作...');
 
         const siFmt = formatSyncInfo(this.syncInfo, this.level);
         if (siFmt !== null) {
@@ -1190,30 +1191,30 @@ export class GearPlanSheetGui extends GearPlanSheet {
         }
 
         if (!this.isViewOnly) {
-            const addRowButton = makeActionButton([makeNewSheetIcon(), "New Set"], () => {
+            const addRowButton = makeActionButton([makeNewSheetIcon(), "新增配裝"], () => {
                 const newSet = new CharacterGearSet(this);
-                newSet.name = "New Set";
+                newSet.name = "新配裝";
                 this.addGearSet(newSet, undefined, true);
             });
             buttonsArea.appendChild(addRowButton);
 
             sheetOptions.addAction({
-                label: 'Name/Description',
+                label: '名稱/說明',
                 action: () => startRenameSheet(this),
             });
             sheetOptions.addAction({
-                label: 'Manage Custom Items',
+                label: '管理自訂裝備',
                 action: () => new CustomItemPopup(this).attachAndShowExclusively(),
             });
             sheetOptions.addAction({
-                label: 'Manage Custom Food',
+                label: '管理自訂食物',
                 action: () => new CustomFoodPopup(this).attachAndShowExclusively(),
             });
             sheetOptions.addAction({
-                label: 'Add Separator',
+                label: '新增分隔線',
                 action: () => {
                     const set = new CharacterGearSet(this);
-                    set.name = 'Separator';
+                    set.name = '分隔線';
                     set.isSeparator = true;
                     this.addGearSet(set, undefined, true);
                 },
@@ -1221,7 +1222,7 @@ export class GearPlanSheetGui extends GearPlanSheet {
             buttonsArea.appendChild(sheetOptions);
         }
         sheetOptions.addAction({
-            label: 'Sheet/Set Info...',
+            label: '配裝表/套裝資訊...',
             action: () => {
                 const selectedGearSet = this.selectedGearSet;
                 new SheetInfoModal(this, selectedGearSet).attachAndShowExclusively();
@@ -1229,7 +1230,7 @@ export class GearPlanSheetGui extends GearPlanSheet {
         });
 
         if (this.isViewOnly) {
-            const saveAsButton = makeActionButton("Save As", () => {
+            const saveAsButton = makeActionButton("另存為", () => {
                 const modal = new SaveAsModal(this, newSheet => openSheetByKey(newSheet.saveKey));
                 modal.attachAndShowExclusively();
             });
@@ -1238,7 +1239,7 @@ export class GearPlanSheetGui extends GearPlanSheet {
         }
         else {
             sheetOptions.addAction({
-                label: 'Save As...',
+                label: '另存為...',
                 action: () => {
                     const modal = new SaveAsModal(this, newSheet => openSheetByKey(newSheet.saveKey));
                     modal.attachAndShowExclusively();
@@ -1246,7 +1247,7 @@ export class GearPlanSheetGui extends GearPlanSheet {
             });
             if (this.saveKey) {
                 sheetOptions.addAction({
-                    label: 'Change Level/Job/Sync',
+                    label: '更改等級/職業/同步',
                     action: () => {
                         const modal = new ChangePropsModal(this);
                         modal.attachAndShowExclusively();
@@ -1258,34 +1259,34 @@ export class GearPlanSheetGui extends GearPlanSheet {
 
         if (!this.isViewOnly) {
 
-            const newSimButton = makeActionButton([makeNewSheetIcon(), "Add Sim"], () => {
+            const newSimButton = makeActionButton([makeNewSheetIcon(), "新增模擬"], () => {
                 this.showAddSimDialog();
             });
             buttonsArea.appendChild(newSimButton);
 
-            const exportSheetButton = makeActionButton([makeExportIcon(), "Export Sheet"], () => {
+            const exportSheetButton = makeActionButton([makeExportIcon(), "匯出配裝表"], () => {
                 startExport(this);
             });
             buttonsArea.appendChild(exportSheetButton);
 
-            const importGearSetButton = makeActionButton([makeImportIcon(), "Import Sets"], () => {
+            const importGearSetButton = makeActionButton([makeImportIcon(), "匯入套裝"], () => {
                 this.showImportSetsDialog();
             });
             buttonsArea.appendChild(importGearSetButton);
         }
         else {
-            const exportPicker = new DropdownActionMenu("Export...");
+            const exportPicker = new DropdownActionMenu("匯出...");
             const sheet = this;
             exportPicker.addAction({
-                label: "Whole Sheet",
+                label: "整個配裝表",
                 action: () => startExport(sheet),
             });
             exportPicker.addAction({
-                label: "Selected Set",
+                label: "選定套裝",
                 action: () => {
                     const selection = sheet.selectedGearSet;
                     if (!selection) {
-                        alert("Select a gear set first");
+                        alert("請先選擇一個套裝");
                     }
                     else {
                         startExport(selection);
@@ -1307,7 +1308,7 @@ export class GearPlanSheetGui extends GearPlanSheet {
             this,
             'race',
             r => {
-                return r ?? "Select a Race/Clan";
+                return r ? RACE_DISPLAY_NAMES[r] : "選擇種族";
             },
             [undefined, ...Object.keys(RACE_STATS) as RaceName[]]);
         buttonsArea.appendChild(raceDropdown);
@@ -1322,10 +1323,10 @@ export class GearPlanSheetGui extends GearPlanSheet {
             'partyBonus',
             value => {
                 if (value === 0) {
-                    return 'No Party Bonus';
+                    return '無團隊加成';
                 }
                 else {
-                    return `${value} Unique Roles`;
+                    return `${value} 個不同職能`;
                 }
             },
             rangeInc(0, MAX_PARTY_BONUS) as PartyBonusAmount[]
@@ -1353,7 +1354,13 @@ export class GearPlanSheetGui extends GearPlanSheet {
                 value => {
                     switch (value) {
                         case null:
-                            return 'No Special Stats';
+                            return '無特殊屬性';
+                        case 'OccultCrescent':
+                            return '異界新月島';
+                        case 'Eureka':
+                            return '禁地優雷卡';
+                        case 'Bozja':
+                            return '博茲雅';
                         default:
                             return camel2title(value);
                     }
@@ -1379,21 +1386,21 @@ export class GearPlanSheetGui extends GearPlanSheet {
                 }
 
                 const helpText = document.createElement('h4');
-                helpText.textContent = 'To edit this sheet, click the "Save As" button below the table.';
+                helpText.textContent = '要編輯此配裝表，請點擊表格下方的「另存為」按鈕。';
                 this.headerArea.appendChild(helpText);
             }
             else {
                 const unsavedWarning = document.createElement('h4');
-                unsavedWarning.textContent = 'This imported sheet will not be saved unless you use the "Save As" button in the "More Actions..." menu below the table.';
+                unsavedWarning.textContent = '此匯入的配裝表不會被儲存，除非您使用表格下方「更多操作...」選單中的「另存為」按鈕。';
                 this.headerArea.appendChild(unsavedWarning);
             }
             this.headerArea.style.display = '';
-            const headerButton = makeActionButton('Toggle Header', () => {
+            const headerButton = makeActionButton('切換表頭', () => {
                 // TODO: if you have manually shown the header, don't hide it again when re-selecting a set
                 this.headerArea.style.display = (this.headerArea.style.display === 'none') ? '' : 'none';
             });
             buttonsArea.appendChild(headerButton);
-            const advancedStats = makeActionButton('Stat Details', () => {
+            const advancedStats = makeActionButton('屬性詳情', () => {
                 this.showAdvancedStats = !this.showAdvancedStats;
             });
             buttonsArea.appendChild(advancedStats);
@@ -1797,7 +1804,7 @@ export class GearPlanSheetGui extends GearPlanSheet {
         url.searchParams.delete('_ij_reload');
         const popup = window.open(url, getNextPopoutContext(), "popout,location=false,toolbar=false,status=false,width=1024,height=768");
         if (!popup) {
-            alert('Failed to pop out editor. Your browser may be blocking popups.');
+            alert('無法彈出編輯器。你的瀏覽器可能正在封鎖彈出視窗。');
             return;
         }
         (popup as any).parentSheet = this;
@@ -1891,7 +1898,7 @@ export class GearPlanSheetGui extends GearPlanSheet {
             return;
         }
         if (this.sims.length === 0) {
-            alert('You must add a simulation to the sheet before you can use the meld solver.');
+            alert('你必須先在配裝表中新增模擬才能使用鑲嵌求解器。');
             return;
         }
         const meldSolveDialog = new MeldSolverDialog(this, selectedSet);
@@ -1997,7 +2004,7 @@ function formatSyncInfo(si: SyncInfo, level: SupportedLevel): string | null {
     const isIlvlSynced = si.ilvlSync !== null;
     const isLvlSynced = si.lvlSync !== null;
     if (isIlvlSynced || isLvlSynced) {
-        let text = 'Sync: ';
+        let text = '同步: ';
         if (isLvlSynced) {
             text += `lv${si.lvlSync} `;
         }

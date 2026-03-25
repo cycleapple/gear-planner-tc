@@ -41,7 +41,7 @@ export interface MPSettings extends SimSettings {
 }
 
 export const mpSimSpec: SimSpec<MPPerMinute, MPSettings> = {
-    displayName: "MP/Min",
+    displayName: "MP/分鐘",
     loadSavedSimInstance(exported: MPSettings) {
         return new MPPerMinute();
     },
@@ -49,7 +49,7 @@ export const mpSimSpec: SimSpec<MPPerMinute, MPSettings> = {
         return new MPPerMinute();
     },
     stub: HEALER_MP_SIM_STUB_NAME,
-    description: "Mp economy",
+    description: "MP經濟",
     isDefaultSim: false,
     supportedJobs: ['AST', 'SCH', 'SGE', 'WHM'],
 };

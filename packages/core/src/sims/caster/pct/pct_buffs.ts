@@ -13,7 +13,7 @@ const HAMMER_ACTIONS: number[] = [
 ];
 
 export const HammerTimeBuff: Buff = {
-    name: "Hammer Time",
+    name: "重錘連擊",
     effects: {},
     selfOnly: true,
     descriptionOverride: "Able to execute Hammer combo GCDs",
@@ -26,7 +26,7 @@ export const HammerTimeBuff: Buff = {
 };
 
 export const RainbowBrightBuff: Buff = {
-    name: "Rainbow Bright",
+    name: "彩虹點滴效果提高",
     duration: 30,
     effects: {},
     selfOnly: true,
@@ -44,7 +44,7 @@ export const RainbowBrightBuff: Buff = {
 };
 
 export const StarstruckBuff: Buff = {
-    name: "Starstruck",
+    name: "天星棱光預備",
     duration: 20,
     effects: {},
     selfOnly: true,
@@ -61,7 +61,7 @@ const SUBTRACTIVE_ACTIONS: number[] = [
 ];
 
 export const SubtractivePaletteBuff: Buff = {
-    name: "Subtractive Palette",
+    name: "減色混合",
     effects: {},
     selfOnly: true,
     descriptionOverride: "Able to execute Subtractive GCDs",
@@ -74,7 +74,7 @@ export const SubtractivePaletteBuff: Buff = {
 };
 
 export const MonochromeBuff: Buff = {
-    name: "Monochrome Tones",
+    name: "色調反轉",
     effects: {},
     selfOnly: true,
     descriptionOverride: "Able to execute Comet in Black",
@@ -84,7 +84,7 @@ export const MonochromeBuff: Buff = {
 };
 
 export const SubtractiveSpectrumBuff: Buff = {
-    name: "Subtractive Spectrum",
+    name: "減色混合預備",
     effects: {},
     selfOnly: true,
     descriptionOverride: "Able to execute Subtractive Palette without cost.",
@@ -100,7 +100,7 @@ export const SubtractiveSpectrumBuff: Buff = {
 };
 
 export const AetherhuesGYBuff: Buff = {
-    name: "Aetherhues",
+    name: "乙太色調",
     duration: 30,
     effects: {},
     selfOnly: true,
@@ -111,7 +111,7 @@ export const AetherhuesGYBuff: Buff = {
 };
 
 export const AetherhuesBMBuff: Buff = {
-    name: "Aetherhues II",
+    name: "乙太色調II",
     duration: 30,
     effects: {},
     selfOnly: true,
@@ -138,7 +138,7 @@ const HYPERPHANTASIA_ACTIONS: number[] = [
  * hyperphantasia do more distinct things, then reconsider this.
  */
 export const HyperphantasiaBuff: Buff = {
-    name: "Hyperphantasia",
+    name: "繪靈幻景",
     duration: 30,
     effects: {
         haste: 25,

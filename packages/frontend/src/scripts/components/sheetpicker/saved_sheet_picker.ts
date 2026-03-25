@@ -72,7 +72,7 @@ export class SheetPickerTable extends CustomTable<SheetHandle, TableSelectionMod
                     div.appendChild(newTabLink);
                     // Reorder dragger
                     const dragger = document.createElement('button');
-                    dragger.title = 'Drag to re-order this set';
+                    dragger.title = '拖動以重新排序';
                     dragger.textContent = '≡';
                     dragger.classList.add('drag-handle');
                     let rowBeingDragged: null | CustomRow<CharacterGearSet> = null;
@@ -289,7 +289,7 @@ export class SheetPickerTable extends CustomTable<SheetHandle, TableSelectionMod
 
             },
         };
-        this.conflictUpBtn = makeActionButton('Conflicts: Upload', async () => {
+        this.conflictUpBtn = makeActionButton('衝突：上傳', async () => {
             this.mgr.allSheets.forEach(ss => {
                 ss.conflictResolutionStrategy = 'keep-local';
                 this.refreshCells(ss);
@@ -297,7 +297,7 @@ export class SheetPickerTable extends CustomTable<SheetHandle, TableSelectionMod
             this.refreshButtons();
             this.uds.syncSheets();
         });
-        this.conflictDnBtn = makeActionButton('Conflicts: Download', async () => {
+        this.conflictDnBtn = makeActionButton('衝突：下載', async () => {
             this.mgr.allSheets.forEach(ss => {
                 ss.conflictResolutionStrategy = 'keep-remote';
                 this.refreshCells(ss);
@@ -350,19 +350,19 @@ export class SheetPickerTable extends CustomTable<SheetHandle, TableSelectionMod
             loggedInItems.forEach(item => item.classList.add('require-account-state-verified'));
 
             // Items that only appear for non-logged-in-users
-            const loginButton = makeActionButton('Login/Register', () => showAccountModal());
+            const loginButton = makeActionButton('登入/註冊', () => showAccountModal());
             const loggedOutText = quickElement('span', [], ['Not logged in - sheets are only stored on this browser!']);
             const loggedOutItems = [loginButton, loggedOutText];
             loggedOutItems.forEach(item => item.classList.add('require-account-state-logged-out'));
 
             // Items that only appear for logged-in but not verified users
-            const verifyButton = makeActionButton('Verify', () => showAccountModal());
+            const verifyButton = makeActionButton('驗證', () => showAccountModal());
             const verifyText = quickElement('span', [], ['Not verified - sheets are only stored on this browser!']);
             const verifyItems = [verifyButton, verifyText];
             verifyItems.forEach(item => item.classList.add('require-account-state-unverified'));
 
             // Items displayed when account (actually token) state has not loaded yet.
-            const accountLoadingText = quickElement('span', [], ['Checking account...']);
+            const accountLoadingText = quickElement('span', [], ['正在檢查帳號...']);
             const loadingItems = [accountLoadingText];
             loadingItems.forEach(item => item.classList.add('require-account-state-not-loaded'));
 
@@ -371,7 +371,7 @@ export class SheetPickerTable extends CustomTable<SheetHandle, TableSelectionMod
         // "New sheet" button/row
         data.push(new SpecialRow(() => {
             const div = document.createElement("div");
-            div.replaceChildren(makePlusIcon(), 'New Sheet');
+            div.replaceChildren(makePlusIcon(), '新增配裝表');
             return div;
         }, (row) => {
             row.classList.add('special-row-hoverable', 'new-sheet-row');
@@ -381,7 +381,7 @@ export class SheetPickerTable extends CustomTable<SheetHandle, TableSelectionMod
         data.push(new SpecialRow(() => {
             const searchBox = document.createElement("input");
             searchBox.type = 'text';
-            searchBox.placeholder = "Search";
+            searchBox.placeholder = "搜尋";
             const clearBtn = makeActionButton([makeCloseButton()], () => {
                 searchBox.value = '';
                 searchBox.dispatchEvent(new Event('input'));

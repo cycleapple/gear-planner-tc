@@ -31,7 +31,7 @@ export type BlmGaugeState = {
 }
 
 export const LeyLinesBuff: Buff = {
-    name: "Circle of Power",
+    name: "魔紋環",
     duration: 20,
     selfOnly: true,
     effects: {
@@ -41,7 +41,7 @@ export const LeyLinesBuff: Buff = {
 };
 
 export const FirestarterBuff: Buff = {
-    name: "Firestarter",
+    name: "縱火",
     selfOnly: true,
     effects: {
         // Removes MP cost and cast time from Fire III
@@ -68,7 +68,7 @@ export const FirestarterBuff: Buff = {
 };
 
 export const ThunderheadBuff: Buff = {
-    name: "Thunderhead",
+    name: "雷暴雲砧",
     selfOnly: true,
     effects: {
         // Allows casting Thunder spells
@@ -84,7 +84,7 @@ export const ThunderheadBuff: Buff = {
 };
 
 export const SwiftcastBuff: Buff = {
-    name: "Swiftcast",
+    name: "即刻詠唱",
     duration: 10,
     selfOnly: true,
     effects: {
@@ -105,7 +105,7 @@ export const SwiftcastBuff: Buff = {
 };
 
 export const TriplecastBuff: Buff = {
-    name: "Triplecast",
+    name: "三連詠唱",
     duration: 15,
     selfOnly: true,
     effects: {

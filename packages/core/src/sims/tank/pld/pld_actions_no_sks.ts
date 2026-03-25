@@ -3,7 +3,7 @@ import {AutoAttack, GcdAbility, OgcdAbility, DamagingAbility, Ability} from "@xi
 export const fast: GcdAbility = {
     id: 9,
     type: 'gcd',
-    name: "Fast Blade",
+    name: "先鋒劍",
     potency: 220,
     attackType: "Weaponskill",
     gcd: 2.5,
@@ -13,7 +13,7 @@ export const fast: GcdAbility = {
 export const riot: GcdAbility = {
     id: 15,
     type: 'gcd',
-    name: "Riot Blade",
+    name: "暴亂劍",
     potency: 330,
     attackType: "Weaponskill",
     gcd: 2.5,
@@ -23,7 +23,7 @@ export const riot: GcdAbility = {
 export const royal: GcdAbility = {
     id: 3539,
     type: 'gcd',
-    name: "Royal Authority",
+    name: "王權劍",
     potency: 460,
     attackType: "Weaponskill",
     gcd: 2.5,
@@ -33,7 +33,7 @@ export const royal: GcdAbility = {
 export const atone: GcdAbility = {
     id: 16460,
     type: 'gcd',
-    name: "Atonement",
+    name: "贖罪劍",
     potency: 460,
     attackType: "Weaponskill",
     gcd: 2.5,
@@ -43,7 +43,7 @@ export const atone: GcdAbility = {
 export const supp: GcdAbility = {
     id: 36918,
     type: 'gcd',
-    name: "Supplication",
+    name: "祈告劍",
     potency: 500,
     attackType: "Weaponskill",
     gcd: 2.5,
@@ -53,7 +53,7 @@ export const supp: GcdAbility = {
 export const sep: GcdAbility = {
     id: 36919,
     type: 'gcd',
-    name: "Sepulchre",
+    name: "葬送劍",
     potency: 540,
     attackType: "Weaponskill",
     gcd: 2.5,
@@ -63,7 +63,7 @@ export const sep: GcdAbility = {
 export const hs: GcdAbility = {
     id: 7384,
     type: 'gcd',
-    name: "Holy Spirit",
+    name: "聖靈",
     potency: 500,
     attackType: "Spell",
     gcd: 2.5,
@@ -73,7 +73,7 @@ export const hs: GcdAbility = {
 export const goring: GcdAbility = {
     id: 3538,
     type: 'gcd',
-    name: "Goring Blade",
+    name: "瀝血劍",
     potency: 700,
     attackType: "Weaponskill",
     gcd: 2.5,
@@ -83,7 +83,7 @@ export const goring: GcdAbility = {
 export const conf: GcdAbility = {
     id: 16459,
     type: 'gcd',
-    name: "Confiteor",
+    name: "悔罪",
     potency: 1000,
     attackType: "Spell",
     gcd: 2.5,
@@ -93,7 +93,7 @@ export const conf: GcdAbility = {
 export const faith: GcdAbility = {
     id: 25748,
     type: 'gcd',
-    name: "Blade of Faith",
+    name: "信念之劍",
     potency: 760,
     attackType: "Spell",
     gcd: 2.5,
@@ -103,7 +103,7 @@ export const faith: GcdAbility = {
 export const truth: GcdAbility = {
     id: 25749,
     type: 'gcd',
-    name: "Blade of Truth",
+    name: "真理之劍",
     potency: 880,
     attackType: "Spell",
     gcd: 2.5,
@@ -113,7 +113,7 @@ export const truth: GcdAbility = {
 export const valor: GcdAbility = {
     id: 25750,
     type: 'gcd',
-    name: "Blade of Valor",
+    name: "英勇之劍",
     potency: 1000,
     attackType: "Spell",
     gcd: 2.5,
@@ -123,7 +123,7 @@ export const valor: GcdAbility = {
 export const cos: OgcdAbility = {
     id: 23,
     type: 'ogcd',
-    name: "Circle of Scorn",
+    name: "厄運流轉",
     potency: 140,
     dot: {
         id: 248,
@@ -136,7 +136,7 @@ export const cos: OgcdAbility = {
 export const exp: OgcdAbility = {
     id: 25747,
     type: 'ogcd',
-    name: "Expiacion",
+    name: "償贖劍",
     potency: 450,
     attackType: "Ability",
 };
@@ -144,7 +144,7 @@ export const exp: OgcdAbility = {
 export const int: OgcdAbility = {
     id: 16461,
     type: 'ogcd',
-    name: "Intervene",
+    name: "調停",
     potency: 150,
     attackType: "Ability",
 };
@@ -152,7 +152,7 @@ export const int: OgcdAbility = {
 export const imp: OgcdAbility = {
     id: 36921,
     type: 'ogcd',
-    name: "Imperator",
+    name: "絕對統治",
     potency: 580,
     attackType: "Ability",
 };
@@ -160,13 +160,13 @@ export const imp: OgcdAbility = {
 export const honor: OgcdAbility = {
     id: 36922,
     type: 'ogcd',
-    name: "Blade of Honor",
+    name: "榮耀之劍",
     potency: 1000,
     attackType: "Ability",
 };
 
 export const auto: AutoAttack = {
-    name: 'Auto Attack',
+    name: '自動攻擊',
     type: 'autoattack',
     potency: 90,
     attackType: 'Auto-attack',
@@ -176,13 +176,13 @@ export const auto: AutoAttack = {
 export const fof: OgcdAbility = {
     id: 20,
     type: 'ogcd',
-    name: "Fight or Flight",
+    name: "戰逃反應",
     potency: null,
     attackType: "Ability",
     activatesBuffs: [
         {
             statusId: 76,
-            name: "Fight or Flight",
+            name: "戰逃反應",
             selfOnly: true,
             duration: 20,
             effects: {

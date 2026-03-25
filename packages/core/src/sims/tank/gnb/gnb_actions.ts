@@ -3,7 +3,7 @@ import {GnbGcdAbility, GnbOgcdAbility, ReadyToBlastBuff, ReadyToRipBuff, NoMercy
 
 export const LightningShot: GnbGcdAbility = {
     type: 'gcd',
-    name: "Lightning Shot",
+    name: "雷電彈",
     id: 16143,
     potency: 150,
     attackType: "Weaponskill",
@@ -14,7 +14,7 @@ export const LightningShot: GnbGcdAbility = {
 
 export const KeenEdge: GnbGcdAbility = {
     type: 'gcd',
-    name: "Keen Edge",
+    name: "利刃斬",
     id: 16137,
     potency: 150,
     attackType: "Weaponskill",
@@ -34,7 +34,7 @@ export const KeenEdge: GnbGcdAbility = {
 
 export const BrutalShell: GnbGcdAbility = {
     type: 'gcd',
-    name: "Brutal Shell",
+    name: "殘暴彈",
     id: 16139,
     potency: 200,
     attackType: "Weaponskill",
@@ -54,7 +54,7 @@ export const BrutalShell: GnbGcdAbility = {
 
 export const SolidBarrel: GnbGcdAbility = {
     type: 'gcd',
-    name: "Solid Barrel",
+    name: "迅連斬",
     id: 16145,
     potency: 320,
     attackType: "Weaponskill",
@@ -75,7 +75,7 @@ export const SolidBarrel: GnbGcdAbility = {
 
 export const GnashingFang: GnbGcdAbility = {
     type: 'gcd',
-    name: "Gnashing Fang",
+    name: "烈牙",
     id: 16146,
     potency: 330,
     attackType: "Weaponskill",
@@ -98,7 +98,7 @@ export const GnashingFang: GnbGcdAbility = {
 
 export const SavageClaw: GnbGcdAbility = {
     type: 'gcd',
-    name: "Savage Claw",
+    name: "猛獸爪",
     id: 16147,
     potency: 410,
     attackType: "Weaponskill",
@@ -115,7 +115,7 @@ export const SavageClaw: GnbGcdAbility = {
 
 export const WickedTalon: GnbGcdAbility = {
     type: 'gcd',
-    name: "Wicked Talon",
+    name: "凶禽爪",
     id: 16150,
     potency: 490,
     attackType: "Weaponskill",
@@ -132,7 +132,7 @@ export const WickedTalon: GnbGcdAbility = {
 
 export const BurstStrike: GnbGcdAbility = {
     type: 'gcd',
-    name: "Burst Strike",
+    name: "爆發擊",
     id: 16162,
     potency: 340,
     attackType: "Weaponskill",
@@ -155,7 +155,7 @@ export const BurstStrike: GnbGcdAbility = {
 
 export const DoubleDown: GnbGcdAbility = {
     type: 'gcd',
-    name: "Double Down",
+    name: "倍攻",
     id: 25760,
     potency: 1000,
     attackType: "Weaponskill",
@@ -171,7 +171,7 @@ export const DoubleDown: GnbGcdAbility = {
 
 export const SonicBreak: GnbGcdAbility = {
     type: 'gcd',
-    name: "Sonic Break",
+    name: "音速破",
     id: 16153,
     potency: 340,
     attackType: "Weaponskill",
@@ -185,7 +185,7 @@ export const SonicBreak: GnbGcdAbility = {
 
 export const ReignOfBeasts: GnbGcdAbility = {
     type: 'gcd',
-    name: "Reign of Beasts",
+    name: "崛起之心",
     id: 36937,
     potency: 800,
     attackType: "Weaponskill",
@@ -194,7 +194,7 @@ export const ReignOfBeasts: GnbGcdAbility = {
 
 export const NobleBlood: GnbGcdAbility = {
     type: 'gcd',
-    name: "Noble Blood",
+    name: "支配之心",
     id: 36938,
     potency: 900,
     attackType: "Weaponskill",
@@ -203,7 +203,7 @@ export const NobleBlood: GnbGcdAbility = {
 
 export const LionHeart: GnbGcdAbility = {
     type: 'gcd',
-    name: "Lion Heart",
+    name: "終結之心",
     id: 36939,
     potency: 1000,
     attackType: "Weaponskill",
@@ -212,7 +212,7 @@ export const LionHeart: GnbGcdAbility = {
 
 export const NoMercy: GnbOgcdAbility = {
     type: 'ogcd',
-    name: "No Mercy",
+    name: "無情",
     id: 16138,
     potency: null,
     attackType: "Ability",
@@ -225,7 +225,7 @@ export const NoMercy: GnbOgcdAbility = {
 
 export const Bloodfest: GnbOgcdAbility = {
     type: 'ogcd',
-    name: "Bloodfest",
+    name: "血壤",
     id: 16164,
     potency: 0,
     attackType: "Ability",
@@ -245,7 +245,7 @@ export const Bloodfest: GnbOgcdAbility = {
 
 export const DangerZone: GnbOgcdAbility = {
     type: 'ogcd',
-    name: "Danger Zone",
+    name: "危險帶",
     id: 16144,
     potency: 250,
     attackType: "Ability",
@@ -257,7 +257,7 @@ export const DangerZone: GnbOgcdAbility = {
 
 export const BlastingZone: GnbOgcdAbility = {
     type: 'ogcd',
-    name: "Blasting Zone",
+    name: "爆破領域",
     id: 16165,
     potency: 720,
     attackType: "Ability",
@@ -275,7 +275,7 @@ export const BlastingZone: GnbOgcdAbility = {
 
 export const BowShock: GnbOgcdAbility = {
     type: 'ogcd',
-    name: "Bow Shock",
+    name: "弓形衝波",
     id: 16159,
     potency: 150,
     attackType: "Ability",
@@ -293,7 +293,7 @@ export const BowShock: GnbOgcdAbility = {
 // Continuation abilities:
 export const Hypervelocity: GnbOgcdAbility = {
     type: 'ogcd',
-    name: "Hypervelocity",
+    name: "超高速",
     id: 25759,
     potency: 140,
     attackType: "Ability",
@@ -311,7 +311,7 @@ export const Hypervelocity: GnbOgcdAbility = {
 
 export const JugularRip: GnbOgcdAbility = {
     type: 'ogcd',
-    name: "Jugular Rip",
+    name: "撕喉",
     id: 16156,
     potency: 200,
     attackType: "Ability",
@@ -329,7 +329,7 @@ export const JugularRip: GnbOgcdAbility = {
 
 export const AbdomenTear: GnbOgcdAbility = {
     type: 'ogcd',
-    name: "Abdomen Tear",
+    name: "裂膛",
     id: 16157,
     potency: 220,
     attackType: "Ability",
@@ -347,7 +347,7 @@ export const AbdomenTear: GnbOgcdAbility = {
 
 export const EyeGouge: GnbOgcdAbility = {
     type: 'ogcd',
-    name: "Eye Gouge",
+    name: "穿目",
     id: 16158,
     potency: 260,
     attackType: "Ability",

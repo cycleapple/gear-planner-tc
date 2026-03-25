@@ -53,7 +53,7 @@ export interface GnbSettingsExternal extends ExternalCycleSettings<GnbSettings> 
 
 export const gnbSpec: SimSpec<GnbSim, GnbSettingsExternal> = {
     stub: "gnb-sheet-sim",
-    displayName: "GNB Sim",
+    displayName: "絕槍模擬",
     description: `Simulates a GNB rotation for level 100/90/80/70.
 If potions are enabled, pots in the burst window every 6m (i.e. 0m, 6m, 12m, etc).
 Defaults to simulating a killtime of 8m 30s (510s).`,
@@ -185,7 +185,7 @@ class GnbCycleProcessor extends CycleProcessor {
     inPotBurst(): boolean {
         let potDuration = 0;
         const buffs = [...this.getActiveBuffs(this.currentTime)];
-        const potBuff = buffs.find(buff => buff.name === "Medicated");
+        const potBuff = buffs.find(buff => buff.name === "強化藥");
         const buffData = potBuff && this.getActiveBuffData(potBuff, this.currentTime);
         if (buffData) {
             potDuration = buffData.end - this.currentTime;

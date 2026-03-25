@@ -35,7 +35,7 @@ export interface SamSettingsExternal extends ExternalCycleSettings<SamSettings> 
 
 export const samSpec: SimSpec<SamSim, SamSettingsExternal> = {
     stub: "sam-sim-lv100",
-    displayName: "SAM Sim",
+    displayName: "武士模擬",
     description: 'Simulates a SAM rotation using level 100 abilities/traits.',
     makeNewSimInstance: function (): SamSim {
         return new SamSim();

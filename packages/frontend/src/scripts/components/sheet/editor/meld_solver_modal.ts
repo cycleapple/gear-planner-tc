@@ -34,14 +34,14 @@ export class MeldSolverDialog extends BaseModal {
         super();
         this._sheet = sheet;
         this.id = 'meld-solver-dialog';
-        this.headerText = 'Meld and Food Solver';
+        this.headerText = '鑲嵌與食物求解器';
         this.form = document.createElement("form");
         this.form.method = 'dialog';
 
         this.classList.add('meld-solver-area');
         this.descriptionText = document.createElement('div');
-        this.descriptionText.textContent = "Solve for the highest-dps set of melds/food for this gearset.\r\n"
-            + "Computation will be much slower without a target GCD.";
+        this.descriptionText.textContent = "為此配裝求解最高DPS的鑲嵌/食物組合。\r\n"
+            + "若指定目標GCD，計算速度會更快。";
 
         this.setNameText = document.createElement('div');
         this.setNameText.textContent = `"${set.name}"`;
@@ -50,7 +50,7 @@ export class MeldSolverDialog extends BaseModal {
         this.settingsDiv = new MeldSolverSettingsMenu(sheet, set);
 
 
-        this.solveMeldsButton = makeActionButton("Solve Melds", async () => {
+        this.solveMeldsButton = makeActionButton("求解鑲嵌", async () => {
             this.solver = new MeldSolver(sheet);
             const meldSolveStart: number = Date.now();
             this.buttonArea.removeChild(this.solveMeldsButton);
@@ -67,7 +67,7 @@ export class MeldSolverDialog extends BaseModal {
                         this.progressDisplay.loadbar.updateProgress(percentage);
                         // Don't re-render this unnecessarily
                         if (!displayedSimText) {
-                            this.progressDisplay.text.textContent = `Simulating ${update.total} sets...`;
+                            this.progressDisplay.text.textContent = `模擬 ${update.total} 套配裝中...`;
                             displayedSimText = true;
                         }
                     }
@@ -75,29 +75,29 @@ export class MeldSolverDialog extends BaseModal {
                         let out: string;
                         switch (update.phase) {
                             case 0:
-                                out = "Initializing...";
+                                out = "初始化中...";
                                 break;
                             case 1:
-                                out = "Generating Piece Combinations...";
+                                out = "產生裝備組合中...";
                                 break;
                             case 2:
                                 if ("subPhase" in update) {
-                                    out = `Generating Sets - Slot ${update.subPhase.phase} / ${update.subPhase.phaseMax}... ${update.count} so far`;
+                                    out = `產生套裝中 - 槽位 ${update.subPhase.phase} / ${update.subPhase.phaseMax}... 目前 ${update.count} 套`;
                                 }
                                 else {
-                                    out = `Generating Sets... ${update.count} so far`;
+                                    out = `產生套裝中... 目前 ${update.count} 套`;
                                 }
                                 break;
                             case 3:
                                 if ("subPhase" in update) {
-                                    out = `Sorting ${update.subPhase.phase} / ${update.subPhase.phaseMax} Sets...`;
+                                    out = `排序中 ${update.subPhase.phase} / ${update.subPhase.phaseMax} 套...`;
                                 }
                                 else {
-                                    out = `Sorting ${update.count} Sets...`;
+                                    out = `排序中 ${update.count} 套...`;
                                 }
                                 break;
                             case 4:
-                                out = `Finalizing ${update.count} Sets (${update.subPhase.phase} / ${update.subPhase.phaseMax})...`;
+                                out = `完成中 ${update.count} 套 (${update.subPhase.phase} / ${update.subPhase.phaseMax})...`;
                                 break;
                             default:
                                 return;
@@ -114,7 +114,7 @@ export class MeldSolverDialog extends BaseModal {
             });
         });
 
-        this.cancelButton = makeActionButton("Cancel", async () => {
+        this.cancelButton = makeActionButton("取消", async () => {
             await this.solver.cancel();
             this.buttonArea.removeChild(this.cancelButton);
             this.inProgress = false;
@@ -198,7 +198,7 @@ class MeldSolverProgressDisplay extends HTMLDivElement {
 
         this.loadbar = new LoadBar;
         this.text = document.createElement('h4');
-        this.text.textContent = "Generating meld combinations...";
+        this.text.textContent = "產生鑲嵌組合中...";
 
         this.replaceChildren(this.text, this.loadbar);
     }
@@ -258,32 +258,32 @@ class MeldSolverSettingsMenu extends HTMLDivElement {
 
         this.useTargetGcdCheckBox = new FieldBoundCheckBox(this.gearsetGenSettings, 'useTargetGcd');
         this.useTargetGcdCheckBox.classList.add('meld-solver-settings');
-        this.targetGcdInput.title = 'Solve for the best set with this GCD';
+        this.targetGcdInput.title = '求解此GCD下的最佳配裝';
         this.targetGcdInput.classList.add('meld-solver-target-gcd-input');
 
-        const targetGcdText = labelFor("Target GCD: ", this.useTargetGcdCheckBox);
-        targetGcdText.textContent = "Target GCD: ";
+        const targetGcdText = labelFor("目標GCD: ", this.useTargetGcdCheckBox);
+        targetGcdText.textContent = "目標GCD: ";
         targetGcdText.classList.add('meld-solver-settings');
 
         this.overwriteFoodCheckbox = new FieldBoundCheckBox(this.gearsetGenSettings, 'overwriteFood');
         this.overwriteFoodCheckbox.classList.add('meld-solver-settings');
-        this.overwriteFoodText = labelFor("Overwrite food? ", this.overwriteFoodCheckbox);
+        this.overwriteFoodText = labelFor("覆蓋食物？ ", this.overwriteFoodCheckbox);
         this.overwriteFoodText.classList.add('meld-solver-settings');
 
         this.overwriteMateriaCheckbox = new FieldBoundCheckBox(this.gearsetGenSettings, 'overwriteExistingMateria');
         this.overwriteMateriaCheckbox.classList.add('meld-solver-settings');
-        this.overwriteMateriaText = labelFor("Overwrite existing materia?", this.overwriteMateriaCheckbox);
+        this.overwriteMateriaText = labelFor("覆蓋現有魔晶石？", this.overwriteMateriaCheckbox);
         this.overwriteMateriaText.classList.add('meld-solver-settings');
 
         const simText = document.createElement('span');
-        simText.textContent = "Sim: ";
+        simText.textContent = "模擬: ";
         simText.classList.add('meld-solver-settings');
 
         this.simDropdown = new FieldBoundDataSelect<typeof this.simSettings, Simulation<SimResult, unknown, unknown>>(
             this.simSettings,
             'sim',
             value => {
-                return value ? value.displayName : "None";
+                return value ? value.displayName : "無";
             },
             [...sheet.sims]
         );
@@ -312,7 +312,7 @@ class MeldSolverSettingsMenu extends HTMLDivElement {
         pentameldWarning.style.maxWidth = "90%";
         pentameldWarning.style.width = "90%";
         const warningSpan = document.createElement('span');
-        warningSpan.textContent = "⚠️ Solving pentameld sets can take a long time. To speed it up, try filling some materia and solving without Overwrite existing materia, or not solving food.";
+        warningSpan.textContent = "⚠️ 求解禁斷鑲嵌套裝可能需要很長時間。要加速求解，可嘗試先填充部分魔晶石並在不覆蓋現有魔晶石的情況下求解，或不求解食物。";
         warningSpan.style.fontSize = '90%';
         warningSpan.style.display = 'inline';
         pentameldWarning.append(warningSpan);
@@ -412,7 +412,7 @@ class FoodEntry extends HTMLDivElement {
             this.nameText.textContent = food.name;
         }
         else {
-            this.nameText.textContent = "No food selected.";
+            this.nameText.textContent = "未選擇食物。";
         }
 
         this.replaceChildren(this.foodImgHolder, this.nameText);
@@ -446,16 +446,16 @@ class MeldSolverConfirmationDialog extends BaseModal {
         this.newSet = newSet;
 
         if (!newSet) {
-            this.headerText = "No Results Found";
+            this.headerText = "未找到結果";
 
             const textElement = document.createElement('span');
-            textElement.textContent = "The solver didn't find any results. Try relaxing some of the settings.";
+            textElement.textContent = "求解器未找到任何結果。請嘗試放寬一些設定。";
             this.contentArea.replaceChildren(textElement);
-            this.addButton(makeActionButton("Ok", (_ev) => this.close()));
+            this.addButton(makeActionButton("確定", (_ev) => this.close()));
             return;
         }
 
-        this.headerText = "Solver Results";
+        this.headerText = "求解結果";
         // This holds the results
         const form = document.createElement("form");
         form.method = 'dialog';
@@ -463,7 +463,7 @@ class MeldSolverConfirmationDialog extends BaseModal {
 
         const materiaTotals = MeldSolverConfirmationDialog.getMateriaTotals(oldSet, newSet);
 
-        const elements = this.buildMateriaLists([`"${oldSet.name}"`, "Solved Set"], materiaTotals, [oldSimResult, newsimResult]);
+        const elements = this.buildMateriaLists([`"${oldSet.name}"`, "求解結果套裝"], materiaTotals, [oldSimResult, newsimResult]);
 
         const [oldFood, newFood] = [document.createElement('div'), document.createElement('div')];
         oldFood.classList.add('solve-result-mat-entry-holder', 'cols-left');
@@ -481,7 +481,7 @@ class MeldSolverConfirmationDialog extends BaseModal {
         arrow.style.gridColumn = '4';
         arrow.style.gridRowEnd = '-1';
 
-        this.applyButton = makeActionButton("Apply", (ev) => {
+        this.applyButton = makeActionButton("套用", (ev) => {
             if (this.newSet) {
                 this.applyResult();
                 this.oldSet.forceRecalc();
@@ -492,7 +492,7 @@ class MeldSolverConfirmationDialog extends BaseModal {
             this.close();
         });
 
-        this.discardButton = makeActionButton("Discard", (_ev) => {
+        this.discardButton = makeActionButton("捨棄", (_ev) => {
             this.close();
         });
 

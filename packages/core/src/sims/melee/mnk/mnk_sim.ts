@@ -63,7 +63,7 @@ export interface MnkSettingsExternal extends ExternalCycleSettings<MnkSettings> 
 
 export const mnkSpec: SimSpec<MnkSim, MnkSettingsExternal> = {
     stub: 'mnk-sim',
-    displayName: 'MNK Sim',
+    displayName: '武僧模擬',
     description: 'Simulates a monk rotation at level 100',
     makeNewSimInstance: function (): MnkSim {
         return new MnkSim();

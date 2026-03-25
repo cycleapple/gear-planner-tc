@@ -19,15 +19,15 @@ class ChunkLoadErrorModal extends BaseModal {
 
     constructor() {
         super();
-        this.headerText = 'Error Loading Page';
+        this.headerText = '頁面載入錯誤';
         const description = el('p', {}, [
-            'A required script failed to load. Reloading the page usually fixes this. You can check the browser console for more details.',
+            '必要的腳本載入失敗。重新載入頁面通常可以解決此問題。你可以查看瀏覽器控制台以取得更多詳情。',
             el('br'),
-            'The page will automatically reload in 10 seconds.',
+            '頁面將在 10 秒後自動重新載入。',
         ]);
         this.contentArea.appendChild(description);
-        this.reloadButton = this.addActionButton('Reload (9)', () => this.reload());
-        this.addCloseButton('Continue Anyway');
+        this.reloadButton = this.addActionButton('重新載入 (9)', () => this.reload());
+        this.addCloseButton('繼續使用');
         this.runCountdownLoop();
     }
 
@@ -46,7 +46,7 @@ class ChunkLoadErrorModal extends BaseModal {
             }
             const remainingAfterWait = targetTime - Date.now();
             const displaySeconds = Math.max(0, Math.min(10, Math.floor(remainingAfterWait / 1000)));
-            this.reloadButton.textContent = `Reload (${Math.min(9, displaySeconds)})`;
+            this.reloadButton.textContent = `重新載入 (${Math.min(9, displaySeconds)})`;
         }
     }
 

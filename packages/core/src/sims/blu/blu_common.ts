@@ -59,7 +59,7 @@ const BLU_CHANNELED_ABILITIES = [
  */
 
 const Boost: Buff = {
-    name: "Boost",
+    name: "蓄力",
     duration: 30,
     selfOnly: true,
     effects: {
@@ -76,7 +76,7 @@ const Boost: Buff = {
 };
 
 const WaxingNocturne: Buff = {
-    name: "Waxing Nocturne",
+    name: "狂戰士化",
     duration: 15,
     selfOnly: true,
     effects: {
@@ -86,7 +86,7 @@ const WaxingNocturne: Buff = {
 };
 
 const MightyGuard: Buff = {
-    name: "Mighty Guard",
+    name: "強力守護",
     selfOnly: true,
     descriptionExtras: ["Reduces damage taken and increases enmity generation"],
     effects: { // also changes the effects of certain BLU spells
@@ -97,7 +97,7 @@ const MightyGuard: Buff = {
 
 
 const WaningNocturne: Buff = {
-    name: "Waning Nocturne",
+    name: "狂戰士化的副作用",
     duration: 15,
     selfOnly: true,
     descriptionExtras: ["Prevents the use of auto-attacks, weaponskills, spells, or abilities"],
@@ -108,7 +108,7 @@ const WaningNocturne: Buff = {
 };
 
 const Harmonized: Buff = {
-    name: "Harmonized",
+    name: "攻擊準備",
     duration: 30,
     selfOnly: true,
     effects: {
@@ -125,7 +125,7 @@ const Harmonized: Buff = {
 };
 
 const TankMimicry: Buff = {
-    name: "Aetheric Mimicry: Tank",
+    name: "乙太複製：防護",
     descriptionExtras: ["Increases defense and augments certain blue magic spells"],
     selfOnly: true,
     effects: {}, // changes the effects of certain BLU spells
@@ -133,7 +133,7 @@ const TankMimicry: Buff = {
 };
 
 const DpsMimicry: Buff = {
-    name: "Aetheric Mimicry: DPS",
+    name: "乙太複製：進攻",
     selfOnly: true,
     descriptionExtras: ["Doubles Matra Magic potency"],
     effects: { // also changes the effects of certain BLU spells
@@ -153,7 +153,7 @@ const DpsMimicry: Buff = {
 };
 
 const HealerMimicry: Buff = {
-    name: "Aetheric Mimicry: Healer",
+    name: "乙太複製：療傷",
     selfOnly: true,
     descriptionExtras: ["Increases healing and augments certain blue magic spells"],
     effects: {}, // changes the effects of certain BLU spells
@@ -161,7 +161,7 @@ const HealerMimicry: Buff = {
 };
 
 const BrushWithDeath: Buff = {
-    name: "Brush with Death",
+    name: "咒髮操控",
     duration: 600,
     selfOnly: true,
     descriptionExtras: ["Prevents using certain blue magic spells"],
@@ -170,7 +170,7 @@ const BrushWithDeath: Buff = {
 };
 
 const SurpanakhaBuff: Buff = {
-    name: "Surpanakha's Fury",
+    name: "穿甲散彈's Fury",
     duration: 3,
     selfOnly: true,
     effects: {
@@ -185,7 +185,7 @@ const SurpanakhaBuff: Buff = {
 };
 
 const Tingling: Buff = {
-    name: "Tingling",
+    name: "霹靂霹靂",
     duration: 15,
     selfOnly: true,
     descriptionExtras: ["Increases the potency of the next physical damage spell cast by 100 per hit"],
@@ -211,7 +211,7 @@ const Tingling: Buff = {
 };
 
 const BasicInstinct: Buff = {
-    name: "Basic Instinct",
+    name: "鬥爭本能",
     selfOnly: true,
     descriptionExtras: ["Ignores the damage penalty inflicted by Mighty Guard"],
     effects: {
@@ -221,7 +221,7 @@ const BasicInstinct: Buff = {
 };
 
 const WingedReprobationBuff = {
-    name: "Winged Reprobation",
+    name: "斷罪飛翔",
     selfOnly: true,
     descriptionExtras: ["Resets Winged Reprobation's recast timer"],
     effects: {
@@ -235,7 +235,7 @@ const WingedReprobationBuff = {
 } as const satisfies Buff;
 
 const WingedRedemption: Buff = {
-    name: "Winged Redemption",
+    name: "完美神的祝福",
     duration: 10,
     selfOnly: true,
     descriptionExtras: ["Increases the potency of Conviction Marcato"],
@@ -260,7 +260,7 @@ const WingedRedemption: Buff = {
  */
 
 export const SongOfTorment: GcdAbility = {
-    name: "Song of Torment",
+    name: "苦悶之歌",
     type: "gcd",
     attackType: "Spell",
     potency: 50,
@@ -275,7 +275,7 @@ export const SongOfTorment: GcdAbility = {
 };
 
 export const Bristle: GcdAbility = {
-    name: "Bristle",
+    name: "怒髮衝冠",
     type: "gcd",
     attackType: "Spell",
     potency: null,
@@ -286,7 +286,7 @@ export const Bristle: GcdAbility = {
 };
 
 export const FinalSting: GcdAbility = {
-    name: "Final Sting",
+    name: "最終刺針",
     type: "gcd",
     attackType: "Spell",
     potency: 2000,
@@ -297,7 +297,7 @@ export const FinalSting: GcdAbility = {
 };
 
 export const OffGuard: OgcdAbility = {
-    name: "Off-guard",
+    name: "破防",
     type: "ogcd",
     attackType: "Spell",
     potency: null,
@@ -311,7 +311,7 @@ export const OffGuard: OgcdAbility = {
 };
 
 export const MoonFlute: GcdAbility = {
-    name: "Moon Flute",
+    name: "月之笛",
     type: "gcd",
     attackType: "Spell",
     potency: null,
@@ -322,7 +322,7 @@ export const MoonFlute: GcdAbility = {
 };
 
 export const FeatherRain: OgcdAbility = {
-    name: "Feather Rain",
+    name: "飛翎雨",
     type: "ogcd",
     attackType: "Ability",
     potency: 220,
@@ -339,7 +339,7 @@ export const FeatherRain: OgcdAbility = {
 };
 
 export const ShockStrike: OgcdAbility = {
-    name: "Shock Strike",
+    name: "轟雷",
     type: "ogcd",
     attackType: "Ability",
     potency: 400,
@@ -351,7 +351,7 @@ export const ShockStrike: OgcdAbility = {
 };
 
 export const GlassDance: OgcdAbility = {
-    name: "Glass Dance",
+    name: "冰雪亂舞",
     type: "ogcd",
     attackType: "Ability",
     potency: 350,
@@ -363,7 +363,7 @@ export const GlassDance: OgcdAbility = {
 };
 
 export const SonicBoom: GcdAbility = {
-    name: "Sonic Boom",
+    name: "音爆",
     type: "gcd",
     attackType: "Spell",
     potency: 210,
@@ -373,7 +373,7 @@ export const SonicBoom: GcdAbility = {
 };
 
 export const Whistle: GcdAbility = {
-    name: "Whistle",
+    name: "口笛",
     type: "gcd",
     attackType: "Spell",
     potency: null,
@@ -384,7 +384,7 @@ export const Whistle: GcdAbility = {
 };
 
 export const Surpanakha: OgcdAbility = {
-    name: "Surpanakha",
+    name: "穿甲散彈",
     type: "ogcd",
     attackType: "Ability",
     potency: 200,
@@ -398,7 +398,7 @@ export const Surpanakha: OgcdAbility = {
 };
 
 export const Quasar: OgcdAbility = {
-    name: "Quasar",
+    name: "類星體",
     type: "ogcd",
     attackType: "Ability",
     potency: 300,
@@ -410,7 +410,7 @@ export const Quasar: OgcdAbility = {
 };
 
 export const JKick: OgcdAbility = {
-    name: "J Kick",
+    name: "正義飛踢",
     type: "ogcd",
     attackType: "Ability",
     potency: 300,
@@ -422,7 +422,7 @@ export const JKick: OgcdAbility = {
 };
 
 export const TripleTrident: GcdAbility = {
-    name: "Triple Trident",
+    name: "魚叉三段",
     type: "gcd",
     attackType: "Spell",
     potency: 450, // 3 hits @ 150 ea, 250 ea under Tingling
@@ -436,7 +436,7 @@ export const TripleTrident: GcdAbility = {
 };
 
 export const Tingle: GcdAbility = {
-    name: "Tingle",
+    name: "霹靂霹靂",
     type: "gcd",
     attackType: "Spell",
     potency: 100,
@@ -447,7 +447,7 @@ export const Tingle: GcdAbility = {
 };
 
 export const FeculentFlood: GcdAbility = {
-    name: "Feculent Flood",
+    name: "污泥潑灑",
     type: "gcd",
     attackType: "Spell",
     potency: 220,
@@ -457,7 +457,7 @@ export const FeculentFlood: GcdAbility = {
 };
 
 export const RoseOfDestruction: GcdAbility = {
-    name: "The Rose of Destruction",
+    name: "鬥靈彈",
     type: "gcd",
     attackType: "Spell",
     potency: 400,
@@ -471,7 +471,7 @@ export const RoseOfDestruction: GcdAbility = {
 };
 
 export const MatraMagic: GcdAbility = {
-    name: "Matra Magic",
+    name: "馬特拉魔法飛彈",
     type: "gcd",
     attackType: "Spell",
     potency: 400, // 8 hits @ 50 ea, 100 ea under Aetheric Mimicry: DPS
@@ -485,7 +485,7 @@ export const MatraMagic: GcdAbility = {
 };
 
 export const PhantomFlurry: OgcdAbility = {
-    name: "Phantom Flurry",
+    name: "鬼宿腳",
     type: "ogcd",
     attackType: "Ability",
     potency: 0,
@@ -502,7 +502,7 @@ export const PhantomFlurry: OgcdAbility = {
 };
 
 export const Nightbloom: OgcdAbility = {
-    name: "Nightbloom",
+    name: "月下彼岸花",
     type: "ogcd",
     attackType: "Ability",
     potency: 400,
@@ -519,7 +519,7 @@ export const Nightbloom: OgcdAbility = {
 };
 
 export const BreathofMagic: GcdAbility = {
-    name: "Breath of Magic",
+    name: "魔法吐息",
     type: "gcd",
     attackType: "Spell",
     potency: 0,
@@ -534,7 +534,7 @@ export const BreathofMagic: GcdAbility = {
 };
 
 export const ConvictionMarcato: GcdAbility = {
-    name: "Conviction Marcato",
+    name: "加強信音",
     type: "gcd",
     attackType: "Spell",
     potency: 220, // 440 under Winged Redemption
@@ -544,7 +544,7 @@ export const ConvictionMarcato: GcdAbility = {
 };
 
 export const WingedReprobation: GcdAbility = {
-    name: "Winged Reprobation",
+    name: "斷罪飛翔",
     type: "gcd",
     attackType: "Spell",
     potency: 300, // 400 with 3 stacks of Winged Reprobation
@@ -559,7 +559,7 @@ export const WingedReprobation: GcdAbility = {
 };
 
 export const MortalFlame: GcdAbility = {
-    name: "Mortal Flame",
+    name: "必滅之炎",
     type: "gcd",
     attackType: "Spell",
     potency: 0,
@@ -574,7 +574,7 @@ export const MortalFlame: GcdAbility = {
 };
 
 export const SeaShanty: OgcdAbility = {
-    name: "Sea Shanty",
+    name: "咕嚕咕嚕",
     type: "ogcd",
     attackType: "Ability",
     potency: 500, // TODO: 1000 if weather is Rain, Showers, or Thunderstorms
@@ -586,7 +586,7 @@ export const SeaShanty: OgcdAbility = {
 };
 
 export const Apokalypsis: OgcdAbility = {
-    name: "Apokalypsis",
+    name: "默示錄",
     type: "ogcd",
     attackType: "Ability",
     potency: 0,
@@ -603,7 +603,7 @@ export const Apokalypsis: OgcdAbility = {
 };
 
 export const BeingMortal: OgcdAbility = {
-    name: "Being Mortal",
+    name: "終有一死",
     type: "ogcd",
     attackType: "Ability",
     potency: 800,

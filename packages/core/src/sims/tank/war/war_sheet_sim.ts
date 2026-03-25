@@ -28,7 +28,7 @@ export interface WarSettingsExternal extends ExternalCycleSettings<WarSettings> 
 
 export const warSpec: SimSpec<WarSim, WarSettingsExternal> = {
     stub: "war-sheet-sim",
-    displayName: "WAR Sim",
+    displayName: "戰士模擬",
     description: `Simulates a WAR rotation for level 100/90/80/70.
 If potions are enabled, pots in the burst window every 6m (i.e. 0m, 6m, 12m, etc).
 Defaults to simulating a killtime of 8m 30s (510s).`,

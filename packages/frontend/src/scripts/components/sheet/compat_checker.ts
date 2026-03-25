@@ -12,15 +12,15 @@ export function showCompatOverview(sheet: GearPlanSheet, set: CharacterGearSet) 
 class CompatCheckerOverviewModal extends BaseModal {
     constructor(sheet: GearPlanSheet, baseSet: CharacterGearSet) {
         super();
-        this.headerText = 'Compatibility Checker';
-        const descriptionText = 'This shows the compatibility of the selected set with all other sets in the sheet. ' +
-            '"Compatible" means that if the same item is used on both sets, that the same materia is installed on both sets. ' +
-            'If the item is not unique, then it is considered "soft incompatible" - you can still assemble both sets, but you will need duplicate items. ';
+        this.headerText = '相容性檢查';
+        const descriptionText = '這會顯示所選套裝與配裝表中其他所有套裝的相容性。' +
+            '「相容」表示如果兩個套裝使用了相同的裝備，則已鑲嵌的魔晶石也相同。' +
+            '如果裝備不是唯一的，則被視為「軟性不相容」——你仍然可以組裝兩個套裝，但需要額外的裝備。';
         const description = el('div', {class: 'description'}, [descriptionText]);
         const setsToCompare = sheet.sets.filter(otherSet => otherSet !== baseSet);
         if (setsToCompare.length === 0) {
             const msg = el('div', {class: 'no-sets-to-compare'}, [
-                'No other sets to compare against.',
+                '沒有其他套裝可供比較。',
             ]);
             this.contentArea.replaceChildren(descriptionText, msg);
         }
@@ -28,20 +28,18 @@ class CompatCheckerOverviewModal extends BaseModal {
             const table = new CustomTable<CharacterGearSet>();
             table.columns = [
                 col({
-                    displayName: 'Set',
+                    displayName: '套裝',
                     shortName: 'set',
                     getter: set => set.name,
                 }),
-                // TODO: job column for multi-job?
                 col({
-                    displayName: 'Compatibility',
+                    displayName: '相容性',
                     shortName: 'compat-result',
                     getter: setB => sheet.checkCompatibility(baseSet, setB),
                     renderer: (value: SetCompatibilityReport, rowValue) => {
-                        // show button to allow details to be opened
                         if (value.compatibilityLevel === 'compatible') {
                             return el('div', {class: 'set-compat-good'}, [
-                                'No issues',
+                                '無問題',
                             ]);
 
                         }
@@ -56,13 +54,9 @@ class CompatCheckerOverviewModal extends BaseModal {
                                 icon.classList.add('error');
                             }
                             const issueCount = value.incompatibleSlots.length;
-                            return makeActionButton([icon, `${issueCount} issue${issueCount > 1 ? 's' : ''}`], () => {
+                            return makeActionButton([icon, `${issueCount} 個問題`], () => {
                                 new CompatCheckerSetModal(value).attachAndShowTop();
                             });
-                            // return el('div', {class: 'set-compat-bad'}, [
-                            //     icon,
-                            //     btn,
-                            // ]);
                         }
                     },
                 }),
@@ -81,31 +75,31 @@ class CompatCheckerSetModal extends BaseModal {
         const table = new CustomTable<SlotIncompatibility>();
         table.columns = [
             col({
-                displayName: 'Slot',
+                displayName: '部位',
                 shortName: 'slot',
                 getter: incomp => incomp.slotKey,
             }),
             col({
-                displayName: 'Issue Type',
+                displayName: '問題類型',
                 shortName: 'issuetype',
                 getter: (incomp: SlotIncompatibility) => incomp.reason,
                 renderer: reason => {
                     let text: string;
                     switch (reason) {
                         case 'materia-mismatch':
-                            text = 'Materia Mismatch';
+                            text = '魔晶石不一致';
                             break;
                         case 'relic-stat-mismatch':
-                            text = 'Relic Stat Mismatch';
+                            text = '肝武屬性不一致';
                             break;
                         default:
-                            text = 'Other';
+                            text = '其他';
                     }
                     return el('div', {class: 'issue-type'}, [text]);
                 },
             }),
             col({
-                displayName: 'Detail',
+                displayName: '詳情',
                 shortName: 'detail',
                 getter: (incomp: SlotIncompatibility) => incomp.subIssues,
                 renderer: subIssues => {
@@ -123,4 +117,3 @@ class CompatCheckerSetModal extends BaseModal {
 
 customElements.define('compat-checker-overview-modal', CompatCheckerOverviewModal);
 customElements.define('compat-checker-set-modal', CompatCheckerSetModal);
-

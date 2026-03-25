@@ -57,7 +57,9 @@ export class StatusIcon extends HTMLImageElement {
 }
 
 function shouldTranslate(buff: Buff) {
-    return buff.statusId > 0 && (buff.translate ?? getCurrentLanguage() !== 'en');
+    const lang = getCurrentLanguage();
+    // TC names are already translated in the code, don't override with XIVAPI
+    return lang !== 'tc' && buff.statusId > 0 && (buff.translate ?? lang !== 'en');
 }
 
 export function statusNameTranslated(buff: Buff): HTMLSpanElement {

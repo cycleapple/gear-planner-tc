@@ -10,7 +10,7 @@ import {SimSettingsUpdateCallback} from "./simulation_gui";
  */
 export class BuffSettingsArea extends NamedSection {
     constructor(settings: BuffSettingsManager, updateCallback: SimSettingsUpdateCallback) {
-        super('Party Comp/Raid Buffs');
+        super('隊伍組成/團隊增益');
         this.classList.add('buff-settings-area');
 
         const table = el('table', {}, [

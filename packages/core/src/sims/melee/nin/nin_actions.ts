@@ -9,7 +9,7 @@ import NINGauge from "./nin_gauge";
  */
 export const SpinningEdge: NinGcdAbility = {
     type: 'gcd',
-    name: "Spinning Edge",
+    name: "雙刃旋",
     id: 2240,
     attackType: "Weaponskill",
     potency: 300,
@@ -24,7 +24,7 @@ export const SpinningEdge: NinGcdAbility = {
 
 export const GustSlash: NinGcdAbility = {
     type: 'gcd',
-    name: "Gust Slash",
+    name: "絕風",
     id: 2242,
     attackType: "Weaponskill",
     potency: 400,
@@ -39,7 +39,7 @@ export const GustSlash: NinGcdAbility = {
 
 export const AeolianEdge: NinGcdAbility = {
     type: 'gcd',
-    name: "Aeolian Edge",
+    name: "旋風刃",
     id: 2255,
     attackType: "Weaponskill",
     potency: 460,
@@ -61,7 +61,7 @@ export const AeolianEdge: NinGcdAbility = {
 
 export const ArmorCrush: NinGcdAbility = {
     type: 'gcd',
-    name: "Armor Crush",
+    name: "強甲破點突",
     id: 3563,
     attackType: "Weaponskill",
     potency: 500,
@@ -83,7 +83,7 @@ export const ArmorCrush: NinGcdAbility = {
 
 export const Raiju: NinGcdAbility = {
     type: 'gcd',
-    name: "Fleeting Raiju",
+    name: "月影雷獸牙",
     id: 25778,
     attackType: "Weaponskill",
     potency: 700,
@@ -94,7 +94,7 @@ export const Raiju: NinGcdAbility = {
 
 export const Phantom: NinGcdAbility = {
     type: 'gcd',
-    name: "Phantom Kamaitachi",
+    name: "殘影鐮鼬",
     id: 25774,
     attackType: "Weaponskill",
     potency: 700, // TODO: Mark as Pet Damage Potency
@@ -105,7 +105,7 @@ export const Phantom: NinGcdAbility = {
 
 export const Ten: MudraStep & OriginCdAbility = {
     type: 'gcd',
-    name: "Ten",
+    name: "天之印",
     id: 2259,
     noChargeId: 18805,
     attackType: "Ability",
@@ -121,7 +121,7 @@ export const Ten: MudraStep & OriginCdAbility = {
 
 export const Chi: MudraStep & SharedCdAbility = {
     type: 'gcd',
-    name: "Chi",
+    name: "地之印",
     id: 2261,
     noChargeId: 18806,
     attackType: "Ability",
@@ -138,7 +138,7 @@ export const Chi: MudraStep & SharedCdAbility = {
 
 export const Jin: MudraStep & SharedCdAbility = {
     type: 'gcd',
-    name: "Jin",
+    name: "人之印",
     id: 2263,
     noChargeId: 18807,
     attackType: "Ability",
@@ -155,7 +155,7 @@ export const Jin: MudraStep & SharedCdAbility = {
 
 export const Fuma: NinjutsuAbility = {
     type: 'gcd',
-    name: "Fuma Shuriken",
+    name: "風魔手裏劍",
     id: 2265,
     attackType: "Ability",
     potency: 500,
@@ -167,7 +167,7 @@ export const Fuma: NinjutsuAbility = {
 
 export const Raiton: NinjutsuAbility = {
     type: 'gcd',
-    name: "Raiton",
+    name: "雷遁之術",
     id: 2267,
     attackType: "Ability",
     potency: 740,
@@ -180,7 +180,7 @@ export const Raiton: NinjutsuAbility = {
 
 export const Suiton: NinjutsuAbility = {
     type: 'gcd',
-    name: "Suiton",
+    name: "水遁之術",
     id: 2271,
     attackType: "Ability",
     potency: 580,
@@ -193,7 +193,7 @@ export const Suiton: NinjutsuAbility = {
 
 export const Hyosho: NinjutsuAbility = {
     type: 'gcd',
-    name: "Hyosho Ranryu",
+    name: "冰晶亂流之術",
     id: 16492,
     attackType: "Ability",
     potency: 1300,
@@ -220,7 +220,7 @@ export const KunaisBane: NinOgcdAbility = {
 
 export const Kassatsu: NinOgcdAbility = {
     type: 'ogcd',
-    name: "Kassatsu",
+    name: "活殺自在",
     id: 2264,
     attackType: "Ability",
     potency: null,
@@ -232,7 +232,7 @@ export const Kassatsu: NinOgcdAbility = {
 
 export const TenChiJin: NinOgcdAbility = {
     type: 'ogcd',
-    name: "Ten Chi Jin",
+    name: "天地人",
     id: 7403,
     attackType: "Ability",
     potency: null,
@@ -244,7 +244,7 @@ export const TenChiJin: NinOgcdAbility = {
 
 export const Meisui: NinOgcdAbility = {
     type: 'ogcd',
-    name: "Meisui",
+    name: "命水",
     id: 16489,
     attackType: "Ability",
     potency: null,
@@ -257,7 +257,7 @@ export const Meisui: NinOgcdAbility = {
 
 export const Bunshin: NinkiAbility = {
     type: 'ogcd',
-    name: "Bunshin",
+    name: "分身術",
     id: 16493,
     attackType: "Ability",
     potency: null,
@@ -271,7 +271,7 @@ export const Bunshin: NinkiAbility = {
 
 export const DokumoriAbility: NinOgcdAbility = {
     type: 'ogcd',
-    name: "Dokumori",
+    name: "介毒之術",
     id: 36957,
     attackType: "Ability",
     potency: 400,
@@ -284,7 +284,7 @@ export const DokumoriAbility: NinOgcdAbility = {
 
 export const DreamWithin: NinOgcdAbility = {
     type: 'ogcd',
-    name: "Dream Within a Dream",
+    name: "夢幻三段",
     id: 3566,
     attackType: "Ability",
     potency: 180 * 3, // Multihit
@@ -292,7 +292,7 @@ export const DreamWithin: NinOgcdAbility = {
 
 export const Bhavacakra: NinkiAbility = {
     type: 'ogcd',
-    name: "Bhavacakra",
+    name: "六道輪迴",
     id: 7402,
     attackType: "Ability",
     potency: 400,
@@ -302,7 +302,7 @@ export const Bhavacakra: NinkiAbility = {
 
 export const ZeshoMeppo: NinkiAbility = {
     type: 'ogcd',
-    name: "Zesho Meppo",
+    name: "是生滅法",
     id: 36960,
     attackType: "Ability",
     potency: 700,
@@ -312,7 +312,7 @@ export const ZeshoMeppo: NinkiAbility = {
 
 export const TenriJindo: NinOgcdAbility = {
     type: 'ogcd',
-    name: "Tenri Jindo",
+    name: "天理人道",
     id: 36961,
     attackType: "Ability",
     potency: 1100,

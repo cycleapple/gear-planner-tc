@@ -9,7 +9,7 @@ import {Simulation} from "@xivgear/core/sims/sim_types";
 export function noSimSettings() {
     const outerDiv = document.createElement("div");
     const header = document.createElement("h1");
-    header.textContent = "No Settings for This Simulation";
+    header.textContent = "此模擬無可用設定";
     outerDiv.replaceChildren(header);
     return outerDiv;
 }

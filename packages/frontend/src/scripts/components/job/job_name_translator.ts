@@ -3,6 +3,7 @@ import {DATA_API_CLIENT, ApiJobType, checkResponse} from "@xivgear/core/data_api
 import {RoleKey} from "@xivgear/xivmath/geartypes";
 import {quickElement} from "@xivgear/common-ui/components/util";
 import {toTranslatable} from "@xivgear/i18n/translation";
+import {TC_JOB_NAMES} from "@xivgear/core/tc_names";
 
 let dataPromise: Promise<Map<JobName, ApiJobType>> | null = null;
 
@@ -20,14 +21,24 @@ function getDataPromise(): Promise<Map<JobName, ApiJobType>> {
     return dataPromise;
 }
 
+/**
+ * TC short abbreviations for jobs (single character).
+ */
+const TC_JOB_ABBREVS: Record<string, string> = {
+    PLD: '騎', MNK: '僧', WAR: '戰', DRG: '龍', BRD: '詩',
+    WHM: '白', BLM: '黑', SMN: '召', SCH: '學', NIN: '忍',
+    MCH: '機', DRK: '暗', AST: '占', SAM: '武', RDM: '紅',
+    BLU: '青', GNB: '絕', DNC: '舞', RPR: '魂', SGE: '賢',
+    VPR: '蛇', PCT: '繪',
+};
+
 export function jobAbbrevTranslated(job: JobName | RoleKey): HTMLSpanElement {
     const text = quickElement('span', ['job-name-translation'], [job]);
     getDataPromise().then(pr => {
-        // If it is a role key, then it will miss on this lookup and do nothing, which is as good as we can get without
-        // a programmatic source.
         const translation = pr.get(job as JobName)?.abbreviationTranslations;
         if (translation) {
-            text.textContent = toTranslatable(job, translation).asCurrentLang;
+            const tcTranslation = { ...translation, tc: TC_JOB_ABBREVS[job] ?? job };
+            text.textContent = toTranslatable(job, tcTranslation).asCurrentLang;
         }
     });
     return text;

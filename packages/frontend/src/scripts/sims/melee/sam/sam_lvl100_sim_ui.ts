@@ -35,7 +35,7 @@ export class SamSimGui extends BaseMultiCycleSimGui<SamSimResult, SamSettings> {
         };
         return [{
             shortName: 'kenkiGauge',
-            displayName: 'Kenki',
+            displayName: '劍氣',
             getter: used => isFinalizedAbilityUse(used) ? used.original : null,
             renderer: (usedAbility?: PreDmgUsedAbility) => {
                 if (usedAbility?.extraData !== undefined) {
@@ -54,7 +54,7 @@ export class SamSimGui extends BaseMultiCycleSimGui<SamSimResult, SamSettings> {
             },
         }, {
             shortName: 'meditation',
-            displayName: 'Meditation',
+            displayName: '默想',
             getter: used => isFinalizedAbilityUse(used) ? used.original : null,
             renderer: extraDataDiscreteGaugeRenderer<SAMExtraData>((_, extra) => {
                 const meditation = extra.gauge.meditation;
@@ -68,7 +68,7 @@ export class SamSimGui extends BaseMultiCycleSimGui<SamSimResult, SamSettings> {
             }),
         }, {
             shortName: 'sen',
-            displayName: 'Sen',
+            displayName: '閃',
             getter: used => isFinalizedAbilityUse(used) ? used.original : null,
             renderer: extraDataDiscreteGaugeRenderer<SAMExtraData>((_, extra) => {
                 const sen = extra.gauge.sen;
@@ -100,9 +100,9 @@ export class SamSimGui extends BaseMultiCycleSimGui<SamSimResult, SamSettings> {
         const ppField = new FieldBoundFloatField(settings, "prePullMeikyo", {inputMode: 'number'});
         const potCb = new FieldBoundCheckBox(settings, "usePotion");
 
-        configDiv.appendChild(labelFor("Meikyo Pre-Pull Time:", ppField));
+        configDiv.appendChild(labelFor("明鏡止水預開怪時間:", ppField));
         configDiv.appendChild(ppField);
-        configDiv.appendChild(labeledCheckbox("Use Potion", potCb));
+        configDiv.appendChild(labeledCheckbox("使用藥水", potCb));
         return configDiv;
     }
 

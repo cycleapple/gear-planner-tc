@@ -3,7 +3,7 @@ import {DrkGcdAbility, DrkOgcdAbility, BloodWeaponBuff, DeliriumBuff, ScornBuff,
 
 export const HardSlash: DrkGcdAbility = {
     type: 'gcd',
-    name: "Hard Slash",
+    name: "重斬",
     id: 3617,
     potency: 150,
     attackType: "Weaponskill",
@@ -24,7 +24,7 @@ export const HardSlash: DrkGcdAbility = {
 
 export const SyphonStrike: DrkGcdAbility = {
     type: 'gcd',
-    name: "Syphon Strike",
+    name: "吸收斬",
     id: 3623,
     potency: 240,
     attackType: "Weaponskill",
@@ -46,7 +46,7 @@ export const SyphonStrike: DrkGcdAbility = {
 
 export const Souleater: DrkGcdAbility = {
     type: 'gcd',
-    name: "Souleater",
+    name: "噬魂斬",
     id: 3632,
     potency: 320,
     attackType: "Weaponskill",
@@ -68,7 +68,7 @@ export const Souleater: DrkGcdAbility = {
 
 export const Bloodspiller: DrkGcdAbility = {
     type: 'gcd',
-    name: "Bloodspiller",
+    name: "血濺",
     id: 7392,
     potency: 500,
     attackType: "Weaponskill",
@@ -86,7 +86,7 @@ export const Bloodspiller: DrkGcdAbility = {
 
 export const ScarletDelirium: DrkGcdAbility = {
     type: 'gcd',
-    name: "Scarlet Delirium",
+    name: "血紅亂",
     id: 36928,
     potency: 620,
     attackType: "Weaponskill",
@@ -96,7 +96,7 @@ export const ScarletDelirium: DrkGcdAbility = {
 
 export const Comeuppance: DrkGcdAbility = {
     type: 'gcd',
-    name: "Comeuppance",
+    name: "報應",
     id: 36929,
     potency: 720,
     attackType: "Weaponskill",
@@ -106,7 +106,7 @@ export const Comeuppance: DrkGcdAbility = {
 
 export const Torcleaver: DrkGcdAbility = {
     type: 'gcd',
-    name: "Torcleaver",
+    name: "戮山",
     id: 36930,
     potency: 820,
     attackType: "Weaponskill",
@@ -116,7 +116,7 @@ export const Torcleaver: DrkGcdAbility = {
 
 export const Unmend: DrkGcdAbility = {
     type: 'gcd',
-    name: "Unmend",
+    name: "傷殘",
     id: 3624,
     potency: 150,
     attackType: "Spell",
@@ -126,7 +126,7 @@ export const Unmend: DrkGcdAbility = {
 
 export const Delirium: DrkOgcdAbility = {
     type: 'ogcd',
-    name: "Delirium",
+    name: "錯亂劍",
     id: 7390,
     potency: null,
     attackType: "Ability",
@@ -140,7 +140,7 @@ export const Delirium: DrkOgcdAbility = {
 
 export const CarveAndSpit: DrkOgcdAbility = {
     type: 'ogcd',
-    name: "Carve and Spit",
+    name: "精雕怒斬",
     id: 3643,
     potency: 510,
     attackType: "Ability",
@@ -160,7 +160,7 @@ export const CarveAndSpit: DrkOgcdAbility = {
 
 export const SaltedEarth: DrkOgcdAbility = {
     type: 'ogcd',
-    name: "Salted Earth",
+    name: "腐穢大地",
     id: 3639,
     attackType: "Ability",
     activatesBuffs: [],
@@ -187,7 +187,7 @@ export const SaltedEarth: DrkOgcdAbility = {
 
 export const SaltAndDarkness: DrkOgcdAbility = {
     type: 'ogcd',
-    name: "Salt and Darkness",
+    name: "腐穢黑暗",
     id: 25755,
     potency: 500,
     attackType: "Ability",
@@ -199,7 +199,7 @@ export const SaltAndDarkness: DrkOgcdAbility = {
 
 export const Disesteem: DrkGcdAbility = {
     type: 'gcd',
-    name: "Disesteem",
+    name: "掠影的蔑視",
     id: 36932,
     potency: 1000,
     attackType: "Weaponskill",
@@ -209,7 +209,7 @@ export const Disesteem: DrkGcdAbility = {
 
 export const EdgeOfDarkness: DrkOgcdAbility = {
     type: 'ogcd',
-    name: "Edge of Darkness",
+    name: "暗黑鋒",
     id: 16467,
     potency: 300,
     attackType: "Ability",
@@ -231,7 +231,7 @@ export const EdgeOfDarkness: DrkOgcdAbility = {
 
 export const EdgeOfShadow: DrkOgcdAbility = {
     type: 'ogcd',
-    name: "Edge of Shadow",
+    name: "暗影鋒",
     id: 16470,
     potency: 460,
     attackType: "Ability",
@@ -253,7 +253,7 @@ export const EdgeOfShadow: DrkOgcdAbility = {
 
 export const TheBlackestNight: DrkOgcdAbility = {
     type: 'ogcd',
-    name: "The Blackest Night",
+    name: "至黑之夜",
     id: 7393,
     potency: null,
     attackType: "Ability",
@@ -271,7 +271,7 @@ export const TheBlackestNight: DrkOgcdAbility = {
 
 export const Shadowbringer: DrkOgcdAbility = {
     type: 'ogcd',
-    name: "Shadowbringer",
+    name: "暗影使者",
     id: 25757,
     potency: 600,
     attackType: "Ability",
@@ -286,7 +286,7 @@ export const Shadowbringer: DrkOgcdAbility = {
 // they've all been programmed to be abilities so that it doesn't roll GCD.
 export const LivingShadow: DrkOgcdAbility = {
     type: 'ogcd',
-    name: "Living Shadow",
+    name: "掠影示現",
     id: 16472,
     // Total potency of its abilities is 2450.
     potency: null,
@@ -306,7 +306,7 @@ export const LivingShadow: DrkOgcdAbility = {
 
 export const LivingShadowShadowstride: DrkOgcdAbility = {
     type: 'ogcd',
-    name: "(Living Shadow) Shadowstride",
+    name: "(掠影示現) 暗影跨步",
     alternativeScalings: livingShadowScalings,
     animationLock: 0,
     id: 38512,
@@ -316,7 +316,7 @@ export const LivingShadowShadowstride: DrkOgcdAbility = {
 
 export const LivingShadowAbyssalDrain: DrkOgcdAbility = {
     type: 'ogcd',
-    name: "(Living Shadow) Abyssal Drain",
+    name: "(掠影示現) 吸血深淵",
     alternativeScalings: livingShadowScalings,
     animationLock: 0,
     id: 17904,
@@ -332,7 +332,7 @@ export const LivingShadowAbyssalDrain: DrkOgcdAbility = {
 
 export const LivingShadowShadowbringer: DrkOgcdAbility = {
     type: 'ogcd',
-    name: "(Living Shadow) Shadowbringer",
+    name: "(掠影示現) 暗影使者",
     alternativeScalings: livingShadowScalings,
     animationLock: 0,
     id: 25881,
@@ -342,7 +342,7 @@ export const LivingShadowShadowbringer: DrkOgcdAbility = {
 
 export const LivingShadowEdgeOfShadow: DrkOgcdAbility = {
     type: 'ogcd',
-    name: "(Living Shadow) Edge of Shadow",
+    name: "(掠影示現) 暗影鋒",
     alternativeScalings: livingShadowScalings,
     animationLock: 0,
     id: 17908,
@@ -359,7 +359,7 @@ export const LivingShadowEdgeOfShadow: DrkOgcdAbility = {
 // Level 80 only, upgraded to Shadowbringer at level 90+
 export const LivingShadowFloodOfShadow: DrkOgcdAbility = {
     type: 'ogcd',
-    name: "(Living Shadow) Flood of Shadow",
+    name: "(掠影示現) 暗影波動",
     alternativeScalings: livingShadowScalings,
     animationLock: 0,
     id: 17907,
@@ -369,7 +369,7 @@ export const LivingShadowFloodOfShadow: DrkOgcdAbility = {
 
 export const LivingShadowBloodspiller: DrkOgcdAbility = {
     type: 'ogcd',
-    name: "(Living Shadow) Bloodspiller",
+    name: "(掠影示現) 血濺",
     alternativeScalings: livingShadowScalings,
     animationLock: 0,
     id: 17909,
@@ -386,7 +386,7 @@ export const LivingShadowBloodspiller: DrkOgcdAbility = {
 // Upgraded to Disesteem at level 100+
 export const LivingShadowCarveAndSpit: DrkOgcdAbility = {
     type: 'ogcd',
-    name: "(Living Shadow) Carve And Spit",
+    name: "(掠影示現) 精雕怒斬",
     alternativeScalings: livingShadowScalings,
     animationLock: 0,
     id: 17915,
@@ -402,7 +402,7 @@ export const LivingShadowCarveAndSpit: DrkOgcdAbility = {
 
 export const LivingShadowDisesteem: DrkOgcdAbility = {
     type: 'ogcd',
-    name: "(Living Shadow) Disesteem",
+    name: "(掠影示現) 掠影的蔑視",
     alternativeScalings: livingShadowScalings,
     animationLock: 0,
     id: 36933,

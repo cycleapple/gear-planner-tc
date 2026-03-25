@@ -484,7 +484,7 @@ export function insertAds(newElement: HTMLElement) {
     {
         // General privacy policy
         const privacyPolicyLink = document.createElement('a');
-        privacyPolicyLink.textContent = 'Privacy';
+        privacyPolicyLink.textContent = '隱私權';
         privacyPolicyLink.href = "#";
         privacyPolicyLink.addEventListener('click', (ev) => {
             ev.preventDefault();
@@ -531,7 +531,7 @@ export function installFallbackPrivacyArea() {
 class PrivacyPolicyModal extends BaseModal {
     constructor() {
         super();
-        this.headerText = 'Privacy Policy';
+        this.headerText = '隱私權政策';
         const element = document.createElement('div');
         this.contentArea.appendChild(element);
         this.contentArea.style.textAlign = 'left';
@@ -539,7 +539,7 @@ class PrivacyPolicyModal extends BaseModal {
         this.inner.style.maxWidth = '1200px';
         this.inner.style.maxHeight = '900px';
         this.addCloseButton();
-        element.innerHTML = 'Loading...';
+        element.innerHTML = '載入中...';
         element.style.width = '1200px';
         element.style.height = '900px';
         import(/* webpackChunkName: "privacy" */ '@xivgear/gearplan-frontend/components/general/privacy').then(mod => {
@@ -547,7 +547,7 @@ class PrivacyPolicyModal extends BaseModal {
             element.style.width = '';
             element.style.height = '';
         }).catch(() => {
-            element.innerHTML = 'Error loading';
+            element.innerHTML = '載入錯誤';
         });
     }
 }

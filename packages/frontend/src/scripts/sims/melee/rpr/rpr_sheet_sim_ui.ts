@@ -10,7 +10,7 @@ export class RprSheetSimGui extends BaseMultiCycleSimGui<RprSheetSimResult, RprS
     protected extraAbilityUsedColumns(_: RprSheetSimResult): CustomColumnSpec<DisplayRecordFinalized, unknown, unknown>[] {
         return [{
             shortName: 'soulGauge',
-            displayName: 'Soul',
+            displayName: '靈魂',
             getter: used => isFinalizedAbilityUse(used) ? used.original : null,
             renderer: (usedAbility?: PreDmgUsedAbility) => {
                 if (usedAbility?.extraData !== undefined) {
@@ -29,7 +29,7 @@ export class RprSheetSimGui extends BaseMultiCycleSimGui<RprSheetSimResult, RprS
             },
         }, {
             shortName: 'shroudGauge',
-            displayName: 'Shroud',
+            displayName: '裹屍布',
             getter: used => isFinalizedAbilityUse(used) ? used.original : null,
             renderer: (usedAbility?: PreDmgUsedAbility) => {
                 if (usedAbility?.extraData !== undefined) {

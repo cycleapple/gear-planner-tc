@@ -7,11 +7,11 @@ export class SgeSimGui extends SimulationGui<SgeSheetSimResult, SgeSheetSettings
     makeConfigInterface(settings: SgeSheetSettings): HTMLElement {
         const div = document.createElement("div");
         const brdCheck = new FieldBoundCheckBox<SgeSheetSettings>(settings, 'hasBard', {id: 'brd-checkbox'});
-        div.appendChild(labeledCheckbox('BRD in Party', brdCheck));
+        div.appendChild(labeledCheckbox('隊伍中有詩人', brdCheck));
         const schCheck = new FieldBoundCheckBox<SgeSheetSettings>(settings, 'hasScholar', {id: 'sch-checkbox'});
-        div.appendChild(labeledCheckbox('SCH in Party', schCheck));
+        div.appendChild(labeledCheckbox('隊伍中有學者', schCheck));
         const drgCheck = new FieldBoundCheckBox<SgeSheetSettings>(settings, 'hasDragoon', {id: 'drg-checkbox'});
-        div.appendChild(labeledCheckbox('DRG in Party', drgCheck));
+        div.appendChild(labeledCheckbox('隊伍中有龍騎', drgCheck));
         return div;
     }
 }

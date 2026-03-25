@@ -11,18 +11,18 @@ export class ChangePasswordModal extends BaseModal {
         super();
 
         const outer = this;
-        this.headerText = 'Change Password';
+        this.headerText = '更改密碼';
         const curPassField = quickElement('input', ['password-field'], []);
         curPassField.type = 'password';
-        curPassField.placeholder = 'Current Password';
+        curPassField.placeholder = '目前密碼';
         curPassField.autocomplete = 'current-password';
         curPassField.setAttribute('validation-field', 'currentPassword');
-        const pwrf = passwordWithRepeat('New Password', 'newPassword');
+        const pwrf = passwordWithRepeat('新密碼', 'newPassword');
 
-        const submitButton = makeActionButton('Change', () => {
+        const submitButton = makeActionButton('更改', () => {
         });
         submitButton.type = 'submit';
-        const cancelButton = makeActionButton('Cancel', () => outer.close());
+        const cancelButton = makeActionButton('取消', () => outer.close());
         const buttonArea = quickElement('div', ['button-area'], [submitButton, cancelButton]);
 
         const form = new ValidatingForm<ChangePasswordResponse>({
@@ -33,7 +33,7 @@ export class ChangePasswordModal extends BaseModal {
                     return {
                         validationErrors: [{
                             field: 'currentPassword',
-                            message: 'Incorrect Password',
+                            message: '密碼不正確',
                         }],
                     } satisfies ValidationErrorResponse;
                 }
@@ -50,13 +50,13 @@ export class ChangePasswordModal extends BaseModal {
                 if (!pwrf.isValid()) {
                     out.push({
                         field: 'password',
-                        message: 'Passwords do not match',
+                        message: '密碼不一致',
                     });
                 }
                 return out;
             },
             async onSuccess(value: ChangePasswordResponse): Promise<void> {
-                alert('Your password has been changed.');
+                alert('你的密碼已變更。');
                 // TODO: this needs to refresh the account modal
                 outer.close();
                 afterPwChange();

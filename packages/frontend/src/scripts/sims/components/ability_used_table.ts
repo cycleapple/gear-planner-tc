@@ -48,7 +48,7 @@ export class AbilitiesUsedTable extends CustomTable<DisplayRecordFinalized> {
         this.columns = [
             col({
                 shortName: 'time',
-                displayName: 'Time',
+                displayName: '時間',
                 getter: used => used,
                 renderer: (used: DisplayRecordFinalized) => {
                     return document.createTextNode(formatTime(used.usedAt));
@@ -74,7 +74,7 @@ export class AbilitiesUsedTable extends CustomTable<DisplayRecordFinalized> {
             }),
             col({
                 shortName: 'ability',
-                displayName: 'Ability',
+                displayName: '技能',
                 getter: used => isFinalizedAbilityUse(used) ? used.ability : used.label,
                 renderer: (ability: GcdAbility | OgcdAbility | AutoAttack | string) => {
                     if (ability instanceof Object) {
@@ -120,7 +120,7 @@ export class AbilitiesUsedTable extends CustomTable<DisplayRecordFinalized> {
             }),
             col({
                 shortName: 'unbuffed-pot',
-                displayName: 'Pot',
+                displayName: '威力',
                 getter: used => {
                     return isFinalizedAbilityUse(used) ? used.totalPotency : null;
                 },
@@ -146,7 +146,7 @@ export class AbilitiesUsedTable extends CustomTable<DisplayRecordFinalized> {
             }),
             col({
                 shortName: 'expected-damage',
-                displayName: 'Damage',
+                displayName: '傷害',
                 getter: used => used,
                 renderer: (used: DisplayRecordFinalized) => {
                     if (isFinalizedAbilityUse(used)) {
@@ -186,7 +186,7 @@ export class AbilitiesUsedTable extends CustomTable<DisplayRecordFinalized> {
             ...extraColumns,
             col({
                 shortName: 'Total Buffs',
-                displayName: 'Total Buffs',
+                displayName: '總增益',
                 getter: used => isFinalizedAbilityUse(used) ? used.combinedEffects : undefined,
                 renderer: (effects: CombinedBuffEffect) => {
                     if (effects === undefined) {
@@ -195,23 +195,23 @@ export class AbilitiesUsedTable extends CustomTable<DisplayRecordFinalized> {
                     const out: string[] = [];
                     if (effects.dmgMod !== 1) {
                         const dmgModRelative = effects.dmgMod - 1;
-                        out.push(`${toRelPct(dmgModRelative, 1)}% dmg`);
+                        out.push(`${toRelPct(dmgModRelative, 1)}% 傷害`);
                     }
                     if (effects.dhitChanceIncrease) {
-                        out.push(`${toRelPct(effects.dhitChanceIncrease, 1)}% DHT`);
+                        out.push(`${toRelPct(effects.dhitChanceIncrease, 1)}% 直擊`);
                     }
                     if (effects.critChanceIncrease) {
-                        out.push(`${toRelPct(effects.critChanceIncrease, 1)}% CRT`);
+                        out.push(`${toRelPct(effects.critChanceIncrease, 1)}% 暴擊`);
                     }
                     if (effects.haste) {
-                        out.push(`${effects.haste}% Haste`);
+                        out.push(`${effects.haste}% 加速`);
                     }
                     return document.createTextNode(out.join(', '));
                 },
             }),
             col({
                 shortName: 'buffs',
-                displayName: 'Buffs Active',
+                displayName: '生效增益',
                 getter: (used: DisplayRecordFinalized) => 'buffs' in used ? used.buffs : [],
                 renderer: (buffs: Buff[]) => {
                     return new BuffListDisplay(buffs);

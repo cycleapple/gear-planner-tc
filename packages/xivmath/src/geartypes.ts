@@ -68,62 +68,62 @@ export type EquipSlotKey = typeof EquipSlots[number];
 export const EquipSlotInfo: Record<EquipSlotKey, EquipSlot> = {
     Weapon: {
         slot: 'Weapon',
-        name: 'Weapon',
+        name: '武器',
         gearSlot: 'Weapon',
     },
     OffHand: {
         slot: 'OffHand',
-        name: 'Off-Hand',
+        name: '副手',
         gearSlot: 'OffHand',
     },
     Head: {
         slot: 'Head',
-        name: 'Head',
+        name: '頭部',
         gearSlot: 'Head',
     },
     Body: {
         slot: 'Body',
-        name: 'Body',
+        name: '身體',
         gearSlot: 'Body',
     },
     Hand: {
         slot: 'Hand',
-        name: 'Hand',
+        name: '手部',
         gearSlot: 'Hand',
     },
     Legs: {
         slot: 'Legs',
-        name: 'Legs',
+        name: '腿部',
         gearSlot: 'Legs',
     },
     Feet: {
         slot: 'Feet',
-        name: 'Feet',
+        name: '腳部',
         gearSlot: 'Feet',
     },
     Ears: {
         slot: 'Ears',
-        name: 'Ears',
+        name: '耳飾',
         gearSlot: 'Ears',
     },
     Neck: {
         slot: 'Neck',
-        name: 'Neck',
+        name: '項鍊',
         gearSlot: 'Neck',
     },
     Wrist: {
         slot: 'Wrist',
-        name: 'Wrist',
+        name: '手鐲',
         gearSlot: 'Wrist',
     },
     RingLeft: {
         slot: 'RingLeft',
-        name: 'Left Ring',
+        name: '左戒指',
         gearSlot: 'Ring',
     },
     RingRight: {
         slot: 'RingRight',
-        name: 'Right Ring',
+        name: '右戒指',
         gearSlot: 'Ring',
     },
 } as const;

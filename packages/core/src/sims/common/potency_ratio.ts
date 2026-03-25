@@ -3,7 +3,7 @@ import {applyDhCrit, baseDamage} from "@xivgear/xivmath/xivmath";
 import {SimResult, SimSettings, SimSpec, Simulation} from "@xivgear/core/sims/sim_types";
 
 export const potRatioSimSpec: SimSpec<PotencyRatioSim, SimSettings> = {
-    displayName: "Potency Ratio",
+    displayName: "威力比",
     loadSavedSimInstance(exported: SimSettings) {
         return new PotencyRatioSim();
     },
@@ -11,7 +11,7 @@ export const potRatioSimSpec: SimSpec<PotencyRatioSim, SimSettings> = {
         return new PotencyRatioSim();
     },
     stub: "pr-sim",
-    description: "Expected damage per 100 potency",
+    description: "每100威力的預期傷害",
     isDefaultSim: true,
 };
 
@@ -31,7 +31,7 @@ export class PotencyRatioSim implements Simulation<PotencyRatioSimResults, SimSe
 
     settings: SimSettings = {};
     shortName = "pr-sim";
-    displayName = "Dmg/100p*";
+    displayName = "傷害/100威*";
 
     async simulate(set: CharacterGearSet): Promise<PotencyRatioSimResults> {
         const base = baseDamage(set.computedStats, 100, 'Spell');

@@ -23,7 +23,7 @@ export class MPSimGui extends SimulationGui<MPResult, MPSettings, EmptyObject> {
     makeDescriptionPanel(): HTMLElement {
         const out = new NamedSection('MP per Minute');
         const text = document.createElement('p');
-        text.textContent = 'This calculation represents MP gains and expenditures standardized to a period of 60 seconds. It is an oversimplification as the actual time to run out of MP will depend on other factors, but can be used to compare the effect of additional spell speed and piety.';
+        text.textContent = '此計算代表標準化為60秒周期的MP收支。這是簡化計算，實際耗盡MP的時間取決於其他因素，但可用於比較額外技能速度和信仰的影響。';
         out.contentArea.appendChild(text);
         return out;
     }

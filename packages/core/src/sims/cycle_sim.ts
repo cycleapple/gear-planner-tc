@@ -527,7 +527,7 @@ export class CycleProcessor<GaugeManagerType extends GaugeManager<unknown> = Gau
         this.aaAbility = {
             attackType: 'Auto-attack',
             type: 'autoattack',
-            name: 'Auto Attack',
+            name: '自動攻擊',
             id: (this.stats.jobStats.aaPotency >= 90 ? 7 : 8),
             noIcon: true,
             potency: this.stats.jobStats.aaPotency,

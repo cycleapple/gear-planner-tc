@@ -12,7 +12,7 @@ export class VprSimGui extends BaseMultiCycleSimGui<VprSimResult, VprSimSettings
     protected extraAbilityUsedColumns(result: VprSimResult): CustomColumnSpec<DisplayRecordFinalized, unknown, unknown>[] {
         return [{
             shortName: 'serpentOfferings',
-            displayName: 'Serpent Offerings',
+            displayName: '蛇供',
             getter: used => isFinalizedAbilityUse(used) ? used.original : null,
             renderer: (usedAbility?: PreDmgUsedAbility) => {
                 if (usedAbility?.extraData !== undefined) {
@@ -31,7 +31,7 @@ export class VprSimGui extends BaseMultiCycleSimGui<VprSimResult, VprSimSettings
             },
         }, {
             shortName: 'rattlingCoils',
-            displayName: 'Rattling Coils',
+            displayName: '蛇鱗',
             getter: used => isFinalizedAbilityUse(used) ? used.original : null,
             renderer: extraDataDiscreteGaugeRenderer<VprExtraData>((_, extra) => {
                 const rattlingCoils = extra.gauge.rattlingCoils;

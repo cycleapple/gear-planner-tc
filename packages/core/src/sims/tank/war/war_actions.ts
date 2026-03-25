@@ -3,7 +3,7 @@ import {WarGcdAbility, WarOgcdAbility, SurgingTempest, PrimalRendReadyBuff, Prim
 
 export const Tomahawk: WarGcdAbility = {
     type: 'gcd',
-    name: "Tomahawk",
+    name: "飛斧",
     id: 46,
     potency: 150,
     attackType: "Weaponskill",
@@ -13,7 +13,7 @@ export const Tomahawk: WarGcdAbility = {
 
 export const HeavySwing: WarGcdAbility = {
     type: 'gcd',
-    name: "Heavy Swing",
+    name: "重劈",
     id: 31,
     potency: 150,
     attackType: "Weaponskill",
@@ -33,7 +33,7 @@ export const HeavySwing: WarGcdAbility = {
 
 export const Maim: WarGcdAbility = {
     type: 'gcd',
-    name: "Maim",
+    name: "凶殘裂",
     id: 37,
     potency: 250,
     attackType: "Weaponskill",
@@ -54,7 +54,7 @@ export const Maim: WarGcdAbility = {
 
 export const StormsPath: WarGcdAbility = {
     type: 'gcd',
-    name: "Storm's Path",
+    name: "衝撞's Path",
     id: 42,
     potency: 380,
     attackType: "Weaponskill",
@@ -75,7 +75,7 @@ export const StormsPath: WarGcdAbility = {
 
 export const StormsEye: WarGcdAbility = {
     type: 'gcd',
-    name: "Storm's Eye",
+    name: "衝撞's Eye",
     id: 45,
     potency: 380,
     attackType: "Weaponskill",
@@ -97,7 +97,7 @@ export const StormsEye: WarGcdAbility = {
 
 export const FellCleave: WarGcdAbility = {
     type: 'gcd',
-    name: "Fell Cleave",
+    name: "裂石飛環",
     id: 3549,
     potency: 520,
     attackType: "Weaponskill",
@@ -114,7 +114,7 @@ export const FellCleave: WarGcdAbility = {
 
 export const InnerChaos: WarGcdAbility = {
     type: 'gcd',
-    name: "Inner Chaos",
+    name: "狂魂",
     id: 16465,
     potency: 660,
     attackType: "Weaponskill",
@@ -126,7 +126,7 @@ export const InnerChaos: WarGcdAbility = {
 
 export const PrimalRend: WarGcdAbility = {
     type: 'gcd',
-    name: "Primal Rend",
+    name: "蠻荒崩裂",
     id: 25753,
     potency: 700,
     attackType: "Weaponskill",
@@ -142,7 +142,7 @@ export const PrimalRend: WarGcdAbility = {
 
 export const PrimalRuination: WarGcdAbility = {
     type: 'gcd',
-    name: "Primal Ruination",
+    name: "盡毀",
     id: 36925,
     potency: 780,
     attackType: "Weaponskill",
@@ -151,7 +151,7 @@ export const PrimalRuination: WarGcdAbility = {
 
 export const InnerRelease: WarOgcdAbility = {
     type: 'ogcd',
-    name: "Inner Release",
+    name: "原初的解放",
     id: 7389,
     potency: null,
     attackType: "Ability",
@@ -170,7 +170,7 @@ export const InnerRelease: WarOgcdAbility = {
 
 export const Infuriate: WarOgcdAbility = {
     type: 'ogcd',
-    name: "Infuriate",
+    name: "戰嚎",
     id: 52,
     potency: null,
     attackType: "Ability",
@@ -191,7 +191,7 @@ export const Infuriate: WarOgcdAbility = {
 
 export const PrimalWrath: WarOgcdAbility = {
     type: 'ogcd',
-    name: "Primal Wrath",
+    name: "原初的怒震",
     id: 36924,
     potency: 700,
     attackType: "Ability",
@@ -202,7 +202,7 @@ export const PrimalWrath: WarOgcdAbility = {
 
 export const Upheaval: WarOgcdAbility = {
     type: 'ogcd',
-    name: "Upheaval",
+    name: "大激震",
     id: 7387,
     potency: 400,
     attackType: "Ability",
@@ -219,7 +219,7 @@ export const Upheaval: WarOgcdAbility = {
 
 export const Onslaught: WarOgcdAbility = {
     type: 'ogcd',
-    name: "Onslaught",
+    name: "猛攻",
     id: 7386,
     potency: 150,
     animationLock: 0.8,

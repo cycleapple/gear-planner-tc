@@ -12,7 +12,7 @@ export class PldSimGui extends BaseMultiCycleSimGui<PldSimResult, PldSettings> {
         return [
             {
                 shortName: 'fight-or-flight',
-                displayName: 'Fight Or Flight',
+                displayName: '戰逃反應',
                 getter: used => isFinalizedAbilityUse(used) ? used.original : null,
                 renderer: (usedAbility?: PreDmgUsedAbility) => {
                     if (usedAbility?.extraData !== undefined) {
@@ -33,7 +33,7 @@ export class PldSimGui extends BaseMultiCycleSimGui<PldSimResult, PldSettings> {
 
         const potCb = new FieldBoundCheckBox(settings, "usePotion");
 
-        configDiv.appendChild(labeledCheckbox("Use Potion", potCb));
+        configDiv.appendChild(labeledCheckbox("使用藥水", potCb));
         return configDiv;
     }
 

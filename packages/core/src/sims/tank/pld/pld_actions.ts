@@ -10,7 +10,7 @@ import {AtonementReadyBuff, SupplicationReadyBuff, SepulchreReadyBuff,
  */
 export const FastBlade: PldGcdAbility = {
     type: 'gcd',
-    name: "Fast Blade",
+    name: "先鋒劍",
     id: 9,
     attackType: "Weaponskill",
     potency: 150,
@@ -30,7 +30,7 @@ export const FastBlade: PldGcdAbility = {
 
 export const RiotBlade: PldGcdAbility = {
     type: 'gcd',
-    name: "Riot Blade",
+    name: "暴亂劍",
     id: 15,
     attackType: "Weaponskill",
     potency: 260,
@@ -50,7 +50,7 @@ export const RiotBlade: PldGcdAbility = {
 
 export const RoyalAuthority: PldGcdAbility = {
     type: 'gcd',
-    name: "Royal Authority",
+    name: "王權劍",
     id: 3539,
     attackType: "Weaponskill",
     potency: 360,
@@ -77,7 +77,7 @@ export const RoyalAuthority: PldGcdAbility = {
 
 export const Atonement: PldGcdAbility = {
     type: 'gcd',
-    name: "Atonement",
+    name: "贖罪劍",
     id: 16460,
     attackType: "Weaponskill",
     potency: 360,
@@ -98,7 +98,7 @@ export const Atonement: PldGcdAbility = {
 
 export const Supplication: PldGcdAbility = {
     type: 'gcd',
-    name: "Supplication",
+    name: "祈告劍",
     id: 36918,
     attackType: "Weaponskill",
     potency: 380,
@@ -119,7 +119,7 @@ export const Supplication: PldGcdAbility = {
 
 export const Sepulchre: PldGcdAbility = {
     type: 'gcd',
-    name: "Sepulchre",
+    name: "葬送劍",
     id: 36919,
     attackType: "Weaponskill",
     potency: 400,
@@ -139,7 +139,7 @@ export const Sepulchre: PldGcdAbility = {
 
 export const HolySpirit: PldGcdAbility = {
     type: 'gcd',
-    name: "Holy Spirit",
+    name: "聖靈",
     id: 7384,
     attackType: "Spell",
     potency: 400,
@@ -155,7 +155,7 @@ export const HolySpirit: PldGcdAbility = {
 
 export const HolySpiritRequiescat: PldGcdAbility = {
     type: 'gcd',
-    name: "Holy Spirit",
+    name: "聖靈",
     id: 7384,
     attackType: "Spell",
     potency: 600,
@@ -188,7 +188,7 @@ export const HolySpiritHardcast: PldGcdAbility = {
 
 export const GoringBlade: PldGcdAbility = {
     type: 'gcd',
-    name: "Goring Blade",
+    name: "瀝血劍",
     id: 3538,
     attackType: "Weaponskill",
     potency: 700,
@@ -198,7 +198,7 @@ export const GoringBlade: PldGcdAbility = {
 
 export const Confiteor: PldGcdAbility = {
     type: 'gcd',
-    name: "Confiteor",
+    name: "悔罪",
     id: 16459,
     attackType: "Spell",
     potency: 920,
@@ -215,7 +215,7 @@ export const Confiteor: PldGcdAbility = {
 
 export const BladeOfFaith: PldGcdAbility = {
     type: 'gcd',
-    name: "Blade of Faith",
+    name: "信念之劍",
     id: 25748,
     attackType: "Spell",
     potency: 720,
@@ -232,7 +232,7 @@ export const BladeOfFaith: PldGcdAbility = {
 
 export const BladeOfTruth: PldGcdAbility = {
     type: 'gcd',
-    name: "Blade of Truth",
+    name: "真理之劍",
     id: 25749,
     attackType: "Spell",
     potency: 820,
@@ -249,7 +249,7 @@ export const BladeOfTruth: PldGcdAbility = {
 
 export const BladeOfValor: PldGcdAbility = {
     type: 'gcd',
-    name: "Blade of Valor",
+    name: "英勇之劍",
     id: 25750,
     attackType: "Spell",
     potency: 920,
@@ -275,7 +275,7 @@ export const BladeOfValor: PldGcdAbility = {
  */
 export const FightOrFlight: PldOgcdAbility = {
     type: 'ogcd',
-    name: "Fight or Flight",
+    name: "戰逃反應",
     id: 20,
     attackType: "Ability",
     potency: null,
@@ -287,7 +287,7 @@ export const FightOrFlight: PldOgcdAbility = {
 
 export const Requiescat: PldOgcdAbility = {
     type: 'ogcd',
-    name: "Requiescat",
+    name: "安魂祈禱",
     id: 7383,
     attackType: "Ability",
     potency: 0,
@@ -305,7 +305,7 @@ export const Requiescat: PldOgcdAbility = {
 
 export const Imperator: PldOgcdAbility = {
     type: 'ogcd',
-    name: "Imperator",
+    name: "絕對統治",
     id: 36921,
     attackType: "Ability",
     potency: 580,
@@ -317,7 +317,7 @@ export const Imperator: PldOgcdAbility = {
 
 export const BladeOfHonor: PldOgcdAbility = {
     type: 'ogcd',
-    name: "Blade of Honor",
+    name: "榮耀之劍",
     id: 36922,
     attackType: "Ability",
     potency: 1000,
@@ -328,7 +328,7 @@ export const BladeOfHonor: PldOgcdAbility = {
 
 export const Intervene: PldOgcdAbility = {
     type: 'ogcd',
-    name: "Intervene",
+    name: "調停",
     id: 16461,
     attackType: "Ability",
     potency: 150,
@@ -340,7 +340,7 @@ export const Intervene: PldOgcdAbility = {
 
 export const SpiritsWithin: PldOgcdAbility = {
     type: 'ogcd',
-    name: "Spirits Within",
+    name: "深奧之靈",
     id: 29,
     attackType: "Ability",
     potency: 270,
@@ -351,7 +351,7 @@ export const SpiritsWithin: PldOgcdAbility = {
 
 export const Expiacion: PldOgcdAbility = {
     type: 'ogcd',
-    name: "Expiacion",
+    name: "償贖劍",
     id: 25747,
     attackType: "Ability",
     potency: 450,
@@ -362,7 +362,7 @@ export const Expiacion: PldOgcdAbility = {
 
 export const CircleOfScorn: PldOgcdAbility = {
     type: 'ogcd',
-    name: "Circle of Scorn",
+    name: "厄運流轉",
     id: 23,
     attackType: "Ability",
     potency: 140,

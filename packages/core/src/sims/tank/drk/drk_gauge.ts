@@ -56,7 +56,7 @@ export class DrkGauge {
 // I implemented this as a buff because that's essentially what it is,
 // but it's in the gauge section because, well, it is a gauge.
 export const Darkside: PersonalBuff = {
-    name: "Darkside",
+    name: "暗黑",
     saveKey: "Darkside",
     duration: 30,
     selfOnly: true,

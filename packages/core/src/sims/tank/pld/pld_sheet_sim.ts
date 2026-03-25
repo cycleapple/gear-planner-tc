@@ -26,7 +26,7 @@ export interface PldSettingsExternal extends ExternalCycleSettings<PldSettings> 
 
 export const pldSpec: SimSpec<PldSim, PldSettingsExternal> = {
     stub: "pld-sheet-sim",
-    displayName: "PLD Sim",
+    displayName: "騎士模擬",
     description: `Simulates a PLD rotation for level 100/90/80/70.
 If potions are enabled, pots in the burst window every 6m (i.e. 0m, 6m, 12m, etc).
 Defaults to simulating a killtime of 8m 30s (510s).`,

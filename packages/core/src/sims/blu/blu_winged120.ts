@@ -14,7 +14,7 @@ export interface BluWinged120SettingsExternal extends ExternalCycleSettings<BluW
 }
 
 export const BluWinged120Spec: SimSpec<BluWinged120Sim, BluWinged120SettingsExternal> = {
-    displayName: "BLU Winged 120s",
+    displayName: "青魔飛翼120秒",
     stub: "blu-winged120",
     supportedJobs: ["BLU"],
     isDefaultSim: true,

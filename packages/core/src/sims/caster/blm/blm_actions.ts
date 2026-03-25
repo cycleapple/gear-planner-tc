@@ -6,7 +6,7 @@ import {BlmElement, BlmGcdAbility, BlmOgcdAbility, FirestarterBuff, LeyLinesBuff
 
 export const Fire3: BlmGcdAbility = {
     type: 'gcd',
-    name: "Fire III",
+    name: "大火焰",
     element: BlmElement.Fire,
     id: 152,
     potency: 290,
@@ -25,7 +25,7 @@ export const Fire3: BlmGcdAbility = {
 
 export const Fire4: BlmGcdAbility = {
     type: 'gcd',
-    name: "Fire IV",
+    name: "超火焰",
     element: BlmElement.Fire,
     id: 3577,
     potency: 300,
@@ -44,7 +44,7 @@ export const Fire4: BlmGcdAbility = {
 
 export const Flare: BlmGcdAbility = {
     type: 'gcd',
-    name: "Flare",
+    name: "火光",
     element: BlmElement.Fire,
     id: 162,
     potency: 240,
@@ -63,7 +63,7 @@ export const Flare: BlmGcdAbility = {
 
 export const FlareStar: BlmGcdAbility = {
     type: 'gcd',
-    name: "Flare Star",
+    name: "耀星",
     element: BlmElement.Fire,
     id: 36989,
     potency: 500,
@@ -81,7 +81,7 @@ export const FlareStar: BlmGcdAbility = {
 
 export const Despair: BlmGcdAbility = {
     type: 'gcd',
-    name: "Despair",
+    name: "絕望",
     element: BlmElement.Fire,
     id: 16505,
     potency: 350,
@@ -105,7 +105,7 @@ export const Despair: BlmGcdAbility = {
 
 export const Blizzard3: BlmGcdAbility = {
     type: 'gcd',
-    name: "Blizzard III",
+    name: "大暴雪",
     element: BlmElement.Ice,
     id: 154,
     potency: 290,
@@ -124,7 +124,7 @@ export const Blizzard3: BlmGcdAbility = {
 
 export const Blizzard4: BlmGcdAbility = {
     type: 'gcd',
-    name: "Blizzard IV",
+    name: "超暴雪",
     element: BlmElement.Ice,
     id: 3576,
     potency: 300,
@@ -143,7 +143,7 @@ export const Blizzard4: BlmGcdAbility = {
 
 export const Thunder3: BlmGcdAbility = {
     type: 'gcd',
-    name: "Thunder III",
+    name: "大雷電",
     element: BlmElement.Thunder,
     id: 153,
     potency: 120,
@@ -166,7 +166,7 @@ export const Thunder3: BlmGcdAbility = {
 
 export const HighThunder: BlmGcdAbility = {
     type: 'gcd',
-    name: "High Thunder",
+    name: "高階雷電",
     element: BlmElement.Thunder,
     id: 36986,
     potency: 150,
@@ -189,7 +189,7 @@ export const HighThunder: BlmGcdAbility = {
 
 export const Xenoglossy: BlmGcdAbility = {
     type: 'gcd',
-    name: "Xenoglossy",
+    name: "異言",
     element: BlmElement.Unaspected,
     id: 16507,
     potency: 890,
@@ -207,7 +207,7 @@ export const Xenoglossy: BlmGcdAbility = {
 
 export const Foul: BlmGcdAbility = {
     type: 'gcd',
-    name: "Foul",
+    name: "穢濁",
     element: BlmElement.Unaspected,
     id: 7422,
     potency: 600,
@@ -231,7 +231,7 @@ export const Foul: BlmGcdAbility = {
 
 export const FireParadox: BlmGcdAbility = {
     type: 'gcd',
-    name: "Paradox",
+    name: "悖論",
     element: BlmElement.Unaspected,
     id: 25797,
     potency: 540,
@@ -252,7 +252,7 @@ export const FireParadox: BlmGcdAbility = {
 
 export const IceParadox: BlmGcdAbility = {
     type: 'gcd',
-    name: "Paradox",
+    name: "悖論",
     element: BlmElement.Unaspected,
     id: 25797,
     potency: 540,
@@ -272,7 +272,7 @@ export const IceParadox: BlmGcdAbility = {
 
 export const Transpose: BlmOgcdAbility & HasGaugeUpdate<BlmGaugeManager> = {
     type: 'ogcd',
-    name: "Transpose",
+    name: "星靈移位",
     id: 149,
     potency: null,
     attackType: "Ability",
@@ -294,7 +294,7 @@ export const Transpose: BlmOgcdAbility & HasGaugeUpdate<BlmGaugeManager> = {
 
 export const Swiftcast: BlmOgcdAbility = {
     type: 'ogcd',
-    name: "Swiftcast",
+    name: "即刻詠唱",
     id: 7561,
     potency: null,
     attackType: "Ability",
@@ -317,7 +317,7 @@ export const Swiftcast: BlmOgcdAbility = {
 
 export const Triplecast: BlmOgcdAbility = {
     type: 'ogcd',
-    name: "Triplecast",
+    name: "三連詠唱",
     id: 7421,
     potency: null,
     attackType: "Ability",
@@ -331,7 +331,7 @@ export const Triplecast: BlmOgcdAbility = {
 
 export const LeyLines: BlmOgcdAbility = {
     type: 'ogcd',
-    name: "Ley Lines",
+    name: "黑魔紋",
     id: 3573,
     potency: null,
     attackType: "Ability",
@@ -345,7 +345,7 @@ export const LeyLines: BlmOgcdAbility = {
 
 export const Amplifier: BlmOgcdAbility & HasGaugeUpdate<BlmGaugeManager> & HasGaugeCondition<BlmGaugeManager> = {
     type: 'ogcd',
-    name: "Amplifier",
+    name: "詳述",
     id: 25796,
     potency: null,
     attackType: "Ability",
@@ -364,7 +364,7 @@ export const Amplifier: BlmOgcdAbility & HasGaugeUpdate<BlmGaugeManager> & HasGa
 
 export const Manafont: BlmOgcdAbility & HasGaugeUpdate<BlmGaugeManager> & HasGaugeCondition<BlmGaugeManager> = {
     type: 'ogcd',
-    name: "Manafont",
+    name: "魔泉",
     id: 158,
     potency: null,
     attackType: "Ability",

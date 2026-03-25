@@ -15,7 +15,7 @@ export type DrgGaugeState = {
 };
 
 export const DraconianFire: PersonalBuff = {
-    name: "Draconian Fire",
+    name: "龍眼",
     selfOnly: true,
     duration: 30,
     statusId: 1863,
@@ -27,7 +27,7 @@ export const DraconianFire: PersonalBuff = {
 };
 
 export const LifeSurgeBuff: PersonalBuff = {
-    name: "Life Surge",
+    name: "龍劍",
     selfOnly: true,
     duration: 5,
     statusId: 3259,
@@ -39,7 +39,7 @@ export const LifeSurgeBuff: PersonalBuff = {
 };
 
 export const PowerSurge: PersonalBuff = {
-    name: "Power Surge",
+    name: "龍槍",
     selfOnly: true,
     duration: 30,
     statusId: 2720,
@@ -49,7 +49,7 @@ export const PowerSurge: PersonalBuff = {
 };
 
 export const LanceChargeBuff: PersonalBuff = {
-    name: "Lance Charge",
+    name: "猛槍",
     selfOnly: true,
     duration: 20,
     statusId: 3258,
@@ -59,7 +59,7 @@ export const LanceChargeBuff: PersonalBuff = {
 };
 
 export const DiveReady: PersonalBuff = {
-    name: "Dive Ready",
+    name: "幻象衝預備",
     selfOnly: true,
     duration: 15,
     statusId: 1243,
@@ -71,7 +71,7 @@ export const DiveReady: PersonalBuff = {
 };
 
 export const EnhancedPiercingTalonBuff: PersonalBuff = {
-    name: "Enhanced Piercing Talon",
+    name: "貫穿尖效果提高",
     selfOnly: true,
     duration: 15,
     statusId: 1870,
@@ -95,7 +95,7 @@ export const DragonsFlight: PersonalBuff = {
 };
 
 export const LifeOfTheDragon: PersonalBuff = {
-    name: "Life of the Dragon",
+    name: "紅蓮龍血",
     selfOnly: true,
     duration: 20,
     statusId: noStatusId(), // it's a pseudo-buff, no icon
@@ -106,7 +106,7 @@ export const LifeOfTheDragon: PersonalBuff = {
 };
 
 export const NastrondReady: PersonalBuff = {
-    name: "Nastrond Ready",
+    name: "死者之岸預備",
     selfOnly: true,
     duration: 20,
     statusId: 4404,
@@ -118,7 +118,7 @@ export const NastrondReady: PersonalBuff = {
 };
 
 export const StarcrossReady: PersonalBuff = {
-    name: "Starcross Ready",
+    name: "渡星衝預備",
     selfOnly: true,
     duration: 20,
     statusId: 4302,

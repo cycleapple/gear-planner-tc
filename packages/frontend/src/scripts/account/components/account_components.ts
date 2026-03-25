@@ -19,7 +19,7 @@ class AccountModal extends BaseModal {
 
     constructor(tracker: AccountStateTracker) {
         super();
-        this.headerText = 'Account';
+        this.headerText = '帳號';
         this.contentArea.appendChild(new AccountManagementInner(tracker, b => this.loadingBlockerVisible = b));
     }
 }
@@ -56,34 +56,34 @@ class AccountManagementInner extends HTMLElement {
         if (this.tracker.loggedIn) {
             const elements: Node[] = [];
             const accountState = this.tracker.accountState;
-            const text = quickElement('span', [], ['Logged in as:', quickElement('br'), accountState.email]);
+            const text = quickElement('span', [], ['已登入：', quickElement('br'), accountState.email]);
             elements.push(text);
             elements.push(quickElement('br'));
-            const chgPassButton = makeActionButton('Change Password', () => {
+            const chgPassButton = makeActionButton('更改密碼', () => {
                 new ChangePasswordModal(this.tracker, () => this.refresh()).attachAndShowTop();
             });
             elements.push(chgPassButton);
-            const logoutButton = makeActionButton('Log Out', this.indicateLoading(async () => {
+            const logoutButton = makeActionButton('登出', this.indicateLoading(async () => {
                 new LogoutModal(this.tracker, () => this.refresh()).attachAndShowTop();
             }));
             elements.push(logoutButton);
             if (!accountState.verified) {
                 // UI for verifying email.
-                const txt = quickElement('span', [], ['You have not verified your email yet. If you have just registered, you should have received a code in your email.']);
+                const txt = quickElement('span', [], ['你的電子郵件尚未驗證。如果你剛註冊，應該已收到驗證碼。']);
                 const verificationCodeInput = quickElement('input', ['verification-code-input'], []);
-                verificationCodeInput.placeholder = 'Verification Code';
+                verificationCodeInput.placeholder = '驗證碼';
                 verificationCodeInput.type = 'text';
-                const submitButton = makeActionButton('Submit', () => {
+                const submitButton = makeActionButton('提交', () => {
                 });
                 submitButton.type = 'submit';
-                const resendButton = makeActionButton('Resend', () => this.indicateLoading(async () => {
+                const resendButton = makeActionButton('重新發送', () => this.indicateLoading(async () => {
                     try {
                         await this.tracker.resendVerificationCode(); // TODO test
-                        alert('Verification code resent');
+                        alert('驗證碼已重新發送');
                     }
                     catch (e) {
                         console.error("error re-sending verification code", e);
-                        alert('There was an error sending the verification code. Please try again later.');
+                        alert('發送驗證碼時發生錯誤，請稍後再試。');
                     }
                 })());
                 const verifyForm = quickElement('form', [], [txt, verificationCodeInput, resendButton, submitButton]);
@@ -106,20 +106,20 @@ class AccountManagementInner extends HTMLElement {
             // Login section
             const children: HTMLElement[] = [];
             {
-                const loginHeader = quickElement('h3', [], ['Login']);
+                const loginHeader = quickElement('h3', [], ['登入']);
                 const email = quickElement('input', ['email-field'], []);
                 email.type = 'email';
-                email.placeholder = 'Email';
+                email.placeholder = '電子郵件';
                 email.autocomplete = 'email';
                 const passwordField = quickElement('input', ['password-field'], []);
                 passwordField.type = 'password';
-                passwordField.placeholder = 'Password';
+                passwordField.placeholder = '密碼';
                 passwordField.autocomplete = 'current-password';
-                const loginButton = makeActionButton('Log In', () => {
+                const loginButton = makeActionButton('登入', () => {
                 });
                 loginButton.type = 'submit';
 
-                const forgotButton = makeActionButton('Forgot Password', this.indicateLoading(async () => {
+                const forgotButton = makeActionButton('忘記密碼', this.indicateLoading(async () => {
                     try {
                         const result = await this.tracker.startPasswordReset(email.value);
                         if (result === 'success') {
@@ -129,12 +129,12 @@ class AccountManagementInner extends HTMLElement {
                         else {
                             email.focus();
                             loginHeader.classList.add('failed');
-                            loginHeader.textContent = 'No Account With That Email';
+                            loginHeader.textContent = '找不到使用該電子郵件的帳號';
                         }
                     }
                     catch (e) {
                         console.error("error starting password reset", e);
-                        alert('There was an error starting the password reset process.');
+                        alert('啟動密碼重設流程時發生錯誤。');
                     }
                 }));
 
@@ -145,7 +145,7 @@ class AccountManagementInner extends HTMLElement {
                     if (accountInfo === null) {
                         // Login failed
                         loginHeader.classList.add('failed');
-                        loginHeader.textContent = 'Login Failed';
+                        loginHeader.textContent = '登入失敗';
                     }
                     else {
                         // Login succeeded
@@ -157,34 +157,34 @@ class AccountManagementInner extends HTMLElement {
             }
             // Divider
             {
-                const divider = quickElement('h3', ['divider-heading'], ['OR']);
+                const divider = quickElement('h3', ['divider-heading'], ['或']);
                 children.push(divider);
             }
             // Register section
             {
-                const registerHeader = quickElement('h3', [], ['Register']);
+                const registerHeader = quickElement('h3', [], ['註冊']);
                 const email = quickElement('input', ['email-field'], []);
                 email.type = 'email';
-                email.placeholder = 'Email (Not Displayed Publicly)';
+                email.placeholder = '電子郵件（不公開顯示）';
                 email.autocomplete = 'email';
                 email.setAttribute('validation-field', 'email');
                 const pwrf = passwordWithRepeat();
                 const displayName = quickElement('input', ['display-name-field'], []);
                 displayName.type = 'text';
-                displayName.placeholder = 'Display Name (May Be Changed)';
+                displayName.placeholder = '顯示名稱（可更改）';
                 displayName.autocomplete = 'username';
                 displayName.setAttribute('validation-field', 'displayName');
                 // TODO: captcha if required
 
                 const privacyCheckbox = document.createElement('input');
                 privacyCheckbox.type = 'checkbox';
-                const privacyLink = quickElement('a', [], ['Privacy Policy']);
+                const privacyLink = quickElement('a', [], ['隱私權政策']);
                 privacyLink.href = '#';
                 privacyLink.addEventListener('click', (e) => {
                     e.preventDefault();
                     showPrivacyPolicyModal();
                 });
-                const privacyCbl = labeledCheckbox(quickElement('span', [], ['I agree to the ', privacyLink]), privacyCheckbox);
+                const privacyCbl = labeledCheckbox(quickElement('span', [], ['我同意', privacyLink]), privacyCheckbox);
                 privacyCheckbox.addEventListener('change', () => {
                     privacyCbl.classList.remove('failed');
                 });
@@ -192,13 +192,13 @@ class AccountManagementInner extends HTMLElement {
 
                 const cookieCheckbox = document.createElement('input');
                 cookieCheckbox.type = 'checkbox';
-                const cookieCbl = labeledCheckbox(quickElement('span', [], ['I consent to cookies (required for account services)']), cookieCheckbox);
+                const cookieCbl = labeledCheckbox(quickElement('span', [], ['我同意使用 Cookie（帳號服務所需）']), cookieCheckbox);
                 cookieCbl.addEventListener('change', () => {
                     cookieCbl.classList.remove('failed');
                 });
                 cookieCbl.setAttribute('validation-field', 'cookie');
 
-                const submitButton = makeActionButton('Register', () => {
+                const submitButton = makeActionButton('註冊', () => {
                 });
                 submitButton.type = 'submit';
                 const outer = this;
@@ -226,19 +226,19 @@ class AccountManagementInner extends HTMLElement {
                         if (!privacyCheckbox.checked) {
                             out.push({
                                 field: 'privacy',
-                                message: 'You must agree to the privacy policy',
+                                message: '你必須同意隱私權政策',
                             });
                         }
                         if (!cookieCheckbox.checked) {
                             out.push({
                                 field: 'cookie',
-                                message: 'You must consent to cookies as they are required to log in',
+                                message: '你必須同意使用 Cookie，因為登入需要使用',
                             });
                         }
                         if (!pwrf.isValid()) {
                             out.push({
                                 field: 'password',
-                                message: 'Passwords do not match',
+                                message: '密碼不一致',
                             });
                         }
                         return out;
@@ -286,7 +286,7 @@ export function setupAccountUi() {
             else {
                 body.setAttribute('data-accountstate', 'logged-in-unverified');
             }
-            accountButtonText.textContent = 'Account';
+            accountButtonText.textContent = '帳號';
             if (tracker.token === null) {
                 body.setAttribute('data-tokenstate', 'not-loaded');
             }
@@ -300,7 +300,7 @@ export function setupAccountUi() {
             }
         }
         else {
-            accountButtonText.textContent = 'Log In';
+            accountButtonText.textContent = '登入';
             body.setAttribute('data-accountstate', 'not-logged-in');
             body.setAttribute('data-tokenstate', 'not-logged-in');
         }

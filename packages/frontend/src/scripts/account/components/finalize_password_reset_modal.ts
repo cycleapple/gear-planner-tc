@@ -10,20 +10,20 @@ export class FinalizePasswordResetModal extends BaseModal {
     constructor(email: string, private readonly acs: AccountStateTracker) {
         super();
         const outer = this;
-        this.headerText = 'Reset Password';
-        const text = quickElement('span', [], ['Please enter the code we sent to ', quickElement('b', [], [email]), '.']);
+        this.headerText = '重設密碼';
+        const text = quickElement('span', [], ['請輸入我們發送到 ', quickElement('b', [], [email]), ' 的驗證碼。']);
         const tokenField = quickElement('input', ['password-field'], []);
-        tokenField.placeholder = 'Password Reset Code';
+        tokenField.placeholder = '密碼重設驗證碼';
         tokenField.pattern = '[0-9]*';
         tokenField.inputMode = 'numeric';
         // TODO: should this be data-validation-field
         tokenField.setAttribute('validation-field', 'token');
-        const pwrf = passwordWithRepeat('New Password', 'newPassword');
+        const pwrf = passwordWithRepeat('新密碼', 'newPassword');
 
-        const submitButton = makeActionButton('Submit', () => {
+        const submitButton = makeActionButton('送出', () => {
         });
         submitButton.type = 'submit';
-        const cancelButton = makeActionButton('Cancel', () => outer.close());
+        const cancelButton = makeActionButton('取消', () => outer.close());
         const buttonArea = quickElement('div', ['button-area'], [submitButton, cancelButton]);
 
         const form = new ValidatingForm<'success'>({
@@ -42,13 +42,13 @@ export class FinalizePasswordResetModal extends BaseModal {
                 if (!pwrf.isValid()) {
                     out.push({
                         field: 'password',
-                        message: 'Passwords do not match',
+                        message: '密碼不一致',
                     });
                 }
                 return out;
             },
             async onSuccess(value: 'success'): Promise<void> {
-                alert('Your password has been changed. You can now log in with the new password.');
+                alert('你的密碼已變更。你現在可以使用新密碼登入。');
                 // Don't refresh the account modal - we want the email to stay
                 outer.close();
             },

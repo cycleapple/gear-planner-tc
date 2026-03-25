@@ -58,7 +58,7 @@ export const OpoFury: PersonalBuff = {
 };
 
 export const RaptorForm: PersonalBuff = {
-    name: "Raptor Form",
+    name: "盜龍形",
     selfOnly: true,
     duration: 30,
     statusId: 108,
@@ -99,7 +99,7 @@ export const RaptorFury: PersonalBuff = {
 
 
 export const CoeurlForm: PersonalBuff = {
-    name: "Coeurl Form",
+    name: "猛虎形",
     selfOnly: true,
     duration: 30,
     statusId: 109,
@@ -141,7 +141,7 @@ export const CoeurlFury: PersonalBuff = {
 };
 
 export const PerfectBalanceBuff: PersonalBuff = {
-    name: "Perfect Balance",
+    name: "震腳",
     selfOnly: true,
     duration: 30,
     statusId: 110,
@@ -181,7 +181,7 @@ export const PerfectBalanceBuff: PersonalBuff = {
 };
 
 export const FormlessFist: PersonalBuff = {
-    name: "Formless Fist",
+    name: "無相身形",
     selfOnly: true,
     duration: 30,
     statusId: 2513,
@@ -220,7 +220,7 @@ export const FormlessFist: PersonalBuff = {
 };
 
 export const RiddleOfFireBuff: PersonalBuff = {
-    name: "Riddle of Fire",
+    name: "紅蓮極意",
     selfOnly: true,
     duration: 20.7,
     statusId: 1181,
@@ -232,7 +232,7 @@ export const RiddleOfFireBuff: PersonalBuff = {
 export const BrotherhoodBuff: PartyBuff = {
     job: "MNK",
     cooldown: 120,
-    name: "Brotherhood",
+    name: "義結金蘭",
     selfOnly: false,
     duration: BROTHERHOOD_BUFF_DURATION,
     statusId: 1185,
@@ -248,7 +248,7 @@ export const BrotherhoodBuff: PartyBuff = {
 export const MeditativeBrotherhood: PartyBuff = {
     job: "MNK",
     cooldown: 120,
-    name: "Meditative Brotherhood",
+    name: "義結金蘭：鬥氣",
     selfOnly: false,
     duration: BROTHERHOOD_BUFF_DURATION,
     statusId: 1182,
@@ -258,7 +258,7 @@ export const MeditativeBrotherhood: PartyBuff = {
 };
 
 export const RiddleOfWindBuff: PersonalBuff = {
-    name: "Riddle of Wind",
+    name: "疾風極意",
     duration: 15,
     statusId: 2687,
     appliesTo: (ability) => ability.attackType === 'Auto-attack',
@@ -267,7 +267,7 @@ export const RiddleOfWindBuff: PersonalBuff = {
     },
 };
 export const FiresRumination: PersonalBuff = {
-    name: "Fire's Rumination",
+    name: "火焰's Rumination",
     duration: 20,
     statusId: 3843,
     effects: {
@@ -289,7 +289,7 @@ export const WindsRumination: PersonalBuff = {
 };
 
 export const Bootshine: FuryAbility = {
-    name: "Bootshine",
+    name: "連擊",
     id: 53,
     type: 'gcd',
     gcd: 2.5,
@@ -311,14 +311,14 @@ export const Bootshine: FuryAbility = {
         },
         {
             minLevel: 92,
-            name: "Leaping Opo",
+            name: "猿舞連擊",
             id: 36945,
             potency: 260,
         }],
 };
 
 export const TrueStrike: FuryAbility = {
-    name: "True Strike",
+    name: "正拳",
     id: 54,
     type: 'gcd',
     gcd: 2.5,
@@ -340,7 +340,7 @@ export const TrueStrike: FuryAbility = {
         },
         {
             minLevel: 92,
-            name: "Rising Raptor",
+            name: "龍顎正拳",
             id: 36946,
             potency: 340,
         },
@@ -348,7 +348,7 @@ export const TrueStrike: FuryAbility = {
 };
 
 export const SnapPunch: FuryAbility = {
-    name: "Snap Punch",
+    name: "崩拳",
     id: 56,
     type: 'gcd',
     gcd: 2.5,
@@ -378,7 +378,7 @@ export const SnapPunch: FuryAbility = {
 
 // I'm not implementing all 4 meditations lol
 export const ForbiddenMeditation: MnkGcdAbility = {
-    name: "Forbidden Meditation",
+    name: "陰陽鬥氣",
     id: 36942,
     type: 'gcd',
     gcd: 1,
@@ -391,7 +391,7 @@ export const ForbiddenMeditation: MnkGcdAbility = {
 };
 
 export const TwinSnakes: FuryAbility = {
-    name: "Twin Snakes",
+    name: "雙掌打",
     id: 61,
     type: 'gcd',
     gcd: 2.5,
@@ -419,7 +419,7 @@ export const TwinSnakes: FuryAbility = {
 };
 
 export const Demolish: FuryAbility = {
-    name: "Demolish",
+    name: "破碎拳",
     id: 66,
     type: 'gcd',
     gcd: 2.5,
@@ -450,7 +450,7 @@ export const Demolish: FuryAbility = {
  * @see OpoForm for conditional activation of opoFury buff
  */
 export const DragonKick: FuryAbility = {
-    name: "Dragon Kick",
+    name: "雙龍腳",
     id: 74,
     type: 'gcd',
     gcd: 2.5,
@@ -480,7 +480,7 @@ export const DragonKick: FuryAbility = {
 };
 
 export const PerfectBalance: MnkOgcdAbility = {
-    name: "Perfect Balance",
+    name: "震腳",
     id: 69,
     type: 'ogcd',
     attackType: "Ability",
@@ -497,7 +497,7 @@ export const PerfectBalance: MnkOgcdAbility = {
 };
 
 export const FormShift: MnkGcdAbility = {
-    name: "Form Shift",
+    name: "演武",
     id: 4262,
     type: 'gcd',
     attackType: "Weaponskill",
@@ -507,7 +507,7 @@ export const FormShift: MnkGcdAbility = {
 };
 
 export const TheForbiddenChakra: MnkOgcdAbility = {
-    name: "The Forbidden Chakra",
+    name: "陰陽鬥氣斬",
     id: 3547,
     type: 'ogcd',
     attackType: 'Ability',
@@ -525,7 +525,7 @@ export const TheForbiddenChakra: MnkOgcdAbility = {
 };
 
 export const ElixirField: MnkGcdAbility = {
-    name: "Elixir Field",
+    name: "蒼氣砲",
     id: 3545,
     type: 'gcd',
     attackType: 'Weaponskill',
@@ -538,14 +538,14 @@ export const ElixirField: MnkGcdAbility = {
     activatesBuffs: [FormlessFist],
     levelModifiers: [{
         minLevel: 92,
-        name: "Elixir Burst",
+        name: "真空波",
         id: 36948,
         potency: 900,
     }],
 };
 
 export const FlintStrike: MnkGcdAbility = {
-    name: "Flint Strike",
+    name: "爆裂腳",
     id: 25882,
     type: 'gcd',
     attackType: 'Weaponskill',
@@ -558,14 +558,14 @@ export const FlintStrike: MnkGcdAbility = {
     activatesBuffs: [FormlessFist],
     levelModifiers: [{
         minLevel: 86,
-        name: "Rising Phoenix",
+        name: "鳳凰舞",
         id: 25768,
         potency: 900,
     }],
 };
 
 export const CelestialRevolution: MnkGcdAbility = {
-    name: "Celestial Revolution",
+    name: "翻天腳",
     id: 25765,
     type: 'gcd',
     attackType: 'Weaponskill',
@@ -584,7 +584,7 @@ export const CelestialRevolution: MnkGcdAbility = {
 };
 
 export const TornadoKick: MnkGcdAbility = {
-    name: "Tornado Kick",
+    name: "鬥魂旋風腳",
     id: 3543,
     type: 'gcd',
     attackType: 'Weaponskill',
@@ -599,13 +599,13 @@ export const TornadoKick: MnkGcdAbility = {
     levelModifiers: [
         {
             minLevel: 90,
-            name: "Phantom Rush",
+            name: "夢幻鬥舞",
             id: 25769,
             potency: 1400,
         },
         {
             minLevel: 94,
-            name: "Phantom Rush",
+            name: "夢幻鬥舞",
             id: 25769,
             potency: 1500,
         },
@@ -613,7 +613,7 @@ export const TornadoKick: MnkGcdAbility = {
 };
 
 export const RiddleOfFire: MnkOgcdAbility = {
-    name: "Riddle of Fire",
+    name: "紅蓮極意",
     id: 7395,
     type: 'ogcd',
     attackType: 'Ability',
@@ -628,7 +628,7 @@ export const RiddleOfFire: MnkOgcdAbility = {
     }],
 };
 export const Brotherhood: MnkOgcdAbility = {
-    name: "Brotherhood",
+    name: "義結金蘭",
     id: 7396,
     type: 'ogcd',
     attackType: 'Ability',
@@ -640,7 +640,7 @@ export const Brotherhood: MnkOgcdAbility = {
 };
 
 export const RiddleOfWind: MnkOgcdAbility = {
-    name: "Riddle of Wind",
+    name: "疾風極意",
     id: 25766,
     type: 'ogcd',
     attackType: 'Ability',
@@ -656,7 +656,7 @@ export const RiddleOfWind: MnkOgcdAbility = {
 };
 
 export const SixSidedStar: MnkGcdAbility = {
-    name: "Six-sided Star",
+    name: "六合星導腳",
     id: 16476,
     type: 'gcd',
     gcd: 5,
@@ -673,14 +673,14 @@ export const SixSidedStar: MnkGcdAbility = {
 
 export const RisingPhoenix: MnkGcdAbility = {
     ...FlintStrike,
-    name: "Rising Phoenix",
+    name: "鳳凰舞",
     id: 25768,
     potency: 900,
 };
 
 export const PhantomRush: MnkGcdAbility = {
     ...TornadoKick,
-    name: "Phantom Rush",
+    name: "夢幻鬥舞",
     id: 25769,
     potency: 1150,
     levelModifiers: [{
@@ -691,14 +691,14 @@ export const PhantomRush: MnkGcdAbility = {
 
 export const LeapingOpo: FuryAbility = {
     ...Bootshine,
-    name: "Leaping Opo",
+    name: "猿舞連擊",
     id: 36945,
     potency: 260,
 };
 
 export const RisingRaptor: FuryAbility = {
     ...TrueStrike,
-    name: "Rising Raptor",
+    name: "龍顎正拳",
     id: 36946,
     potency: 340,
 };
@@ -712,7 +712,7 @@ export const PouncingCoeurl: FuryAbility = {
 
 export const ElixirBurst: MnkGcdAbility = {
     ...ElixirField,
-    name: "Elixir Burst",
+    name: "真空波",
     id: 36948,
     potency: 900,
 };
@@ -726,7 +726,7 @@ export const WindsReply: MnkGcdAbility = {
     potency: 1040,
 };
 export const FiresReply: MnkGcdAbility = {
-    name: "Fire's Reply",
+    name: "火焰's Reply",
     id: 36950,
     type: 'gcd',
     attackType: 'Weaponskill',

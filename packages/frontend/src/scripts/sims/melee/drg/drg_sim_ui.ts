@@ -10,7 +10,7 @@ export class DrgSimGui extends BaseMultiCycleSimGui<DrgSimResult, DrgSettings> {
     protected extraAbilityUsedColumns(_: DrgSimResult): CustomColumnSpec<DisplayRecordFinalized, unknown, unknown>[] {
         return [{
             shortName: 'wwt',
-            displayName: 'Firstminds\' Focus',
+            displayName: '龍眼',
             getter: used => isFinalizedAbilityUse(used) ? used.original : null,
             renderer: (usedAbility?: PreDmgUsedAbility<DrgGaugeState>) => {
                 if (usedAbility === null) {
@@ -31,7 +31,7 @@ export class DrgSimGui extends BaseMultiCycleSimGui<DrgSimResult, DrgSettings> {
 
         const potCb = new FieldBoundCheckBox(settings, "usePotion");
 
-        configDiv.appendChild(labeledCheckbox("Use Potion", potCb));
+        configDiv.appendChild(labeledCheckbox("使用藥水", potCb));
 
         /*
         const useEptOpenerCB = new FieldBoundCheckBox(settings, "useEptOpener");
@@ -49,7 +49,7 @@ export class DrgSimGui extends BaseMultiCycleSimGui<DrgSimResult, DrgSettings> {
             postValidators: [nonNegative],
         });
 
-        const label = labelFor('Maximum acceptable clip (SkS):', acceptableClipSksField);
+        const label = labelFor('最大可接受卡轉（技速）:', acceptableClipSksField);
         label.style.display = 'block';
 
         configDiv.appendChild(el("div", {}, [

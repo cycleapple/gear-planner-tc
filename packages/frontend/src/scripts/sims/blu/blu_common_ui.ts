@@ -9,11 +9,11 @@ export class BluSimGui extends BaseMultiCycleSimGui<CycleSimResult, BluSimSettin
         // insert BLU stance toggles
         const stancesDiv = document.createElement("div");
         const dpsMimicryCb = new FieldBoundCheckBox(settings, "dpsMimicryEnabled");
-        stancesDiv.appendChild(labeledCheckbox("Aetheric Mimicry: DPS", dpsMimicryCb));
+        stancesDiv.appendChild(labeledCheckbox("以太模仿：DPS", dpsMimicryCb));
         const mightyGuardCb = new FieldBoundCheckBox(settings, "mightyGuardEnabled");
-        stancesDiv.appendChild(labeledCheckbox("Mighty Guard", mightyGuardCb));
+        stancesDiv.appendChild(labeledCheckbox("強力守護", mightyGuardCb));
         const basicInstinctCb = new FieldBoundCheckBox(settings, "basicInstinctEnabled");
-        stancesDiv.appendChild(labeledCheckbox("Basic Instinct", basicInstinctCb));
+        stancesDiv.appendChild(labeledCheckbox("鬥爭本能", basicInstinctCb));
 
         configDiv.appendChild(stancesDiv);
         return configDiv;

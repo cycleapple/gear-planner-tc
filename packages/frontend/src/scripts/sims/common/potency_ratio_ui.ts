@@ -8,7 +8,7 @@ import {PotencyRatioSimResults} from "@xivgear/core/sims/common/potency_ratio";
 function makeDescriptionPanel() {
     const out = new NamedSection('Potency Ratio');
     const text = document.createElement('p');
-    text.textContent = 'This calculation represents the expected damage of a 100 potency action. This does not represent an accurate DPS value, as it does not take Skill/Spell Speed into account.';
+    text.textContent = '此計算代表100威力技能的預期傷害。這不代表準確的DPS值，因為未考慮技能速度/詠唱速度。';
     out.contentArea.appendChild(text);
     return out;
 }

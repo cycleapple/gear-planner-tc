@@ -88,13 +88,13 @@ function getPrimaryVarSpec<X extends object>(formulaSet: MathFormulaSet<X>): Var
     const pvKey = formulaSet.primaryVariable;
     if (pvKey === 'level') {
         return {
-            label: "Level",
+            label: "等級",
             type: "level",
         };
     }
     else if (pvKey === 'job') {
         return {
-            label: "Job",
+            label: "職業",
             type: 'job',
         };
     }
@@ -197,7 +197,7 @@ export class MathArea extends HTMLElement {
             }
         });
 
-        const formulaHeader = quickElement('h3', ['show-hide-formula-header'], ['Show/Hide Formulae', showHide]);
+        const formulaHeader = quickElement('h3', ['show-hide-formula-header'], ['顯示/隱藏公式', showHide]);
         formulaHeader.addEventListener('click', ev => {
             showHide.toggle();
         });
@@ -628,7 +628,7 @@ export class MathArea extends HTMLElement {
             update().then(() => this.loading = false);
         }
         else {
-            this.heading.textContent = 'Math';
+            this.heading.textContent = '數學公式';
             this.setFormulaAreaVisible(false);
             this.landingOuter.style.display = '';
         }

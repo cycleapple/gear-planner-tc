@@ -43,7 +43,9 @@ export async function xivApiSingleCols<Columns extends readonly string[]>(sheet:
 
     const query = new URL(`./sheet/${sheet}/${id}?fields=${cols.join(',')}`, XIVAPI_BASE_URL + '/');
     if (lang) {
-        query.searchParams.set('language', lang);
+        // XIVAPI only supports en/de/fr/ja; map tc to ja for API requests
+        const apiLang = lang === 'tc' ? 'ja' : lang;
+        query.searchParams.set('language', apiLang);
     }
     return xivApiFetch(query).then(response => response.json()).then(response => {
         const responseOut = response['fields'];

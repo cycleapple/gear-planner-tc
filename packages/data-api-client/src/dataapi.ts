@@ -320,6 +320,7 @@ export interface XivApiLangValueString {
   de: string;
   fr: string;
   ja: string;
+  tc?: string;
 }
 
 export type XivApiObject = XivApiBase & {

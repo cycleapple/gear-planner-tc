@@ -10,7 +10,7 @@ export class SchSimGui extends BaseMultiCycleSimGui<SchSimResult, SchSettings> {
     protected extraAbilityUsedColumns(_: SchSimResult): CustomColumnSpec<DisplayRecordFinalized, unknown, unknown>[] {
         return [{
             shortName: 'aetherflow',
-            displayName: 'Aetherflow',
+            displayName: '以太超流',
             getter: used => isFinalizedAbilityUse(used) ? used.original : null,
             renderer: extraDataDiscreteGaugeRenderer<SchExtraData>((_, extra) => {
                 const aetherflow = extra.gauge.aetherflow;
@@ -30,7 +30,7 @@ export class SchSimGui extends BaseMultiCycleSimGui<SchSimResult, SchSettings> {
             id: 'edField',
             postValidators: [nonNegative],
         });
-        const label = labelFor('ED per AF/Diss', edField);
+        const label = labelFor('每次以太超流/轉化的能量吸收', edField);
         label.style.display = 'block';
         return el("div", {}, [
             label,

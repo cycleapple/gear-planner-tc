@@ -4,7 +4,7 @@ import {FlanksbaneVenom, FlankstungVenom, HindsbaneVenom, HindstungVenom, HonedR
 
 export const SteelFangs: VprGcdAbility = {
     type: 'gcd',
-    name: "Steel Fangs",
+    name: "壹之牙【咬創】",
     id: 34606,
     potency: 200,
     attackType: "Weaponskill",
@@ -15,7 +15,7 @@ export const SteelFangs: VprGcdAbility = {
 
 export const ReavingFangs: VprGcdAbility = {
     type: 'gcd',
-    name: "Reaving Fangs",
+    name: "壹之牙【穿裂】",
     id: 34607,
     potency: 200,
     attackType: "Weaponskill",
@@ -48,7 +48,7 @@ export const SwiftskinsSting: VprGcdAbility = {
 
 export const FlankstingStrike: VprGcdAbility = {
     type: 'gcd',
-    name: "Flanksting Strike",
+    name: "參之牙【側擊】",
     id: 34610,
     potency: 400,
     attackType: "Weaponskill",
@@ -60,7 +60,7 @@ export const FlankstingStrike: VprGcdAbility = {
 
 export const FlanksbaneFang: VprGcdAbility = {
     type: 'gcd',
-    name: "Flanksbane Fang",
+    name: "參之牙【側裂】",
     id: 34611,
     potency: 400,
     attackType: "Weaponskill",
@@ -72,7 +72,7 @@ export const FlanksbaneFang: VprGcdAbility = {
 
 export const HindstingStrike: VprGcdAbility = {
     type: 'gcd',
-    name: "Hindsting Strike",
+    name: "參之牙【背擊】",
     id: 34612,
     potency: 400,
     attackType: "Weaponskill",
@@ -84,7 +84,7 @@ export const HindstingStrike: VprGcdAbility = {
 
 export const HindsbaneFang: VprGcdAbility = {
     type: 'gcd',
-    name: "Hindsbane Fang",
+    name: "參之牙【背裂】",
     id: 34613,
     potency: 400,
     attackType: "Weaponskill",
@@ -96,7 +96,7 @@ export const HindsbaneFang: VprGcdAbility = {
 
 export const Vicewinder: VprGcdAbility = {
     type: 'gcd',
-    name: "Vicewinder",
+    name: "壹之蛇【強碎】",
     id: 34620,
     potency: 500,
     attackType: "Weaponskill",
@@ -135,7 +135,7 @@ export const SwiftskinsCoil: VprGcdAbility = {
 
 export const UncoiledFury: VprGcdAbility = {
     type: 'gcd',
-    name: "Uncoiled Fury",
+    name: "飛蛇之尾",
     id: 34633,
     potency: 680,
     attackType: "Weaponskill",
@@ -146,7 +146,7 @@ export const UncoiledFury: VprGcdAbility = {
 
 export const Reawaken: VprGcdAbility = {
     type: 'gcd',
-    name: "Reawaken",
+    name: "祖靈降臨",
     id: 34626,
     potency: 750,
     attackType: "Weaponskill",
@@ -167,30 +167,30 @@ const GenerationBase: VprGcdAbility = {
 
 export const FirstGeneration: VprGcdAbility = {
     ...GenerationBase,
-    name: "First Generation",
+    name: "祖靈之牙【壹】",
     id: 34627,
 };
 
 export const SecondGeneration: VprGcdAbility = {
     ...GenerationBase,
-    name: "Second Generation",
+    name: "祖靈之牙【貳】",
     id: 34628,
 };
 
 export const ThirdGeneration: VprGcdAbility = {
     ...GenerationBase,
-    name: "Third Generation",
+    name: "祖靈之牙【參】",
     id: 34629,
 };
 
 export const FourthGeneration: VprGcdAbility = {
     ...GenerationBase,
-    name: "Fourth Generation",
+    name: "祖靈之牙【肆】",
     id: 34630,
 };
 
 export const Ouroboros: VprGcdAbility = {
-    name: "Ouroboros",
+    name: "祖靈大蛇牙",
     id: 34631,
     type: 'gcd',
     potency: 1150,
@@ -209,25 +209,25 @@ const LegacyBase: VprOgcdAbility = {
 
 export const FirstLegacy: VprOgcdAbility = {
     ...LegacyBase,
-    name: "First Legacy",
+    name: "祖靈之蛇【壹】",
     id: 34640,
 };
 
 export const SecondLegacy: VprOgcdAbility = {
     ...LegacyBase,
-    name: "Second Legacy",
+    name: "祖靈之蛇【貳】",
     id: 34641,
 };
 
 export const ThirdLegacy: VprOgcdAbility = {
     ...LegacyBase,
-    name: "Third Legacy",
+    name: "祖靈之蛇【參】",
     id: 34642,
 };
 
 export const FourthLegacy: VprOgcdAbility = {
     ...LegacyBase,
-    name: "Fourth Legacy",
+    name: "祖靈之蛇【肆】",
     id: 34643,
 };
 
@@ -246,7 +246,7 @@ export const SerpentsIre: VprOgcdAbility = {
 };
 
 export const TwinfangBite: VprOgcdAbility = {
-    name: "Twinfang Bite",
+    name: "雙牙連擊",
     id: 34636,
     type: 'ogcd',
     potency: 120,
@@ -254,7 +254,7 @@ export const TwinfangBite: VprOgcdAbility = {
 };
 
 export const TwinbloodBite: VprOgcdAbility = {
-    name: "Twinblood Bite",
+    name: "雙牙亂擊",
     id: 34637,
     type: 'ogcd',
     potency: 120,
@@ -262,7 +262,7 @@ export const TwinbloodBite: VprOgcdAbility = {
 };
 
 export const DeathRattle: VprOgcdAbility = {
-    name: "Death Rattle",
+    name: "蛇尾擊",
     id: 34634,
     type: 'ogcd',
     potency: 280,
@@ -270,7 +270,7 @@ export const DeathRattle: VprOgcdAbility = {
 };
 
 export const UncoiledTwinfang: VprOgcdAbility = {
-    name: "Uncoiled Twinfang",
+    name: "飛蛇連尾擊",
     id: 34644,
     type: 'ogcd',
     potency: 120,
@@ -278,7 +278,7 @@ export const UncoiledTwinfang: VprOgcdAbility = {
 };
 
 export const UncoiledTwinblood: VprOgcdAbility = {
-    name: "Uncoiled Twinblood",
+    name: "飛蛇亂尾擊",
     id: 34645,
     type: 'ogcd',
     potency: 120,

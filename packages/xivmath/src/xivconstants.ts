@@ -98,6 +98,29 @@ export type RaceName = 'Duskwight' | 'Wildwood'
     | 'Dunesfolk' | 'Plainsfolk'
 
 /**
+ * Traditional Chinese display names for races/clans.
+ * Maps from the internal RaceName key to the TC display name.
+ */
+export const RACE_DISPLAY_NAMES: Record<RaceName, string> = {
+    'Midlander': '中原之民',
+    'Highlander': '高地之民',
+    'Wildwood': '森林之民',
+    'Duskwight': '黑影之民',
+    'Plainsfolk': '平原之民',
+    'Dunesfolk': '沙漠之民',
+    'Seekers of the Sun': '逐日之民',
+    'Keepers of the Moon': '護月之民',
+    'Sea Wolf': '北洋之民',
+    'Hellsguard': '紅焰之民',
+    'Raen': '晨曦之民',
+    'Xaela': '暮暉之民',
+    'Helion': '掠日之民',
+    'The Lost': '迷蹤之民',
+    'Rava': '密林之民',
+    'Veena': '山林之民',
+};
+
+/**
  * Supported levels.
  */
 export const SupportedLevels = [70, 80, 90, 100] as const;
@@ -573,7 +596,7 @@ export const LEVEL_STATS: Record<SupportedLevel, LevelStats> = {
 const defaultItemDispBase = {
     showNq: false,
     higherRelics: true,
-    minILvlFood: 770,
+    minILvlFood: 700,
     maxILvlFood: 999,
     showOneStatFood: false,
 } as const satisfies Partial<ItemDisplaySettings>;
@@ -642,7 +665,7 @@ export const LEVEL_ITEMS: Record<SupportedLevel, LevelItemInfo> = {
         defaultDisplaySettings: {
             ...defaultItemDispBase,
             // Raise this when more gear is available
-            minILvl: 770,
+            minILvl: 700,
             maxILvl: 999,
         },
     },
@@ -720,50 +743,50 @@ export type MateriaSubstat = typeof MateriaSubstats[number];
  * Full display names for every stat
  */
 export const STAT_FULL_NAMES: Record<RawStatKey, string> = {
-    crit: "Critical Hit",
-    defenseMag: "Magic Defense",
-    defensePhys: "Defense",
-    determination: "Determination",
-    dexterity: "Dexterity",
-    dhit: "Direct Hit",
-    hp: "Hit Points",
-    intelligence: "Intelligence",
-    mind: "Mind",
-    piety: "Piety",
-    skillspeed: "Skill Speed",
-    spellspeed: "Spell Speed",
-    strength: "Strength",
-    tenacity: "Tenacity",
-    vitality: "Vitality",
-    wdMag: "Weapon Damage (Magical)",
-    wdPhys: "Weapon Damage (Physical)",
-    weaponDelay: "Auto-Attack Delay",
-    gearHaste: "Gear Haste",
+    crit: "暴擊",
+    defenseMag: "魔法防禦力",
+    defensePhys: "物理防禦力",
+    determination: "信念",
+    dexterity: "靈巧",
+    dhit: "直擊",
+    hp: "HP",
+    intelligence: "智力",
+    mind: "精神",
+    piety: "信仰",
+    skillspeed: "技能速度",
+    spellspeed: "詠唱速度",
+    strength: "力量",
+    tenacity: "堅韌",
+    vitality: "耐力",
+    wdMag: "魔法基本性能",
+    wdPhys: "物理基本性能",
+    weaponDelay: "攻擊間隔",
+    gearHaste: "加速",
 };
 
 /**
  * Abbreviations for every stat
  */
 export const STAT_ABBREVIATIONS: Record<RawStatKey, string> = {
-    crit: "CRT",
-    defenseMag: "MD",
-    defensePhys: "DEF",
-    determination: "DET",
-    dexterity: "DEX",
-    dhit: "DHT",
+    crit: "暴擊",
+    defenseMag: "魔防",
+    defensePhys: "物防",
+    determination: "信念",
+    dexterity: "靈巧",
+    dhit: "直擊",
     hp: "HP",
-    intelligence: "INT",
-    mind: "MND",
-    piety: "PIE",
-    skillspeed: "SkS",
-    spellspeed: "SpS",
-    strength: "STR",
-    tenacity: "TNC",
-    vitality: "VIT",
-    wdMag: "WDm",
-    wdPhys: "WDp",
-    weaponDelay: "Dly",
-    gearHaste: "Hst",
+    intelligence: "智力",
+    mind: "精神",
+    piety: "信仰",
+    skillspeed: "技速",
+    spellspeed: "詠速",
+    strength: "力量",
+    tenacity: "堅韌",
+    vitality: "耐力",
+    wdMag: "魔傷",
+    wdPhys: "物傷",
+    weaponDelay: "間隔",
+    gearHaste: "加速",
 };
 
 /**
@@ -867,23 +890,41 @@ export const RAID_TIER_ILVLS = [
 export function formatAcquisitionSource(source: GearAcquisitionSource): string | null {
     switch (source) {
         case "augtome":
-            return "Aug. Tome";
+            return "強化神典石";
         case "augcrafted":
-            return "Aug. Crafted";
+            return "強化製作";
         case "normraid":
-            return "Normal Raid";
+            return "普通零式";
         case "extrial":
-            return "Ex. Trial";
+            return "極蠻神";
         case "alliance":
-            return "Alliance Raid";
+            return "同盟團";
         case "fieldoperation":
-            return "Field operation";
+            return "特殊區域";
         case "deepdungeon":
-            return "Deep Dungeon";
+            return "深層迷宮";
+        case "tome":
+            return "神典石";
+        case "crafted":
+            return "製作";
+        case "raid":
+            return "零式";
+        case "ultimate":
+            return "絕境戰";
+        case "relic":
+            return "肝武";
+        case "dungeon":
+            return "迷宮";
+        case "artifact":
+            return "職業裝";
+        case "criterion":
+            return "特殊迷宮";
+        case "custom":
+            return "自訂";
         case "other":
             return null;
     }
-    return source[0].toUpperCase() + source.substring(1);
+    return source;
 }
 
 /**
@@ -927,7 +968,7 @@ export function bluWdfromInt(gearIntStat: number): number {
 export const defaultItemDisplaySettings: Readonly<ItemDisplaySettings> = {
     minILvl: 680,
     maxILvl: 999,
-    minILvlFood: 770,
+    minILvlFood: 700,
     maxILvlFood: 999,
     higherRelics: true,
     showNq: false,

@@ -24,7 +24,7 @@ function makeGearFiltersArea(
     const filtersForm = document.createElement('form');
     filtersForm.style.display = 'contents';
     filtersForm.classList.add('ilvl-picker-area');
-    const itemIlvlRange = new ILvlRangePicker(itemDisplaySettings, 'minILvl', 'maxILvl', 'Gear:', MIN_ILVL_ITEMS);
+    const itemIlvlRange = new ILvlRangePicker(itemDisplaySettings, 'minILvl', 'maxILvl', '裝備:', MIN_ILVL_ITEMS);
     itemIlvlRange.addListener((min, max) => {
         recordSheetEvent('itemIlvlRange', sheet, {
             min: min,
@@ -33,7 +33,7 @@ function makeGearFiltersArea(
     });
     filtersForm.appendChild(itemIlvlRange);
 
-    const foodIlvlRange = new ILvlRangePicker(itemDisplaySettings, 'minILvlFood', 'maxILvlFood', 'Food:', MIN_ILVL_FOOD);
+    const foodIlvlRange = new ILvlRangePicker(itemDisplaySettings, 'minILvlFood', 'maxILvlFood', '食物:', MIN_ILVL_FOOD);
     foodIlvlRange.addListener((min, max) => {
         recordSheetEvent('foodIlvlRange', sheet, {
             min: min,
@@ -46,7 +46,7 @@ function makeGearFiltersArea(
         id: 'show-nq-cb',
     });
     nqCb.addListener(displayUpdateImmediate);
-    const nqCbWithLabel = labeledCheckbox('Show NQ Items', nqCb);
+    const nqCbWithLabel = labeledCheckbox('顯示NQ裝備', nqCb);
     filtersForm.appendChild(nqCbWithLabel);
 
     const fakeSubmitButton = quickElement("button", [], ['Hidden']);
@@ -204,15 +204,15 @@ export class GearEditToolbar extends HTMLDivElement {
             updateGearDisplayNow();
             this.buttonsArea.closePopout();
         });
-        this.buttonsArea.addPanelButton(["Gear", el('br'), "Filters"], ilvlDiv);
+        this.buttonsArea.addPanelButton(["裝備", el('br'), "篩選"], ilvlDiv);
 
         this.appendChild(this.buttonsArea);
 
         const materiaPriority = new MateriaPriorityPicker(matFillCtrl, sheet);
 
-        this.buttonsArea.addPanelButton(["Materia", el('br'), "Fill/Lock"], materiaPriority);
+        this.buttonsArea.addPanelButton(["魔晶石", el('br'), "填充/鎖定"], materiaPriority);
 
-        this.buttonsArea.addPanelButtonModal(["Meld/Food", el('br'), "Solver"], () => sheet.showMeldSolveDialog());
+        this.buttonsArea.addPanelButtonModal(["鑲嵌/食物", el('br'), "求解器"], () => sheet.showMeldSolveDialog());
 
         this.statTierDisplay = new StatTierDisplay(sheet);
         this.appendChild(this.statTierDisplay);
@@ -257,7 +257,7 @@ export class PopoutGearEditToolbar extends HTMLDivElement {
 
         const materiaPriority = new MateriaPriorityPicker(matFillCtrl, sheet);
 
-        this.buttonsArea.addPanelButton(["Materia", el('br'), "Fill/Lock"], materiaPriority);
+        this.buttonsArea.addPanelButton(["魔晶石", el('br'), "填充/鎖定"], materiaPriority);
 
         // TODO: meld solver will trigger the popup on the main window
         // this.buttonsArea.addPanelButtonModal(["Meld/Food", document.createElement('br'), "Solver"], () => sheet.showMeldSolveDialog());

@@ -10,22 +10,22 @@ export class ConflictResolutionDialog extends BaseModal {
 
     constructor(sheet: SheetHandle, private readonly uds: UserDataSyncer) {
         super();
-        this.headerText = 'Conflict Resolution';
-        this.addActionButton('Keep Local', () => {
+        this.headerText = '衝突解決';
+        this.addActionButton('保留本機', () => {
             this.currentSheet.conflictResolutionStrategy = 'keep-local';
             this.done();
         });
-        this.addActionButton('Keep Remote', () => {
+        this.addActionButton('保留遠端', () => {
             this.currentSheet.conflictResolutionStrategy = 'keep-remote';
             this.done();
         });
-        this.saveAsButton = this.addActionButton('Save Local As...', () => {
+        this.saveAsButton = this.addActionButton('本機另存為...', () => {
             // Save local as a new sheet, then ditch the local data
             this.currentSheet.saveLocalAsDefault();
             this.currentSheet.conflictResolutionStrategy = 'keep-remote';
             this.done();
         });
-        this.addCloseButton('Cancel');
+        this.addCloseButton('取消');
         this.setSheet(sheet);
     }
 
@@ -52,7 +52,7 @@ export class ConflictResolutionDialog extends BaseModal {
 
 function conflictSubArea(label: string, deleted: boolean): HTMLDivElement {
     const header = quickElement('h3', [], [label]);
-    const text = quickElement('p', [], [deleted ? 'Deleted' : 'Modified']);
+    const text = quickElement('p', [], [deleted ? '已刪除' : '已修改']);
     return quickElement('div', [], [header, text]);
 }
 

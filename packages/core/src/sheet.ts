@@ -131,7 +131,7 @@ export class SheetProvider<SheetType extends GearPlanSheet> {
             race: undefined,
             saveKey: sheetKey,
             sets: [{
-                name: "Default Set",
+                name: "預設套裝",
                 items: {},
             }],
             sims: [],

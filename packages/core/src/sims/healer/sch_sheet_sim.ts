@@ -25,7 +25,7 @@ export type SchExtraData = {
 
 const filler: SchGcdAbility = {
     type: 'gcd',
-    name: "Broil II",
+    name: "魔炎法",
     id: 7435,
     potency: 240,
     attackType: "Spell",
@@ -33,17 +33,17 @@ const filler: SchGcdAbility = {
     cast: 1.5,
     levelModifiers: [{
         minLevel: 72,
-        name: "Broil III",
+        name: "死炎法",
         potency: 255,
         id: 16541,
     }, {
         minLevel: 82,
-        name: "Broil IV",
+        name: "極炎法",
         id: 25865,
         potency: 295,
     }, {
         minLevel: 94,
-        name: "Broil IV",
+        name: "極炎法",
         id: 25865,
         potency: 320,
     }],
@@ -52,7 +52,7 @@ const filler: SchGcdAbility = {
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 const r2: SchGcdAbility = {
     type: 'gcd',
-    name: "Ruin II",
+    name: "毀壞",
     id: 17870,
     potency: 220,
     attackType: "Spell",
@@ -61,7 +61,7 @@ const r2: SchGcdAbility = {
 
 const bio: SchGcdAbility = {
     type: 'gcd',
-    name: "Bio II",
+    name: "中度毒化",
     id: 17865,
     potency: 0,
     dot: {
@@ -73,7 +73,7 @@ const bio: SchGcdAbility = {
     gcd: 2.5,
     levelModifiers: [{
         minLevel: 72,
-        name: "Biolysis",
+        name: "蠱毒法",
         id: 16540,
         dot: {
             duration: 30,
@@ -83,7 +83,7 @@ const bio: SchGcdAbility = {
     },
     {
         minLevel: 94,
-        name: "Biolysis",
+        name: "蠱毒法",
         id: 16540,
         dot: {
             duration: 30,
@@ -95,7 +95,7 @@ const bio: SchGcdAbility = {
 };
 
 export const ImpactImminent: PersonalBuff = {
-    name: "Impact Imminent",
+    name: "埋伏之毒預備",
     saveKey: "Impact Imminent",
     duration: 30,
     selfOnly: true,
@@ -130,7 +130,7 @@ const chain: SchOgcdAbility = {
 
 const baneful: SchOgcdAbility = {
     type: 'ogcd',
-    name: "Baneful Impaction",
+    name: "埋伏之毒",
     id: 37012,
     potency: 0,
     dot: {
@@ -143,7 +143,7 @@ const baneful: SchOgcdAbility = {
 
 const ed: SchOgcdAbility = {
     type: 'ogcd',
-    name: "Energy Drain",
+    name: "吸取能量",
     id: 167,
     potency: 100,
     attackType: "Ability",
@@ -152,7 +152,7 @@ const ed: SchOgcdAbility = {
 
 const aetherflow: SchOgcdAbility = {
     type: 'ogcd',
-    name: "Aetherflow",
+    name: "乙太超流",
     id: 166,
     potency: 0,
     attackType: "Ability",
@@ -164,7 +164,7 @@ const aetherflow: SchOgcdAbility = {
 
 const diss: SchOgcdAbility = {
     type: 'ogcd',
-    name: "Dissipation",
+    name: "轉化",
     id: 3587,
     potency: 0,
     attackType: "Ability",
@@ -209,7 +209,7 @@ export interface SchSettingsExternal extends ExternalCycleSettings<SchSettings> 
 }
 
 export const schNewSheetSpec: SimSpec<SchSim, SchSettingsExternal> = {
-    displayName: "SCH Sim",
+    displayName: "學者模擬",
     loadSavedSimInstance(exported: SchSettingsExternal) {
         return new SchSim(exported);
     },

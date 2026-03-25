@@ -4,7 +4,7 @@ import {DeathsDesign, IdealHost} from "./rpr_buff";
 
 export const Slice: RprGcdAbility = {
     type: 'gcd',
-    name: "Slice",
+    name: "切割",
     id: 24373,
     potency: 420,
     attackType: "Weaponskill",
@@ -15,7 +15,7 @@ export const Slice: RprGcdAbility = {
 
 export const WaxingSlice: RprGcdAbility = {
     type: 'gcd',
-    name: "Waxing Slice",
+    name: "增盈切割",
     id: 24374,
     potency: 500,
     attackType: "Weaponskill",
@@ -26,7 +26,7 @@ export const WaxingSlice: RprGcdAbility = {
 
 export const InfernalSlice: RprGcdAbility = {
     type: 'gcd',
-    name: "Infernal Slice",
+    name: "地獄切割",
     id: 24375,
     potency: 600,
     attackType: "Weaponskill",
@@ -37,7 +37,7 @@ export const InfernalSlice: RprGcdAbility = {
 
 export const ShadowOfDeath: RprGcdAbility = {
     type: 'gcd',
-    name: "Shadow of Death",
+    name: "死亡之影",
     id: 24378,
     potency: 300,
     attackType: "Weaponskill",
@@ -49,7 +49,7 @@ export const ShadowOfDeath: RprGcdAbility = {
 
 export const Harpe: RprGcdAbility = {
     type: 'gcd',
-    name: "Harpe",
+    name: "勾刃",
     id: 24386,
     potency: 300,
     attackType: "Weaponskill",
@@ -62,7 +62,7 @@ export const Harpe: RprGcdAbility = {
 
 export const Gibbet: RprGcdAbility = {
     type: 'gcd',
-    name: "Gibbet",
+    name: "絞決",
     id: 24382,
     potency: 620,
     attackType: "Weaponskill",
@@ -73,7 +73,7 @@ export const Gibbet: RprGcdAbility = {
 
 export const Gallows: RprGcdAbility = {
     type: 'gcd',
-    name: "Gallows",
+    name: "縊殺",
     id: 24383,
     potency: 620,
     attackType: "Weaponskill",
@@ -84,7 +84,7 @@ export const Gallows: RprGcdAbility = {
 
 export const SoulSlice: RprGcdAbility = {
     type: 'gcd',
-    name: "Soul Slice",
+    name: "靈魂切片",
     id: 24380,
     potency: 520,
     attackType: "Weaponskill",
@@ -99,7 +99,7 @@ export const SoulSlice: RprGcdAbility = {
 
 export const PlentifulHarvest: RprGcdAbility = {
     type: 'gcd',
-    name: "Plentiful Harvest",
+    name: "大豐收",
     id: 24385,
     potency: 1000,
     attackType: "Weaponskill",
@@ -110,7 +110,7 @@ export const PlentifulHarvest: RprGcdAbility = {
 
 export const HarvestMoon: RprGcdAbility = {
     type: 'gcd',
-    name: "Harvest Moon",
+    name: "收穫月",
     id: 24388,
     potency: 800,
     attackType: "Weaponskill",
@@ -121,7 +121,7 @@ export const HarvestMoon: RprGcdAbility = {
 
 export const Communio: RprGcdAbility = {
     type: 'gcd',
-    name: "Communio",
+    name: "團契",
     id: 24398,
     potency: 1100,
     attackType: "Spell",
@@ -131,7 +131,7 @@ export const Communio: RprGcdAbility = {
 
 export const Perfectio: RprGcdAbility = {
     type: 'gcd',
-    name: "Perfectio",
+    name: "完人",
     id: 36973,
     potency: 1300,
     attackType: "Weaponskill",
@@ -141,7 +141,7 @@ export const Perfectio: RprGcdAbility = {
 
 export const ExecutionersGibbet: RprGcdAbility = {
     type: 'gcd',
-    name: "Executioner's Gibbet",
+    name: "處刑人's Gibbet",
     id: 36970,
     potency: 820,
     attackType: "Weaponskill",
@@ -152,7 +152,7 @@ export const ExecutionersGibbet: RprGcdAbility = {
 
 export const ExecutionersGallows: RprGcdAbility = {
     type: 'gcd',
-    name: "Executioner's Gallows",
+    name: "處刑人's Gallows",
     id: 36971,
     potency: 820,
     attackType: "Weaponskill",
@@ -163,7 +163,7 @@ export const ExecutionersGallows: RprGcdAbility = {
 
 export const ExecutionersGallowsUnbuffed: RprGcdAbility = {
     type: 'gcd',
-    name: "Executioner's Gallows",
+    name: "處刑人's Gallows",
     id: 36971,
     potency: 760,
     attackType: "Weaponskill",
@@ -174,7 +174,7 @@ export const ExecutionersGallowsUnbuffed: RprGcdAbility = {
 
 export const VoidReapingUnbuffed: RprGcdAbility = {
     type: 'gcd',
-    name: "Void Reaping",
+    name: "虛無收割",
     id: 24395,
     potency: 560,
     attackType: "Weaponskill",
@@ -185,7 +185,7 @@ export const VoidReapingUnbuffed: RprGcdAbility = {
 
 export const VoidReaping: RprGcdAbility = {
     type: 'gcd',
-    name: "Void Reaping",
+    name: "虛無收割",
     id: 24395,
     potency: 620,
     attackType: "Weaponskill",
@@ -196,7 +196,7 @@ export const VoidReaping: RprGcdAbility = {
 
 export const CrossReaping: RprGcdAbility = {
     type: 'gcd',
-    name: "Cross Reaping",
+    name: "交錯收割",
     id: 24396,
     potency: 620,
     attackType: "Weaponskill",
@@ -207,7 +207,7 @@ export const CrossReaping: RprGcdAbility = {
 
 export const Gluttony: RprOgcdAbility = {
     type: 'ogcd',
-    name: "Gluttony",
+    name: "暴食",
     id: 24393,
     potency: 520,
     attackType: "Ability",
@@ -220,7 +220,7 @@ export const Gluttony: RprOgcdAbility = {
 
 export const UnveiledGibbet: RprOgcdAbility = {
     type: 'ogcd',
-    name: "Unveiled Gibbet",
+    name: "絞決爪",
     id: 24390,
     potency: 440,
     attackType: "Ability",
@@ -229,7 +229,7 @@ export const UnveiledGibbet: RprOgcdAbility = {
 
 export const UnveiledGallows: RprOgcdAbility = {
     type: 'ogcd',
-    name: "Unveiled Gallows",
+    name: "縊殺爪",
     id: 24391,
     potency: 440,
     attackType: "Ability",
@@ -247,7 +247,7 @@ export const LemuresSlice: RprOgcdAbility = {
 
 export const Sacrificium: RprOgcdAbility = {
     type: 'ogcd',
-    name: "Sacrificium",
+    name: "祭牲",
     id: 36969,
     potency: 700,
     attackType: "Ability",
@@ -255,7 +255,7 @@ export const Sacrificium: RprOgcdAbility = {
 
 export const Enshroud: RprOgcdAbility = {
     type: 'ogcd',
-    name: "Enshroud",
+    name: "夜遊魂衣",
     id: 24394,
     potency: 0,
     attackType: "Ability",
@@ -264,7 +264,7 @@ export const Enshroud: RprOgcdAbility = {
 
 export const ArcaneCircle: RprOgcdAbility = {
     type: 'ogcd',
-    name: "Arcane Circle",
+    name: "神秘環",
     id: 24405,
     activatesBuffs: [ArcaneCircleBuff],
     potency: null,

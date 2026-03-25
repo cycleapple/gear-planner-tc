@@ -17,7 +17,7 @@ import {BaseMultiCycleSim} from "@xivgear/core/sims/processors/sim_processors";
  */
 const filler: GcdAbility = {
     type: 'gcd',
-    name: "Dosis",
+    name: "注藥",
     potency: 300,
     attackType: "Spell",
     gcd: 2.5,
@@ -25,17 +25,17 @@ const filler: GcdAbility = {
     id: 24283,
     levelModifiers: [{
         minLevel: 72,
-        name: "Dosis II",
+        name: "注藥II",
         potency: 320,
         id: 24306,
     }, {
         minLevel: 82,
-        name: "Dosis III",
+        name: "注藥III",
         id: 24312,
         potency: 330,
     }, {
         minLevel: 94,
-        name: "Dosis III",
+        name: "注藥III",
         id: 24312,
         potency: 380,
     }],
@@ -43,7 +43,7 @@ const filler: GcdAbility = {
 
 const eDosis: GcdAbility = {
     type: 'gcd',
-    name: "Eukrasian Dosis",
+    name: "均衡注藥",
     potency: 0,
     dot: {
         id: 2614,
@@ -59,7 +59,7 @@ const eDosis: GcdAbility = {
     levelModifiers: [
         {
             minLevel: 72,
-            name: "Eukrasian Dosis II",
+            name: "均衡注藥II",
             dot: {
                 id: 2615,
                 duration: 30,
@@ -69,7 +69,7 @@ const eDosis: GcdAbility = {
         },
         {
             minLevel: 82,
-            name: "Eukrasian Dosis III",
+            name: "均衡注藥III",
             dot: {
                 id: 2864,
                 duration: 30,
@@ -82,7 +82,7 @@ const eDosis: GcdAbility = {
 
 const phlegma: GcdAbility = {
     type: 'gcd',
-    name: "Phlegma",
+    name: "發炎",
     potency: 400,
     attackType: "Spell",
     gcd: 2.5,
@@ -96,14 +96,14 @@ const phlegma: GcdAbility = {
     levelModifiers: [
         {
             minLevel: 72,
-            name: "Phlegma II",
+            name: "發炎II",
             potency: 490,
             // can be correct to 24307 after #720
             id: 24313,
         },
         {
             minLevel: 82,
-            name: "Phlegma III",
+            name: "發炎III",
             potency: 600,
             id: 24313,
         }],
@@ -111,7 +111,7 @@ const phlegma: GcdAbility = {
 
 const psyche: OgcdAbility = {
     type: 'ogcd',
-    name: "Psyche",
+    name: "心神風息",
     id: 37033,
     potency: 0,
     attackType: "Ability",
@@ -135,7 +135,7 @@ export interface SgeNewSheetSettingsExternal extends ExternalCycleSettings<SgeNe
 }
 
 export const sgeNewSheetSpec: SimSpec<SgeSheetSim, SgeNewSheetSettingsExternal> = {
-    displayName: "SGE Sim",
+    displayName: "賢者模擬",
     loadSavedSimInstance(exported: SgeNewSheetSettingsExternal) {
         return new SgeSheetSim(exported);
     },

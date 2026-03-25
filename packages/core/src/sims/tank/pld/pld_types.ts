@@ -26,7 +26,7 @@ export type PldExtraData = {
  * Paladin-specific Buffs
  */
 export const FightOrFlightBuff: Buff = {
-    name: "Fight or Flight",
+    name: "戰逃反應",
     selfOnly: true,
     effects: {
         dmgIncrease: 0.25,
@@ -36,7 +36,7 @@ export const FightOrFlightBuff: Buff = {
 };
 
 export const RequiescatBuff: Buff = {
-    name: "Requiescat",
+    name: "安魂祈禱",
     selfOnly: true,
     effects: {
         // Buffs Holy Spirits, or at higher levels, allows usage of PLD spell combo.
@@ -49,7 +49,7 @@ export const RequiescatBuff: Buff = {
 };
 
 export const ConfiteorReadyBuff: Buff = {
-    name: "Confiteor Ready",
+    name: "悔罪預備",
     selfOnly: true,
     effects: {
         // Allows usage of Confiteor
@@ -62,7 +62,7 @@ export const ConfiteorReadyBuff: Buff = {
 };
 
 export const GoringBladeReadyBuff: Buff = {
-    name: "Goring Blade Ready",
+    name: "瀝血劍預備",
     selfOnly: true,
     effects: {
         // Allows usage of Goring Blade
@@ -74,7 +74,7 @@ export const GoringBladeReadyBuff: Buff = {
 };
 
 export const AtonementReadyBuff: Buff = {
-    name: "Atonement Ready",
+    name: "贖罪劍預備",
     selfOnly: true,
     effects: {
         // Allows usage of Atonement
@@ -86,7 +86,7 @@ export const AtonementReadyBuff: Buff = {
 };
 
 export const SupplicationReadyBuff: Buff = {
-    name: "Supplication Ready",
+    name: "祈告劍預備",
     selfOnly: true,
     effects: {
         // Allows usage of Supplication
@@ -98,7 +98,7 @@ export const SupplicationReadyBuff: Buff = {
 };
 
 export const SepulchreReadyBuff: Buff = {
-    name: "Sepulchre Ready",
+    name: "葬送劍預備",
     selfOnly: true,
     effects: {
         // Allows usage of Sepulchre
@@ -110,7 +110,7 @@ export const SepulchreReadyBuff: Buff = {
 };
 
 export const DivineMightBuff: Buff = {
-    name: "Divine Might",
+    name: "神聖魔法效果提高",
     selfOnly: true,
     effects: {
         // Allows usage of instant cast Holy Spirit
@@ -122,7 +122,7 @@ export const DivineMightBuff: Buff = {
 };
 
 export const BladeOfHonorReadyBuff: Buff = {
-    name: "Blade of Honor Ready",
+    name: "榮耀之劍預備",
     selfOnly: true,
     effects: {
         // Allows usage of Blade of Honor

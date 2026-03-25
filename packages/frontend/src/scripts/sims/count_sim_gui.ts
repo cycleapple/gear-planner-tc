@@ -27,7 +27,7 @@ export class BaseUsageCountSimGui<ResultType extends CountSimResult, InternalSet
         const custom = this.makeCustomConfigInterface(settings, updateCallback);
         if (custom) {
             custom.classList.add('custom-sim-settings-area');
-            const section = new NamedSection('Sim-Specific Settings');
+            const section = new NamedSection('模擬專屬設定');
             section.contentArea.append(custom);
             div.appendChild(section);
         }
@@ -53,14 +53,14 @@ export class BaseUsageCountSimGui<ResultType extends CountSimResult, InternalSet
     makeResultDisplay(result: ResultType): HTMLElement {
         // noinspection JSNonASCIINames
         const mainResultsTable = simpleKvTable({
-            "Expected DPS": result.mainDpsFull.expected,
-            "Std Deviation": result.mainDpsFull.stdDev,
-            "Expected +1σ": applyStdDev(result.mainDpsFull, 1),
-            "Expected +2σ": applyStdDev(result.mainDpsFull, 2),
-            "Expected +3σ": applyStdDev(result.mainDpsFull, 3),
-            "Unbuffed PPS": result.unbuffedPps,
-            "Total Damage": result.totalDamage.expected,
-            "Cycle Time": result.cycleTime.toFixed(3),
+            "預期DPS": result.mainDpsFull.expected,
+            "標準差": result.mainDpsFull.stdDev,
+            "預期+1σ": applyStdDev(result.mainDpsFull, 1),
+            "預期+2σ": applyStdDev(result.mainDpsFull, 2),
+            "預期+3σ": applyStdDev(result.mainDpsFull, 3),
+            "無增益PPS": result.unbuffedPps,
+            "總傷害": result.totalDamage.expected,
+            "循環時間": result.cycleTime.toFixed(3),
         });
         mainResultsTable.classList.add('main-results-table');
 
@@ -108,7 +108,7 @@ export class BaseUsageCountSimGui<ResultType extends CountSimResult, InternalSet
         const bucketsTable = new CustomTable<typeof transposedData[number]>();
         const columns: CustomColumn<typeof transposedData[number], unknown, unknown>[] = [col({
             shortName: "skill",
-            displayName: "Skill",
+            displayName: "技能",
             getter: item => item.ability,
             renderer: (value: Ability) => {
                 return document.createTextNode(`${value.name}`);

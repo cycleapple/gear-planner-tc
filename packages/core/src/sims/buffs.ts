@@ -1,7 +1,7 @@
 import {Ability, PartyBuff} from "./sim_types";
 
 export const Dokumori = {
-    name: "Dokumori",
+    name: "毒盛",
     saveKey: "Mug",
     job: "NIN",
     duration: 21,
@@ -15,7 +15,7 @@ export const Dokumori = {
 } as const satisfies PartyBuff;
 
 export const Litany = {
-    name: "Battle Litany",
+    name: "戰鬥連禱",
     saveKey: "Battle Litany",
     job: "DRG",
     duration: 20,
@@ -29,7 +29,7 @@ export const Litany = {
 } as const satisfies PartyBuff;
 
 export const Brotherhood = {
-    name: "Brotherhood",
+    name: "義結金蘭",
     saveKey: "Brotherhood",
     job: "MNK",
     duration: 20,
@@ -44,7 +44,7 @@ export const Brotherhood = {
 } as const satisfies PartyBuff;
 
 export const ArcaneCircleBuff = {
-    name: "Arcane Circle",
+    name: "神秘環",
     saveKey: "Arcane Circle",
     job: "RPR",
     duration: 20,
@@ -58,7 +58,7 @@ export const ArcaneCircleBuff = {
 } as const satisfies PartyBuff;
 
 export const SearingLight = {
-    name: "Searing Light",
+    name: "灼熱之光",
     saveKey: "Searing Light",
     job: "SMN",
     duration: 20,
@@ -72,7 +72,7 @@ export const SearingLight = {
 } as const satisfies PartyBuff;
 
 export const Embolden = {
-    name: "Embolden",
+    name: "鼓勵",
     saveKey: "Embolden",
     job: "RDM",
     duration: 20,
@@ -87,7 +87,7 @@ export const Embolden = {
 } as const satisfies PartyBuff;
 
 export const StarryMuse = {
-    name: "Starry Muse",
+    name: "星空構想",
     saveKey: "Starry Muse",
     job: "PCT",
     duration: 20,
@@ -102,7 +102,7 @@ export const StarryMuse = {
 } as const satisfies PartyBuff;
 
 export const StandardFinishBuff = {
-    name: "Standard Finish",
+    name: "標準舞步結束",
     saveKey: "Standard Finish",
     job: "DNC",
     duration: 60,
@@ -118,7 +118,7 @@ export const StandardFinishBuff = {
 } as const satisfies PartyBuff;
 
 export const Devilment = {
-    name: "Devilment",
+    name: "進攻之探戈",
     saveKey: "Devilment",
     job: "DNC",
     duration: 20,
@@ -134,7 +134,7 @@ export const Devilment = {
 
 /* With how the cycle processer script currently handles buffs, this wouldn't properly work
 export const StandardFinish = {
-    name: "Standard Finish",
+    name: "標準舞步結束",
     job: "DNC",
     duration: 60,
     optional: true,
@@ -147,7 +147,7 @@ export const StandardFinish = {
 } as const satisfies PartyBuff;
 */
 export const TechnicalFinish = {
-    name: "Technical Finish",
+    name: "技巧舞步結束",
     saveKey: "Technical Finish",
     job: "DNC",
     duration: 20,
@@ -166,7 +166,7 @@ export const TechnicalFinish = {
 } as const satisfies PartyBuff;
 
 export const BattleVoice = {
-    name: "Battle Voice",
+    name: "戰鬥之聲",
     saveKey: "Battle Voice",
     job: "BRD",
     duration: 20,
@@ -180,7 +180,7 @@ export const BattleVoice = {
 } as const satisfies PartyBuff;
 
 export const RadiantFinale = {
-    name: "Radiant Finale",
+    name: "光明神的最終樂章",
     saveKey: "Radiant Finale",
     job: "BRD",
     duration: 20,
@@ -194,7 +194,7 @@ export const RadiantFinale = {
 } as const satisfies PartyBuff;
 
 export const Chain = {
-    name: "Chain",
+    name: "連環計",
     saveKey: "Chain",
     job: "SCH",
     duration: 20,
@@ -208,7 +208,7 @@ export const Chain = {
 } as const satisfies PartyBuff;
 
 export const Divination = {
-    name: "Divination",
+    name: "占卜",
     saveKey: "Divination",
     job: "AST",
     duration: 20,
@@ -222,7 +222,7 @@ export const Divination = {
 } as const satisfies PartyBuff;
 
 export const AstCard = {
-    name: "Single Target AST Card",
+    name: "占星單體卡牌",
     saveKey: "Single Target AST Card",
     job: "AST",
     duration: 15,
@@ -238,7 +238,7 @@ export const AstCard = {
 } as const satisfies PartyBuff;
 
 export const OffGuardBuff = {
-    name: "Off-guard",
+    name: "破防",
     saveKey: "Off-guard",
     job: "BLU",
     duration: 15,

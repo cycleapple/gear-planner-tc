@@ -1,4 +1,4 @@
-export const ALL_LANGS = ['en', 'de', 'fr', 'ja'] as const;
+export const ALL_LANGS = ['en', 'de', 'fr', 'ja', 'tc'] as const;
 
 export function isValidLanguage(languageMaybe: string): languageMaybe is Language {
     return ALL_LANGS.includes(languageMaybe as Language);
@@ -17,12 +17,13 @@ export const LangaugeDisplayName: TranslationData = {
     'de': 'Deutsch',
     'fr': 'Français',
     'ja': '日本語',
+    'tc': '繁體中文',
 } as const;
 
 let currentLang: null | Language = null;
 
 export function getCurrentLanguage(): Language {
-    return currentLang ?? 'en';
+    return currentLang ?? 'tc';
 }
 
 export function setCurrentLanguage(lang: Language) {
@@ -47,8 +48,11 @@ class TranslatableImpl implements TranslatableString {
     }
 
     get ja() {
-        // TODO
         return this.data['ja'] ?? this.defaultValue;
+    }
+
+    get tc() {
+        return this.data['tc'] ?? this.defaultValue;
     }
 
     get asCurrentLang(): string {

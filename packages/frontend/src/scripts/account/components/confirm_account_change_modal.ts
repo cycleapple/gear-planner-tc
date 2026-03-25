@@ -8,14 +8,14 @@ import {ResolveReject} from "@xivgear/util/async";
 export class ConfirmAccountChangeModal extends BaseModal {
     constructor(private readonly promiseOut: ResolveReject<boolean>) {
         super();
-        this.headerText = 'Confirm Account Change';
-        const text = quickElement('p', [], ['You were previously logged in with a different account. If you continue to log in, local data will be cleared and replaced with data from the new account.']);
+        this.headerText = '確認帳號變更';
+        const text = quickElement('p', [], ['你之前使用了不同的帳號登入。如果繼續登入，本機資料將被清除並替換為新帳號的資料。']);
         this.contentArea.replaceChildren(text);
-        this.addActionButton('Delete Data and Switch', ev => this.showLoadingBlockerWhile(async () => {
+        this.addActionButton('刪除資料並切換', ev => this.showLoadingBlockerWhile(async () => {
             promiseOut.resolve(true);
             this.close();
         }));
-        this.addActionButton('Cancel', ev => this.showLoadingBlockerWhile(async () => {
+        this.addActionButton('取消', ev => this.showLoadingBlockerWhile(async () => {
             promiseOut.resolve(false);
             this.close();
         }));

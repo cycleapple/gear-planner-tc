@@ -42,7 +42,7 @@ export type AstExtraData = {
 const filler: AstGcdAbility = {
     id: 25871,
     type: 'gcd',
-    name: "Fall Malefic",
+    name: "落陷凶星",
     potency: 250,
     attackType: "Spell",
     gcd: 2.5,
@@ -58,7 +58,7 @@ const filler: AstGcdAbility = {
 const combust: AstGcdAbility = {
     id: 16554,
     type: 'gcd',
-    name: "Combust III",
+    name: "焚灼",
     potency: 0,
     dot: {
         id: 2041,
@@ -80,7 +80,7 @@ const combust: AstGcdAbility = {
 const star: AstOgcdAbility = {
     id: 7439,
     type: 'ogcd',
-    name: "Earthly Star",
+    name: "地星",
     potency: 310,
     attackType: "Ability",
     cooldown: {
@@ -89,7 +89,7 @@ const star: AstOgcdAbility = {
 };
 
 export const Divining: PersonalBuff = {
-    name: "Divining",
+    name: "神諭預備",
     saveKey: "Divining",
     duration: 30,
     selfOnly: true,
@@ -108,7 +108,7 @@ export const Divining: PersonalBuff = {
 
 const div: AstOgcdAbility = {
     type: 'ogcd',
-    name: "Divination",
+    name: "占卜",
     id: 16552,
     activatesBuffs: [Divination],
     potency: null,
@@ -126,7 +126,7 @@ const div: AstOgcdAbility = {
 
 const oracle: AstOgcdAbility = {
     type: 'ogcd',
-    name: "Oracle",
+    name: "神諭",
     id: 37029,
     potency: 860,
     attackType: "Ability",
@@ -134,12 +134,12 @@ const oracle: AstOgcdAbility = {
 
 /*const astrodyne: AstOgcdAbility = {
     id: 25870,
-    name: "Astrodyne",
+    name: "星力",
     type: "ogcd",
     potency: null,
     activatesBuffs: [
         {
-            name: "Astrodyne",
+            name: "星力",
             selfOnly: true,
             duration: 15,
             effects: { //currently assumes 2 seal dynes, can change dmgIncrease based on frequency of 3 seals
@@ -154,7 +154,7 @@ const oracle: AstOgcdAbility = {
 export const LightspeedBuff: PersonalBuff = {
     duration: 15,
     effects: {},
-    name: "Lightspeed",
+    name: "光速",
     selfOnly: true,
     descriptionOverride: "Instant casts for 15 seconds",
     beforeAbility<X extends Ability>(controller: BuffController, ability: X): X | null {
@@ -171,7 +171,7 @@ export const LightspeedBuff: PersonalBuff = {
 
 const ls: AstOgcdAbility = {
     type: 'ogcd',
-    name: "Lightspeed",
+    name: "光速",
     id: 3606,
     activatesBuffs: [LightspeedBuff],
     potency: null,
@@ -184,7 +184,7 @@ const ls: AstOgcdAbility = {
 
 const astralDraw: AstOgcdAbility = {
     type: 'ogcd',
-    name: "Astral Draw",
+    name: "星極抽卡",
     id: 37017,
     potency: 0,
     attackType: "Ability",
@@ -199,7 +199,7 @@ const astralDraw: AstOgcdAbility = {
 
 const umbralDraw: AstOgcdAbility = {
     type: 'ogcd',
-    name: "Umbral Draw",
+    name: "靈極抽卡",
     id: 37018,
     potency: 0,
     attackType: "Ability",
@@ -215,7 +215,7 @@ const umbralDraw: AstOgcdAbility = {
 const lord: AstOgcdAbility = {
     id: 7444,
     type: 'ogcd',
-    name: "Lord of Crowns",
+    name: "王冠之領主",
     potency: 400,
     attackType: "Ability",
     updateGaugeLegacy: (gauge: AstGauge) => {
@@ -225,7 +225,7 @@ const lord: AstOgcdAbility = {
 
 const balance: AstOgcdAbility = {
     type: 'ogcd',
-    name: "The Balance",
+    name: "太陽神之衡",
     id: 37023,
     potency: 0,
     attackType: "Ability",
@@ -236,7 +236,7 @@ const balance: AstOgcdAbility = {
 
 const spear: AstOgcdAbility = {
     type: 'ogcd',
-    name: "The Spear",
+    name: "戰爭神之槍",
     id: 37026,
     potency: 0,
     attackType: "Ability",
@@ -288,7 +288,7 @@ export interface AstSettingsExternal extends ExternalCycleSettings<AstSettings> 
 }
 
 export const astNewSheetSpec: SimSpec<AstSim, AstSettingsExternal> = {
-    displayName: "AST Sim",
+    displayName: "占星模擬",
     loadSavedSimInstance(exported: AstSettingsExternal) {
         return new AstSim(exported);
     },

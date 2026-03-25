@@ -10,7 +10,7 @@ export class WhmSimGui extends BaseMultiCycleSimGui<WhmSimResult, WhmSettings> {
     protected extraAbilityUsedColumns(result: WhmSimResult): CustomColumnSpec<DisplayRecordFinalized, unknown, unknown>[] {
         return [col({
             shortName: 'lilies',
-            displayName: 'Lilies',
+            displayName: '百合',
             getter: used => isFinalizedAbilityUse(used) ? used.original : null,
             renderer: (usedAbility: PreDmgUsedAbility<WhmGaugeState> | null) => {
                 if (usedAbility === null) {

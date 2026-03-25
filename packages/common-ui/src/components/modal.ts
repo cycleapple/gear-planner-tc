@@ -19,7 +19,7 @@ export abstract class BaseModal extends HTMLElement {
         this.buttonArea = el('div', {classes: ['lower-button-area', 'modal-lower-button-area']});
         this.closeButton = makeActionButton([makeCloseButton()], () => {
             this.close();
-        }, 'Close');
+        }, '關閉');
         this.closeButton.classList.add('modal-close-button');
         this.inner = el('div', {class: 'modal-inner'}, [
             this.closeButton,
@@ -40,7 +40,7 @@ export abstract class BaseModal extends HTMLElement {
         return button;
     }
 
-    protected addCloseButton(label: string = 'Close') {
+    protected addCloseButton(label: string = '關閉') {
         return this.addActionButton(label, () => this.close());
     }
 

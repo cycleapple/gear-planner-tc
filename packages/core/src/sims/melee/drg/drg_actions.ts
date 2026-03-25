@@ -25,7 +25,7 @@ import {Litany} from "@xivgear/core/sims/buffs";
 export const TrueThrust: DrgGcdAbility = {
     // 1
     type: 'gcd',
-    name: "True Thrust",
+    name: "精準刺",
     id: 75,
     potency: 170,
     appDelay: 0.76,
@@ -44,7 +44,7 @@ export const TrueThrust: DrgGcdAbility = {
 export const RaidenThrust: DrgGcdAbility = {
     // ab1 - level 76+
     type: 'gcd',
-    name: "Raiden Thrust",
+    name: "龍眼雷電",
     id: 16479,
     potency: 280,
     appDelay: 0.62,
@@ -63,7 +63,7 @@ export const RaidenThrust: DrgGcdAbility = {
 export const Disembowel: DrgGcdAbility = {
     // a2
     type: 'gcd',
-    name: "Disembowel",
+    name: "開膛槍",
     id: 87,
     potency: 210,
     appDelay: 1.65,
@@ -83,7 +83,7 @@ export const Disembowel: DrgGcdAbility = {
 export const SpiralBlow: DrgGcdAbility = {
     // a2 - level 96+
     type: 'gcd',
-    name: "Spiral Blow",
+    name: "螺旋擊",
     id: 36955,
     potency: 300,
     //appDelay: 1.38,// This is only *damage* delay, the buffs apply immediately and this is more important.
@@ -98,7 +98,7 @@ export const SpiralBlow: DrgGcdAbility = {
 export const ChaosThrust: DrgGcdAbility = {
     // a3
     type: 'gcd',
-    name: "Chaos Thrust",
+    name: "櫻花怒放",
     id: 88,
     potency: 260,
     dot: {
@@ -116,7 +116,7 @@ export const ChaosThrust: DrgGcdAbility = {
 export const ChaoticSpring: DrgGcdAbility = {
     // a3 - level 86+
     type: 'gcd',
-    name: "Chaotic Spring",
+    name: "櫻花繚亂",
     id: 25772,
     potency: 300,
     dot: {
@@ -140,7 +140,7 @@ export const ChaoticSpring: DrgGcdAbility = {
 export const WheelingThrust: DrgGcdAbility = {
     // a4
     type: 'gcd',
-    name: "Wheeling Thrust",
+    name: "龍尾大迴旋",
     id: 3556,
     potency: 340,
     appDelay: 0.67,
@@ -153,7 +153,7 @@ export const WheelingThrust: DrgGcdAbility = {
 export const VorpalThrust: DrgGcdAbility = {
     // b2
     type: 'gcd',
-    name: "Vorpal Thrust",
+    name: "貫通刺",
     id: 78,
     potency: 250,
     appDelay: 1.02,
@@ -172,7 +172,7 @@ export const VorpalThrust: DrgGcdAbility = {
 export const LanceBarrage: DrgGcdAbility = {
     // b2 - level 96+
     type: 'gcd',
-    name: "Lance Barrage",
+    name: "前衝刺",
     id: 36954,
     potency: 340,
     appDelay: 0.94,
@@ -185,7 +185,7 @@ export const LanceBarrage: DrgGcdAbility = {
 export const FullThrust: DrgGcdAbility = {
     // b3
     type: 'gcd',
-    name: "Full Thrust",
+    name: "直刺",
     id: 84,
     potency: 380,
     attackType: "Weaponskill",
@@ -216,7 +216,7 @@ export const HeavensThrust: DrgGcdAbility = {
 export const FangAndClaw: DrgGcdAbility = {
     // b4
     type: 'gcd',
-    name: "Fang and Claw",
+    name: "龍牙龍爪",
     id: 3554,
     potency: 300,
     appDelay: 0.62,
@@ -235,7 +235,7 @@ export const FangAndClaw: DrgGcdAbility = {
 export const Drakesbane: DrgGcdAbility = {
     // ab5
     type: 'gcd',
-    name: "Drakesbane",
+    name: "雲蒸龍變",
     id: 36952,
     potency: 380,
     appDelay: 1.65,
@@ -266,7 +266,7 @@ export const Drakesbane: DrgGcdAbility = {
 export const DoomSpike: DrgGcdAbility = {
     // 1
     type: 'gcd',
-    name: "Doom Spike",
+    name: "死天槍",
     id: 86,
     potency: 110,
     appDelay: 1.29,
@@ -279,7 +279,7 @@ export const DoomSpike: DrgGcdAbility = {
 export const DraconianFury: DrgGcdAbility = {
     // c1 - level 82+
     type: 'gcd',
-    name: "Draconian Fury",
+    name: "龍眼蒼天",
     id: 25770,
     potency: 110,
     appDelay: 0.76,
@@ -292,7 +292,7 @@ export const DraconianFury: DrgGcdAbility = {
 export const SonicThrust: DrgGcdAbility = {
     // c2
     type: 'gcd',
-    name: "Sonic Thrust",
+    name: "音速刺",
     id: 7397,
     potency: 120,
     appDelay: 0.80,
@@ -306,7 +306,7 @@ export const SonicThrust: DrgGcdAbility = {
 export const CoerthanTorment: DrgGcdAbility = {
     // c3
     type: 'gcd',
-    name: "Coerthan Torment",
+    name: "山境酷刑",
     id: 16477,
     potency: 150,
     appDelay: 0.49,
@@ -320,7 +320,7 @@ export const CoerthanTorment: DrgGcdAbility = {
 
 export const PiercingTalon: DrgGcdAbility = {
     type: 'gcd',
-    name: "Piercing Talon",
+    name: "貫穿尖",
     id: 90,
     potency: 150,
     appDelay: 0.85,
@@ -352,7 +352,7 @@ export const EnhancedPiercingTalon: DrgGcdAbility = {
 
 export const LifeSurge: DrgOgcdAbility = {
     type: 'ogcd',
-    name: "Life Surge",
+    name: "龍劍",
     id: 83,
     potency: null,
     appDelay: 0,
@@ -376,7 +376,7 @@ export const LifeSurge: DrgOgcdAbility = {
 
 export const LanceCharge: DrgOgcdAbility = {
     type: 'ogcd',
-    name: "Lance Charge",
+    name: "猛槍",
     id: 85,
     potency: null,
     appDelay: 0.62,
@@ -390,7 +390,7 @@ export const LanceCharge: DrgOgcdAbility = {
 
 export const Jump: DrgOgcdAbility = {
     type: 'ogcd',
-    name: "Jump",
+    name: "跳躍",
     id: 92,
     potency: 320,
     appDelay: 0.49,
@@ -406,7 +406,7 @@ export const Jump: DrgOgcdAbility = {
 export const HighJump: DrgOgcdAbility = {
     // level 74+
     type: 'ogcd',
-    name: "High Jump",
+    name: "高跳",
     id: 16478,
     potency: 400,
     appDelay: 0.49,
@@ -421,7 +421,7 @@ export const HighJump: DrgOgcdAbility = {
 
 export const ElusiveJump: DrgOgcdAbility = {
     type: 'ogcd',
-    name: "Elusive Jump",
+    name: "迴避跳躍",
     id: 94,
     potency: null,
     animationLock: 0.8,
@@ -435,7 +435,7 @@ export const ElusiveJump: DrgOgcdAbility = {
 
 export const DragonfireDive: DrgOgcdAbility = {
     type: 'ogcd',
-    name: "Dragonfire Dive",
+    name: "龍炎衝",
     id: 96,
     potency: 500,
     appDelay: 2.23,
@@ -455,7 +455,7 @@ export const DragonfireDive: DrgOgcdAbility = {
 
 export const BattleLitany: DrgOgcdAbility = {
     type: 'ogcd',
-    name: "Battle Litany",
+    name: "戰鬥連禱",
     id: 3557,
     potency: null,
     appDelay: 0.62,
@@ -469,7 +469,7 @@ export const BattleLitany: DrgOgcdAbility = {
 
 export const Geirskogul: DrgOgcdAbility = {
     type: 'ogcd',
-    name: "Geirskogul",
+    name: "武神槍",
     id: 3555,
     potency: 200,
     appDelay: 0.67,
@@ -490,7 +490,7 @@ export const Geirskogul: DrgOgcdAbility = {
 
 export const MirageDive: DrgOgcdAbility = {
     type: 'ogcd',
-    name: "Mirage Dive",
+    name: "幻象衝",
     id: 7399,
     potency: 380,
     appDelay: 0.80,
@@ -500,7 +500,7 @@ export const MirageDive: DrgOgcdAbility = {
 
 export const Nastrond: DrgOgcdAbility = {
     type: 'ogcd',
-    name: "Nastrond",
+    name: "死者之岸",
     id: 7400,
     potency: 600,
     appDelay: 0.76,
@@ -519,7 +519,7 @@ export const Nastrond: DrgOgcdAbility = {
 
 export const Stardiver: DrgOgcdAbility = {
     type: 'ogcd',
-    name: "Stardiver",
+    name: "墜星衝",
     id: 16480,
     potency: 720,
     appDelay: 1.29,
@@ -544,7 +544,7 @@ export const Stardiver: DrgOgcdAbility = {
 
 export const WyrmwindThrust: DrgOgcdAbility & HasGaugeCondition<DrgGaugeManager> = {
     type: 'ogcd',
-    name: "Wyrmwind Thrust",
+    name: "天龍點睛",
     id: 25773,
     potency: 440,
     appDelay: 1.20,
@@ -558,7 +558,7 @@ export const WyrmwindThrust: DrgOgcdAbility & HasGaugeCondition<DrgGaugeManager>
 
 export const RiseOfTheDragon: DrgOgcdAbility = {
     type: 'ogcd',
-    name: "Rise of the Dragon",
+    name: "龍炎昇",
     id: 36953,
     potency: 550,
     appDelay: 1.16,
@@ -568,7 +568,7 @@ export const RiseOfTheDragon: DrgOgcdAbility = {
 
 export const Starcross: DrgOgcdAbility = {
     type: 'ogcd',
-    name: "Starcross",
+    name: "渡星衝",
     id: 36956,
     potency: 1000,
     appDelay: 0.98,

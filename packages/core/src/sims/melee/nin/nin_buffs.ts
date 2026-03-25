@@ -31,7 +31,7 @@ const NINJUTSU_ACTIONS: string[] = [
     ...NINJUTSU_ACTIONS_3STEP,
 ];
 export const KassatsuBuff: Buff = {
-    name: "Kassatsu",
+    name: "活殺自在",
     selfOnly: true,
     descriptionExtras: ["Able to execute a ninjutsu without consuming charges while increasing damage"],
     effects: {
@@ -45,7 +45,7 @@ export const KassatsuBuff: Buff = {
 };
 
 export const TenChiJinReady: Buff = {
-    name: "Ten Chi Jin",
+    name: "天地人",
     selfOnly: true,
     descriptionExtras: ["Able to execute 3 ninjutsu actions in succession"],
     effects: {
@@ -72,7 +72,7 @@ export const TenChiJinReady: Buff = {
 };
 
 export const TenriJindoReady: Buff = {
-    name: "Tenri Jindo Ready",
+    name: "天理人道預備",
     selfOnly: true,
     descriptionExtras: ["Able to execute Tenri Jindo"],
     effects: {
@@ -85,7 +85,7 @@ export const TenriJindoReady: Buff = {
 };
 
 export const ShadowWalker: Buff = {
-    name: "Shadow Walker",
+    name: "忍隱",
     selfOnly: true,
     descriptionExtras: ["Able to execute actions normally only available while hidden"],
     effects: {
@@ -98,7 +98,7 @@ export const ShadowWalker: Buff = {
 };
 
 export const MeisuiBuff: Buff = {
-    name: "Meisui",
+    name: "命水",
     selfOnly: true,
     descriptionExtras: ["Increase potency of single-target ninki spenders"],
     effects: {
@@ -118,7 +118,7 @@ export const MeisuiBuff: Buff = {
 };
 
 export const BunshinBuff: Buff = {
-    name: "Bunshin",
+    name: "分身術",
     selfOnly: true,
     descriptionExtras: ["Deals additional damage when executing Weaponskills"],
     effects: {
@@ -140,7 +140,7 @@ export const BunshinBuff: Buff = {
 };
 
 export const RaijuReady: Buff = {
-    name: "Raiju Ready",
+    name: "月影雷獸預備",
     selfOnly: true,
     descriptionExtras: ["Able to execute Fleeting/Forked Raiju"],
     effects: {
@@ -161,7 +161,7 @@ export const RaijuReady: Buff = {
 };
 
 export const PhantomReady: Buff = {
-    name: "Phantom Kamaitachi Ready",
+    name: "殘影鐮鼬預備",
     selfOnly: true,
     descriptionExtras: ["Able to execute Phantom Kamaitachi"],
     effects: {
@@ -174,7 +174,7 @@ export const PhantomReady: Buff = {
 };
 
 export const Higi: Buff = {
-    name: "Higi",
+    name: "秘技預備",
     selfOnly: true,
     descriptionExtras: ["Able to execute Zesho Meppo or Deathfrog Medium"],
     effects: {

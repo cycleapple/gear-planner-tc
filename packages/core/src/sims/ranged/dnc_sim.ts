@@ -4,7 +4,7 @@ import {StandardFinishBuff, TechnicalFinish} from "@xivgear/core/sims/buffs";
 import {ExternalCountSettings, CountSimResult, BaseUsageCountSim, SkillCount} from "@xivgear/core/sims/processors/count_sim";
 
 export const dncDtSheetSpec: SimSpec<DncDtSim, DncDtSimSettings> = {
-    displayName: "DNC Lv100 Sim",
+    displayName: "舞者Lv100模擬",
     loadSavedSimInstance(exported: ExternalCountSettings<DncDtSimSettings>) {
         return new DncDtSim(exported);
     },
@@ -24,7 +24,7 @@ export interface DncDtSimResults extends CountSimResult {
 }
 
 const cascade: GcdAbility = {
-    name: 'Cascade',
+    name: '傾瀉',
     type: 'gcd',
     attackType: 'Weaponskill',
     potency: 220,
@@ -33,7 +33,7 @@ const cascade: GcdAbility = {
 } as const satisfies GcdAbility;
 
 const fountain: GcdAbility = {
-    name: 'Fountain',
+    name: '噴泉',
     type: 'gcd',
     attackType: 'Weaponskill',
     potency: 280,
@@ -43,7 +43,7 @@ const fountain: GcdAbility = {
 
 
 const reverseCascade: GcdAbility = {
-    name: 'Reverse Cascade',
+    name: '逆瀑瀉',
     type: 'gcd',
     potency: 280,
     attackType: 'Weaponskill',
@@ -52,7 +52,7 @@ const reverseCascade: GcdAbility = {
 } as const satisfies GcdAbility;
 
 const fountainFall: GcdAbility = {
-    name: 'Fountainfall',
+    name: '墜噴泉',
     type: 'gcd',
     potency: 340,
     attackType: 'Weaponskill',
@@ -61,7 +61,7 @@ const fountainFall: GcdAbility = {
 } as const satisfies GcdAbility;
 
 const saberDance: GcdAbility = {
-    name: 'Saber Dance',
+    name: '劍舞',
     type: 'gcd',
     potency: 540,
     attackType: 'Weaponskill',
@@ -70,7 +70,7 @@ const saberDance: GcdAbility = {
 } as const satisfies GcdAbility;
 
 const starfall: GcdAbility = {
-    name: 'Starfall Dance',
+    name: '流星舞',
     type: 'gcd',
     potency: 600,
     attackType: 'Weaponskill',
@@ -81,7 +81,7 @@ const starfall: GcdAbility = {
 } as const satisfies GcdAbility;
 
 const standardFinish: GcdAbility = {
-    name: 'Standard Finish',
+    name: '標準舞步結束',
     type: 'gcd',
     potency: 850,
     attackType: 'Weaponskill',
@@ -92,7 +92,7 @@ const standardFinish: GcdAbility = {
 } as const satisfies GcdAbility;
 
 const techFinish: GcdAbility = {
-    name: 'Technical Finish',
+    name: '技巧舞步結束',
     type: 'gcd',
     potency: 1300,
     attackType: 'Weaponskill',
@@ -103,7 +103,7 @@ const techFinish: GcdAbility = {
 } as const satisfies GcdAbility;
 
 const tillana: GcdAbility = {
-    name: 'Tillana',
+    name: '提拉納',
     type: 'gcd',
     potency: 600,
     attackType: 'Weaponskill',
@@ -113,7 +113,7 @@ const tillana: GcdAbility = {
 } as const satisfies GcdAbility;
 
 const fanDance: OgcdAbility = {
-    name: 'Fan Dance',
+    name: '扇舞·序',
     type: 'ogcd',
     potency: 180,
     attackType: 'Ability',
@@ -124,7 +124,7 @@ const fanDance: OgcdAbility = {
 } as const satisfies OgcdAbility;
 
 const fd3: OgcdAbility = {
-    name: 'Fan Dance III',
+    name: '扇舞·急',
     type: 'ogcd',
     potency: 220,
     attackType: 'Ability',
@@ -135,7 +135,7 @@ const fd3: OgcdAbility = {
 } as const satisfies OgcdAbility;
 
 const fd4: OgcdAbility = {
-    name: 'Fan Dance IV',
+    name: '扇舞·終',
     type: 'ogcd',
     potency: 460,
     attackType: 'Ability',
@@ -146,7 +146,7 @@ const fd4: OgcdAbility = {
 } as const satisfies OgcdAbility;
 
 const finishingMove: GcdAbility = {
-    name: 'Finishing Move',
+    name: '結束動作',
     type: 'gcd',
     potency: 850,
     attackType: 'Weaponskill',
@@ -157,7 +157,7 @@ const finishingMove: GcdAbility = {
 } as const satisfies GcdAbility;
 
 const lastDance: GcdAbility = {
-    name: 'Last Dance',
+    name: '落幕舞',
     type: 'gcd',
     potency: 540,
     attackType: 'Weaponskill',
@@ -167,7 +167,7 @@ const lastDance: GcdAbility = {
 } as const satisfies GcdAbility;
 
 const danceOfTheDawn: GcdAbility = {
-    name: 'Dance of the Dawn',
+    name: '拂曉舞',
     type: 'gcd',
     potency: 1000,
     attackType: 'Weaponskill',
@@ -177,7 +177,7 @@ const danceOfTheDawn: GcdAbility = {
 } as const satisfies GcdAbility;
 
 const auto: AutoAttack = {
-    name: 'Auto Attack',
+    name: '自動攻擊',
     type: 'autoattack',
     potency: 90,
     attackType: 'Auto-attack',
@@ -186,7 +186,7 @@ const auto: AutoAttack = {
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 const standardStep: GcdAbility = {
-    name: 'Standard Step',
+    name: '標準舞步',
     type: 'gcd',
     potency: 0,
     attackType: 'Weaponskill',
@@ -197,7 +197,7 @@ const standardStep: GcdAbility = {
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 const techStep: GcdAbility = {
-    name: 'Technical Step',
+    name: '技巧舞步',
     type: 'gcd',
     potency: null,
     attackType: 'Weaponskill',
@@ -220,7 +220,7 @@ const stepsAction: GcdAbility = {
 
 export class DncDtSim extends BaseUsageCountSim<DncDtSimResults, DncDtSimSettings> {
     readonly spec = dncDtSheetSpec;
-    displayName = 'DNC Sim';
+    displayName = '舞者模擬';
     readonly shortName = dncDtSheetSpec.stub;
     readonly manualRun = false;
 

@@ -47,10 +47,10 @@ export class GearSetEditor extends HTMLElement {
     checkIssues(): void {
         const issues = this.gearSet.issues;
         if (issues.length >= 1) {
-            this.issuesButtonContent.replaceChildren(iconForIssues(...issues), `${issues.length} issue${issues.length === 1 ? '' : 's'}`);
+            this.issuesButtonContent.replaceChildren(iconForIssues(...issues), `${issues.length} 個問題`);
         }
         else {
-            this.issuesButtonContent.replaceChildren('No issues');
+            this.issuesButtonContent.replaceChildren('無問題');
         }
     }
 
@@ -66,7 +66,7 @@ export class GearSetEditor extends HTMLElement {
         this.appendChild(this.desc);
         this.formatTitleDesc();
 
-        const compatCheckerButton = makeActionButton('Compatibility', () => {
+        const compatCheckerButton = makeActionButton('相容性', () => {
             showCompatOverview(this.sheet, this.gearSet);
         });
 
@@ -78,13 +78,13 @@ export class GearSetEditor extends HTMLElement {
         issuesButton.classList.add('issues-button');
 
         const buttonArea = quickElement('div', ['gear-set-editor-button-area', 'button-row'], [
-            makeActionButton([makeExportIcon(), 'Export Set'], () => {
+            makeActionButton([makeExportIcon(), '匯出套裝'], () => {
                 startExport(this.gearSet);
             }),
-            makeActionButton([editIcon(), 'Edit Name/Description'], () => {
+            makeActionButton([editIcon(), '編輯名稱/說明'], () => {
                 startRenameSet(writeProxy(this.gearSet, () => this.formatTitleDesc()));
             }),
-            isPopout() ? null : makeActionButton([makeExportIcon(), 'Popout Editor'], () => {
+            isPopout() ? null : makeActionButton([makeExportIcon(), '彈出編輯器'], () => {
                 const sheetAny = this.sheet;
                 sheetAny.openPopoutForSet(this.gearSet);
             }),

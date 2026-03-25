@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-Hant">
 <head>
     <link rel="stylesheet" href="./style.css"/>
     <script blocking="render">
@@ -15,7 +15,7 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="mobile-web-app-capable" content="yes">
 
-    <title>XivGear - FFXIV Gear Planner</title>
+    <title>XivGear - FFXIV 配裝規劃器（繁中版）</title>
     <script data-cfasync="false">window.nitroAds = window.nitroAds || {
         createAd: function () {
             return new Promise(e => {
@@ -37,7 +37,7 @@
                 const scriptSrc = target.src;
                 if (scriptSrc?.includes('main') && scriptSrc?.includes('.js')) {
                     console.error("Main script load appears to have failed", event);
-                    document.querySelector('#content-area').replaceChildren(`There was an error loading the main script. The page will reload automatically in 5 seconds. Check the browser console for more details.`);
+                    document.querySelector('#content-area').replaceChildren(`載入主程式時發生錯誤。頁面將在 5 秒後自動重新載入。請檢查瀏覽器主控台以獲取更多詳情。`);
                     setTimeout(() => {
                         const newLoc = new URL(document.location.toString());
                         newLoc.searchParams.set("_cacheBust", Math.floor(Math.random() * 1_000_000).toString());
@@ -74,12 +74,12 @@
 </div>
 <div id="main-menu-area">
     <div id="main-menu-area-inner">
-        <a href="?page=">My Sheets</a>
-        <a href="?page=newsheet" id="new-sheet-button">New Sheet</a>
-        <a href="?page=importsheet">Import</a>
-        <a href="" id="settings-button">Settings</a>
-        <a href="" id="account-button"><span id="account-text">Log In</span></a>
-        <a href="./math/">Math</a><!--    <a href="." id="dev-menu-button">Dev Menu</a>-->
+        <a href="?page=">我的配裝表</a>
+        <a href="?page=newsheet" id="new-sheet-button">新增配裝表</a>
+        <a href="?page=importsheet">匯入</a>
+        <a href="" id="settings-button">設定</a>
+        <a href="" id="account-button"><span id="account-text">登入</span></a>
+        <a href="./math/">數學公式</a><!--    <a href="." id="dev-menu-button">Dev Menu</a>-->
         <a href="https://github.com/xiv-gear-planner/gear-planner/" id="github-button" target="_blank">GitHub</a>
         <a href="https://ko-fi.com/wynnxiv" id="kofi-button" target="_blank">Ko-Fi</a>
         <a href="https://patreon.com/xivgearapp?utm_medium=unknown&utm_source=join_link&utm_campaign=creatorshare_creator&utm_content=copyLink"
@@ -90,22 +90,18 @@
 <div id="preload-area">
     <div id="welcome-message">
         <noscript>
-            <h1 class="js-warning">Please enable JS. This site will not function without it.</h1>
+            <h1 class="js-warning">請啟用 JavaScript。此網站需要 JavaScript 才能正常運作。</h1>
         </noscript>
-        <button id="welcome-close-button">Close</button>
-        <h1>Welcome to XivGear!</h1>
-        <p>xivgear.app is an advanced FFXIV gear planner and calculator. Build, compare, calculate, and simulate your
-            sets without complicated spreadsheets.</p>
-        <p>Here's a few of the features it supports:</p>
+        <button id="welcome-close-button">關閉</button>
+        <h1>歡迎使用 XivGear！</h1>
+        <p>xivgear.app 是一款進階的 FFXIV 配裝規劃與計算工具。不需要複雜的試算表，即可建立、比較、計算和模擬你的配裝方案。</p>
+        <p>以下是部分功能特色：</p>
         <ul>
-            <li>For most jobs, DPS simulations built right into the gear set editor, for instant feedback.</li>
-            <li>Share a sheet containing multiple sets, so players can view them at a glance, rather than having to
-                click through several sets.
-            </li>
-            <li>The ability to solve the optimal melds and food for a given set of gear.</li>
+            <li>大多數職業都內建了 DPS 模擬功能，可在配裝編輯器中即時查看回饋。</li>
+            <li>分享包含多個配裝的配裝表，讓其他玩家一眼就能瀏覽所有方案，無需逐個點開。</li>
+            <li>可自動求解指定裝備的最佳鑲嵌和食物組合。</li>
         </ul>
-        <p>Happy Raiding! Don't forget to check out <a href="https://thebalanceffxiv.com/">The Balance</a> for
-            best-in-slot gear sets.</p>
+        <p>祝你副本順利！別忘了到 <a href="https://thebalanceffxiv.com/">The Balance</a> 查看最佳配裝方案。</p>
     </div>
 </div>
 <!--<script defer="" src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" data-cf-beacon="{&quot;version&quot;:&quot;2024.11.0&quot;,&quot;token&quot;:&quot;779030c9ed5c43e5a560998dc71acb36&quot;,&quot;r&quot;:1,&quot;server_timing&quot;:{&quot;name&quot;:{&quot;cfCacheStatus&quot;:true,&quot;cfEdge&quot;:true,&quot;cfExtPri&quot;:true,&quot;cfL4&quot;:true,&quot;cfOrigin&quot;:true,&quot;cfSpeedBrain&quot;:true},&quot;location_startswith&quot;:null}}" crossorigin="anonymous"></script>-->

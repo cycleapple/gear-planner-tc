@@ -263,7 +263,7 @@ export class FoodItemsTable extends CustomTable<FoodItem, TableSelectionModel<Fo
             }),
             {
                 shortName: "itemname",
-                displayName: "Name",
+                displayName: "名稱",
                 getter: item => {
                     return item.nameTranslation.asCurrentLang;
                 },
@@ -320,13 +320,13 @@ export class FoodItemsTable extends CustomTable<FoodItem, TableSelectionModel<Fo
         const osfCb = new FieldBoundCheckBox(gearSet.sheet.itemDisplaySettings, 'showOneStatFood', {
             id: 'show-osf-cb',
         });
-        const oneStatFoodWithLabel = labeledCheckbox('Show Food with One Relevant Stat', osfCb);
+        const oneStatFoodWithLabel = labeledCheckbox('顯示僅有一項相關屬性的食物', osfCb);
         // This should not trigger the show/hide control
         oneStatFoodWithLabel.addEventListener('click', e => e.stopPropagation());
         // Chrome has weird behavior, this is a workaround
         osfCb.addEventListener('click', e => e.stopPropagation());
 
-        const showHideRow = makeShowHideRow('Food', gearSet.isSlotCollapsed('food'), (val, count) => {
+        const showHideRow = makeShowHideRow('食物', gearSet.isSlotCollapsed('food'), (val, count) => {
             gearSet.setSlotCollapsed('food', val);
             recordSheetEvent('hideFood', sheet, {
                 hidden: val,
@@ -630,7 +630,7 @@ export class GearItemsTable extends CustomTable<GearSlotItem, TableSelectionMode
                 cb.addListener(() => {
                     sheet.gearDisplaySettingsUpdateNow();
                 });
-                const lcb = labeledCheckbox('Display relics above max ilvl setting', cb);
+                const lcb = labeledCheckbox('顯示超過最大品級設定的肝武', cb);
                 lcb.addEventListener('click', e => e.stopPropagation());
                 extras.push(lcb);
             }
@@ -758,13 +758,13 @@ export class GearItemsTable extends CustomTable<GearSlotItem, TableSelectionMode
             }),
             col({
                 shortName: "itemname",
-                displayName: "Name",
+                displayName: "名稱",
                 getter: item => {
                     return item.item.nameTranslation.asCurrentLang;
                 },
                 renderer: (name: string, rowValue: GearSlotItem) => {
                     const trashButton = quickElement('button', ['remove-item-button'], [makeTrashIcon()]);
-                    trashButton.title = 'Click to un-equip item';
+                    trashButton.title = '點擊取消裝備';
                     trashButton.addEventListener('click', (ev) => {
                         gearSet.setEquip(rowValue.slotId, null);
                         selectionTracker.set(rowValue.slotId, null);
@@ -793,11 +793,11 @@ export class GearItemsTable extends CustomTable<GearSlotItem, TableSelectionMode
             }),
             col({
                 shortName: "mats",
-                displayName: "Mat",
+                displayName: "魔晶石",
                 getter: item => {
                     return item.item;
                 },
-                initialWidth: 30,
+                initialWidth: 50,
                 renderer: (value: GearItem) => {
                     const span = document.createElement('span');
                     if (value.isSyncedDown) {
@@ -823,7 +823,7 @@ export class GearItemsTable extends CustomTable<GearSlotItem, TableSelectionMode
             }),
             col({
                 shortName: "wd",
-                displayName: "WD",
+                displayName: "武傷",
                 getter: item => {
                     // return Math.max(item.item.stats.wdMag, item.item.stats.wdPhys);
                     return Math.max(item.item.stats.wdMag, item.item.stats.wdPhys);
@@ -1039,7 +1039,7 @@ export class GearItemsViewTable extends CustomTable<GearSlotItem> {
             }),
             col({
                 shortName: "itemname",
-                displayName: "Name",
+                displayName: "名稱",
                 getter: item => {
                     return item.item.nameTranslation.asCurrentLang;
                 },
@@ -1087,7 +1087,7 @@ export class GearItemsViewTable extends CustomTable<GearSlotItem> {
 export class AltItemsModal extends BaseModal {
     constructor(baseItem: GearItem, altItems: GearItem[], sheet: GearPlanSheet) {
         super();
-        this.headerText = 'Alternative Items';
+        this.headerText = '替代裝備';
 
         const text = el('p');
         if (sheet.ilvlSync) {
@@ -1117,7 +1117,7 @@ export class AltItemsModal extends BaseModal {
             }),
             {
                 shortName: "itemname",
-                displayName: "Name",
+                displayName: "名稱",
                 getter: item => {
                     return item.nameTranslation.asCurrentLang;
                 },

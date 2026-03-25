@@ -34,7 +34,7 @@ export type GnbExtraData = {
 };
 
 export const NoMercyBuff: PersonalBuff = {
-    name: "No Mercy",
+    name: "無情",
     saveKey: "No Mercy",
     duration: 20,
     selfOnly: true,
@@ -60,7 +60,7 @@ export const ReadyToBreakBuff: Buff = {
 };
 
 export const BloodfestBuff: Buff = {
-    name: "Bloodfest",
+    name: "血壤",
     duration: 30,
     selfOnly: true,
     effects: {

@@ -74,7 +74,7 @@ export type BlmPpsSettingsExternal = {
 
 export const blmPpsSpec: SimSpec<BlmPpsSim, BlmPpsSettingsExternal> = {
     stub: "blm-pps-sim",
-    displayName: "BLM PPS Sim",
+    displayName: "黑魔PPS模擬",
     description: `Estimates DPS based on average potency-per-second, essentially simulating infinite killtime.
 Party buffs are not considered.`,
     makeNewSimInstance: function (): BlmPpsSim {

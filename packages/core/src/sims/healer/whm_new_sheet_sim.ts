@@ -30,7 +30,7 @@ export type WhmGaugeState = {
 const filler: GcdAbility = {
     id: 25859,
     type: 'gcd',
-    name: "Glare III",
+    name: "閃灼",
     potency: 350,
     attackType: "Spell",
     gcd: 2.5,
@@ -40,7 +40,7 @@ const filler: GcdAbility = {
 const dia: GcdAbility = {
     id: 16532,
     type: 'gcd',
-    name: "Dia",
+    name: "天輝",
     potency: 85,
     dot: {
         id: 1871,
@@ -54,7 +54,7 @@ const dia: GcdAbility = {
 const assize: OgcdAbility = {
     id: 3571,
     type: 'ogcd',
-    name: "Assize",
+    name: "法令",
     potency: 400,
     attackType: "Ability",
     cooldown: {
@@ -63,7 +63,7 @@ const assize: OgcdAbility = {
 };
 
 export const SacredSight: PersonalBuff = {
-    name: "Sacred Sight",
+    name: "閃颯預備",
     saveKey: "Sacred Sight",
     duration: 30,
     stacks: 3,
@@ -84,11 +84,11 @@ export const SacredSight: PersonalBuff = {
 const pom: OgcdAbility = {
     id: 136,
     type: 'ogcd',
-    name: 'Presence of Mind',
+    name: '神速詠唱',
     potency: null,
     activatesBuffs: [
         {
-            name: "Presence of Mind",
+            name: "神速詠唱",
             selfOnly: true,
             duration: 15,
             effects: {
@@ -107,7 +107,7 @@ const pom: OgcdAbility = {
 const lily: GcdAbility & HasGaugeUpdate<WhmGaugeManager> & HasGaugeCondition<WhmGaugeManager> = {
     id: 16534,
     type: 'gcd',
-    name: "Afflatus Rapture",
+    name: "狂喜之心",
     potency: 0,
     attackType: "Spell",
     gcd: 2.5,
@@ -123,7 +123,7 @@ const lily: GcdAbility & HasGaugeUpdate<WhmGaugeManager> & HasGaugeCondition<Whm
 const misery: GcdAbility & HasGaugeUpdate<WhmGaugeManager> & HasGaugeCondition<WhmGaugeManager> = {
     id: 16535,
     type: 'gcd',
-    name: "Afflatus Misery",
+    name: "苦難之心",
     potency: 1400,
     attackType: "Spell",
     gcd: 2.5,
@@ -136,7 +136,7 @@ const misery: GcdAbility & HasGaugeUpdate<WhmGaugeManager> & HasGaugeCondition<W
 const glare4: GcdAbility = {
     id: 37009,
     type: 'gcd',
-    name: "Glare IV",
+    name: "閃颯",
     potency: 640,
     attackType: "Spell",
     gcd: 2.5,
@@ -190,7 +190,7 @@ export interface WhmSettingsExternal extends ExternalCycleSettings<WhmSettings> 
 }
 
 export const whmNewSheetSpec: SimSpec<WhmSim, WhmSettingsExternal> = {
-    displayName: "WHM Sim",
+    displayName: "白魔模擬",
     loadSavedSimInstance(exported: WhmSettingsExternal) {
         return new WhmSim(exported);
     },

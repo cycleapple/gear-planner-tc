@@ -45,7 +45,7 @@ export class AstSheetSimGui extends BaseMultiCycleSimGui<AstSimResult, AstSettin
         } as const;
         return [col({
             shortName: 'cards',
-            displayName: 'Cards',
+            displayName: '牌',
             getter: used => isFinalizedAbilityUse(used) ? used.original : null,
             renderer: extraDataDiscreteGaugeRenderer<AstExtraData>((_, extra) => {
 

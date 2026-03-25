@@ -14,7 +14,7 @@ export interface BluF2PSettingsExternal extends ExternalCycleSettings<BluF2PSett
 }
 
 export const BluF2PSpec: SimSpec<BluF2PSim, BluF2PSettingsExternal> = {
-    displayName: "BLU Free Trial",
+    displayName: "青魔免費試玩",
     stub: "blu-f2p",
     supportedJobs: ["BLU"],
     isDefaultSim: false,

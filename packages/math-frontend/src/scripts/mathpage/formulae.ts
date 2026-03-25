@@ -42,7 +42,7 @@ type SpsSettings = BaseSpeedSettings & {
 
 const baseGcdVar = {
     type: "number",
-    label: "Base GCD",
+    label: "基礎GCD",
     property: "baseGcd",
     integer: false,
     min: () => 0.1,
@@ -50,7 +50,7 @@ const baseGcdVar = {
 
 const hasteVar = {
     type: "number",
-    label: "Haste",
+    label: "加速",
     property: "haste",
     integer: true,
     min: () => 0,
@@ -94,10 +94,10 @@ export function registerFormulae() {
     registerFormula<{
         'mainstat': number
     }>({
-        name: "Main Stat",
+        name: "主屬性",
         stub: "main-stat",
         functions: [formula({
-            name: "Main Stat Multiplier",
+            name: "主屬性倍率",
             fn: mainStatMulti,
             argExtractor: async function (arg, gen: GeneralSettings) {
                 // This one technically doesn't need this
@@ -106,7 +106,7 @@ export function registerFormulae() {
         })],
         variables: [{
             type: "number",
-            label: "Main Stat Value",
+            label: "主屬性數值",
             property: "mainstat",
             integer: true,
             min: baseMain,
@@ -127,16 +127,16 @@ export function registerFormulae() {
         'wd': number,
         'delay': number
     }>({
-        name: "Weapon Damage",
+        name: "武器性能",
         stub: "weapon-damage",
         functions: [formula({
-            name: "Weapon Damage Multiplier",
+            name: "武器性能倍率",
             fn: wdMulti,
             argExtractor: async function (arg, gen: GeneralSettings) {
                 return [gen.levelStats, await getClassJobStatsFull(gen.classJob), arg.wd, false] as const;
             },
         }), formula({
-            name: "Auto-Attack Multiplier",
+            name: "自動攻擊倍率",
             fn: autoAttackModifier,
             argExtractor: async function (arg, gen: GeneralSettings) {
                 return [gen.levelStats, await getClassJobStatsFull(gen.classJob), arg.delay, arg.wd] as const;
@@ -144,13 +144,13 @@ export function registerFormulae() {
         })],
         variables: [{
             type: "number",
-            label: "Weapon Damage Value",
+            label: "武器性能數值",
             property: "wd",
             integer: true,
             min: () => 0,
         }, {
             type: "number",
-            label: "Weapon Speed (Seconds)",
+            label: "武器速度（秒）",
             property: "delay",
             integer: false,
             min: () => 0.01,
@@ -167,10 +167,10 @@ export function registerFormulae() {
     registerFormula<{
         'det': number
     }>({
-        name: "Determination",
+        name: "信念",
         stub: "det",
         functions: [formula({
-            name: "Determination Multiplier",
+            name: "信念倍率",
             fn: detDmg,
             argExtractor: async function (arg, gen: GeneralSettings) {
                 return [gen.levelStats, arg.det] as const;
@@ -178,7 +178,7 @@ export function registerFormulae() {
         })],
         variables: [{
             type: "number",
-            label: "Determination Stat",
+            label: "信念數值",
             property: "det",
             integer: true,
             min: baseMain,
@@ -192,10 +192,10 @@ export function registerFormulae() {
     registerFormula<{
         'def': number
     }>({
-        name: "Defense",
+        name: "防禦",
         stub: "def",
         functions: [formula({
-            name: "Defense/Mdef Damage Taken",
+            name: "物防/魔防受傷",
             fn: defIncomingDmg,
             argExtractor: async function (arg, gen: GeneralSettings) {
                 return [gen.levelStats, arg.def] as const;
@@ -203,7 +203,7 @@ export function registerFormulae() {
         })],
         variables: [{
             type: "number",
-            label: "Defense/Mdef Stat",
+            label: "物防/魔防數值",
             property: "def",
             integer: true,
             min: () => 0,
@@ -217,16 +217,16 @@ export function registerFormulae() {
     registerFormula<{
         'tnc': number
     }>({
-        name: "Tenacity",
+        name: "堅韌",
         stub: "tnc",
         functions: [formula({
-            name: "Outgoing Multiplier",
+            name: "輸出倍率",
             fn: tenacityDmg,
             argExtractor: async function (arg, gen: GeneralSettings) {
                 return [gen.levelStats, arg.tnc] as const;
             },
         }), formula({
-            name: "Incoming Multiplier",
+            name: "受傷倍率",
             fn: tenacityIncomingDmg,
             argExtractor: async function (arg, gen: GeneralSettings) {
                 return [gen.levelStats, arg.tnc] as const;
@@ -234,7 +234,7 @@ export function registerFormulae() {
         })],
         variables: [{
             type: "number",
-            label: "Tenacity Stat",
+            label: "堅韌數值",
             property: "tnc",
             integer: true,
             min: baseSub,
@@ -248,10 +248,10 @@ export function registerFormulae() {
     registerFormula<{
         'piety': number
     }>({
-        name: "Piety",
+        name: "信仰",
         stub: "piety",
         functions: [formula({
-            name: "MP/3s",
+            name: "MP/3秒",
             fn: mpTick,
             argExtractor: async function (arg, gen: GeneralSettings) {
                 return [gen.levelStats, arg.piety] as const;
@@ -259,7 +259,7 @@ export function registerFormulae() {
         })],
         variables: [{
             type: "number",
-            label: "Piety Stat",
+            label: "信仰數值",
             property: "piety",
             integer: true,
             min: baseMain,
@@ -272,17 +272,18 @@ export function registerFormulae() {
 
     registerFormula<SksSettings>({
         stub: 'sks',
-        name: 'Skill Speed',
+        name: '技能速度',
         functions: [
             formula({
                 name: 'GCD',
                 fn: sksToGcd,
+
                 argExtractor: async function (args, gen) {
                     return [args.baseGcd, gen.levelStats, args.sks, args.haste] as const;
                 },
             }),
             formula({
-                name: 'DoT Multi',
+                name: 'DoT倍率',
                 fn: sksTickMulti,
                 hideableColumn: true,
                 argExtractor: async function (args, gen) {
@@ -294,7 +295,7 @@ export function registerFormulae() {
             baseGcdVar,
             {
                 type: "number",
-                label: "Skill Speed",
+                label: "技能速度",
                 property: "sks",
                 integer: true,
                 min: baseSub,
@@ -313,7 +314,7 @@ export function registerFormulae() {
 
     registerFormula<SpsSettings>({
         stub: 'sps',
-        name: 'Spell Speed',
+        name: '詠唱速度',
         primaryVariable: 'sps',
         functions: [
             formula({
@@ -324,7 +325,7 @@ export function registerFormulae() {
                 },
             }),
             formula({
-                name: 'DoT Multi',
+                name: 'DoT倍率',
                 hideableColumn: true,
                 fn: spsTickMulti,
                 argExtractor: async function (args, gen) {
@@ -336,7 +337,7 @@ export function registerFormulae() {
             baseGcdVar,
             {
                 type: "number",
-                label: "Spell Speed",
+                label: "詠唱速度",
                 property: "sps",
                 integer: true,
                 min: baseSub,
@@ -357,7 +358,7 @@ export function registerFormulae() {
         secondaryHaste: number,
     }>({
         stub: 'gcd-comp',
-        name: 'GCD Comparison',
+        name: 'GCD比較',
         primaryVariable: 'sps',
         functions: [
             formula({
@@ -376,7 +377,7 @@ export function registerFormulae() {
                 },
             }),
             formula({
-                name: 'DoT Multi',
+                name: 'DoT倍率',
                 hideableColumn: true,
                 fn: spsTickMulti,
                 argExtractor: async function (args, gen) {
@@ -387,12 +388,12 @@ export function registerFormulae() {
         variables: [
             {
                 ...baseGcdVar,
-                label: 'Base GCD 1',
+                label: '基礎GCD 1',
             },
             {
                 ...baseGcdVar,
                 property: 'secondaryGcd',
-                label: 'Base GCD 2',
+                label: '基礎GCD 2',
             },
             {
                 type: "number",
@@ -403,12 +404,12 @@ export function registerFormulae() {
             },
             {
                 ...hasteVar,
-                label: 'Haste 1',
+                label: '加速 1',
             },
             {
                 ...hasteVar,
                 property: 'secondaryHaste',
-                label: 'Haste 2',
+                label: '加速 2',
             },
         ],
         makeDefaultInputs: (gen: GeneralSettings) => {
@@ -425,16 +426,16 @@ export function registerFormulae() {
     registerFormula<{
         crit: number,
     }>({
-        name: "Crit",
+        name: "暴擊",
         stub: "crit",
         functions: [formula({
-            name: "Crit Chance",
+            name: "暴擊機率",
             fn: critChance,
             argExtractor: async function (arg, gen: GeneralSettings) {
                 return [gen.levelStats, arg.crit] as const;
             },
         }), formula({
-            name: "Crit Damage",
+            name: "暴擊傷害",
             fn: critDmg,
             argExtractor: async function (arg, gen: GeneralSettings) {
                 return [gen.levelStats, arg.crit] as const;
@@ -448,7 +449,7 @@ export function registerFormulae() {
         primaryVariable: 'crit',
         variables: [{
             type: "number",
-            label: "Crit Stat",
+            label: "暴擊數值",
             property: "crit",
             integer: true,
             min: baseSub,
@@ -459,11 +460,11 @@ export function registerFormulae() {
         crit: number,
         bonusPct: number,
     }>({
-        name: "Bonus/Auto Crit",
+        name: "加成/自動暴擊",
         stub: "autocrit",
         functions: [
             formula({
-                name: "Buffed Crit Chance",
+                name: "加成暴擊機率",
                 excludeFormula: true,
                 fn: (critChance: number, bonusCritChance: number) => flp(3, critChance + bonusCritChance),
                 argExtractor: async function (arg, gen: GeneralSettings) {
@@ -474,7 +475,7 @@ export function registerFormulae() {
                 },
             }),
             formula({
-                name: "Autocrit Extra Multi",
+                name: "自動暴擊額外倍率",
                 fn: autoCritBuffDmg,
                 argExtractor: async function (arg, gen: GeneralSettings) {
                     const cmult = critDmg(gen.levelStats, arg.crit);
@@ -482,7 +483,7 @@ export function registerFormulae() {
                 },
             }),
             formula({
-                name: "Autocrit Total Multi",
+                name: "自動暴擊總倍率",
                 fn: (cm: number, bcm: number) => flp(5, cm * bcm),
                 excludeFormula: true,
                 argExtractor: async function (arg, gen: GeneralSettings) {
@@ -500,13 +501,13 @@ export function registerFormulae() {
         primaryVariable: 'crit',
         variables: [{
             type: "number",
-            label: "Crit Stat",
+            label: "暴擊數值",
             property: "crit",
             integer: true,
             min: baseSub,
         }, {
             type: "number",
-            label: "Crit % Buff",
+            label: "暴擊%加成",
             property: "bonusPct",
             integer: true,
             min: () => 0,
@@ -517,22 +518,22 @@ export function registerFormulae() {
     registerFormula<{
         'dhit': number
     }>({
-        name: 'Direct Hit',
+        name: '直擊',
         stub: "dhit",
         functions: [formula({
-            name: "DH Chance",
+            name: "直擊機率",
             fn: dhitChance,
             argExtractor: async function (arg, gen: GeneralSettings) {
                 return [gen.levelStats, arg.dhit] as const;
             },
         }), formula({
-            name: "DH Damage",
+            name: "直擊傷害",
             fn: dhitDmg,
             argExtractor: async function (arg, gen: GeneralSettings) {
                 return [gen.levelStats, arg.dhit] as const;
             },
         }), formula({
-            name: "Auto-DH Bonus",
+            name: "自動直擊加成",
             fn: autoDhitBonusDmg,
             argExtractor: async function (arg, gen: GeneralSettings) {
                 return [gen.levelStats, arg.dhit] as const;
@@ -544,7 +545,7 @@ export function registerFormulae() {
         primaryVariable: "dhit",
         variables: [{
             type: "number",
-            label: "DH Stat",
+            label: "直擊數值",
             property: "dhit",
             integer: true,
             min: baseSub,
@@ -554,10 +555,10 @@ export function registerFormulae() {
     registerFormula<{
         'vit': number,
     }>({
-        name: 'Vitality',
+        name: '耐力',
         stub: 'vit',
         functions: [formula({
-            name: 'Hit Points',
+            name: 'HP',
             fn: vitToHp,
             async argExtractor(arg, gen: GeneralSettings) {
                 return [gen.levelStats, await getClassJobStatsFull(gen.classJob), arg.vit] as const;
@@ -569,7 +570,7 @@ export function registerFormulae() {
         primaryVariable: 'vit',
         variables: [{
             type: 'number',
-            label: 'Vitality',
+            label: '耐力',
             property: 'vit',
             integer: true,
             min: baseMain,
@@ -577,7 +578,7 @@ export function registerFormulae() {
     });
 
     registerFormula<Record<string, never>>({
-        name: 'Levels',
+        name: '等級',
         stub: 'lvlmod',
         functions: [formula({
             name: 'baseMain',
@@ -601,21 +602,21 @@ export function registerFormulae() {
                 return [gen.levelStats] as const;
             },
         }), formula({
-            name: 'Base HP',
+            name: '基礎HP',
             excludeFormula: true,
             fn: (lvl: LevelStats) => lvl.hp,
             async argExtractor(arg, gen: GeneralSettings) {
                 return [gen.levelStats] as const;
             },
         }), formula({
-            name: 'HP Mod',
+            name: 'HP係數',
             excludeFormula: true,
             fn: hpScalar,
             async argExtractor(arg, gen: GeneralSettings) {
                 return [gen.levelStats, JOB_DATA[gen.classJob]] as const;
             },
         }), formula({
-            name: 'AP Mod',
+            name: 'AP係數',
             excludeFormula: true,
             fn: mainStatPowerMod,
             async argExtractor(arg, gen: GeneralSettings) {
@@ -629,10 +630,10 @@ export function registerFormulae() {
         variables: [],
     });
     registerFormula<Record<string, never>>({
-        name: 'Jobs',
+        name: '職業',
         stub: 'job',
         functions: [formula({
-            name: 'AA Pot',
+            name: '自動攻擊威力',
             excludeFormula: true,
             fn: (jobData: JobData) => jobData.aaPotency,
             async argExtractor(arg, gen: GeneralSettings) {

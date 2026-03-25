@@ -10,11 +10,11 @@ export class WhmSheetSimGui extends SimulationGui<WhmSheetSimResult, WhmSheetSet
         const checkboxesDiv = document.createElement("div");
 
         const brdCheck = new FieldBoundCheckBox<WhmSheetSettings>(settings, 'hasBard', {id: 'brd-checkbox'});
-        checkboxesDiv.appendChild(labeledCheckbox('BRD in Party', brdCheck));
+        checkboxesDiv.appendChild(labeledCheckbox('隊伍中有詩人', brdCheck));
         const schCheck = new FieldBoundCheckBox<WhmSheetSettings>(settings, 'hasScholar', {id: 'sch-checkbox'});
-        checkboxesDiv.appendChild(labeledCheckbox('SCH in Party', schCheck));
+        checkboxesDiv.appendChild(labeledCheckbox('隊伍中有學者', schCheck));
         const drgCheck = new FieldBoundCheckBox<WhmSheetSettings>(settings, 'hasDragoon', {id: 'drg-checkbox'});
-        checkboxesDiv.appendChild(labeledCheckbox('DRG in Party', drgCheck));
+        checkboxesDiv.appendChild(labeledCheckbox('隊伍中有龍騎', drgCheck));
 
         outerDiv.appendChild(checkboxesDiv);
 
@@ -22,28 +22,28 @@ export class WhmSheetSimGui extends SimulationGui<WhmSheetSimResult, WhmSheetSet
             id: 'ldPerMin-input',
             postValidators: [nonNegative],
         });
-        const ldPerMinLabel = labelFor('Lucid Dreaming/Minute', ldPerMin);
+        const ldPerMinLabel = labelFor('醒夢/分鐘', ldPerMin);
         outerDiv.appendChild(quickElement("div", ['labeled-item'], [ldPerMinLabel, ldPerMin]));
 
         const rezPerMin = new FieldBoundFloatField<WhmSheetSettings>(settings, 'rezPerMin', {
             id: 'rezPerMin-input',
             postValidators: [nonNegative],
         });
-        const rezPerMinLabel = labelFor('Raise/Minute', rezPerMin);
+        const rezPerMinLabel = labelFor('復活/分鐘', rezPerMin);
         outerDiv.appendChild(quickElement("div", ['labeled-item'], [rezPerMinLabel, rezPerMin]));
 
         const m2perMin = new FieldBoundFloatField<WhmSheetSettings>(settings, 'm2PerMin', {
             id: 'm2PerMin-input',
             postValidators: [nonNegative],
         });
-        const m2perMinLabel = labelFor('Medica II/Minute', m2perMin);
+        const m2perMinLabel = labelFor('醫濟II/分鐘', m2perMin);
         outerDiv.appendChild(quickElement("div", ['labeled-item'], [m2perMinLabel, m2perMin]));
 
         const c3perMin = new FieldBoundFloatField<WhmSheetSettings>(settings, 'c3PerMin', {
             id: 'c3PerMin-input',
             postValidators: [nonNegative],
         });
-        const c3perMinLabel = labelFor('Cure III/Minute', c3perMin);
+        const c3perMinLabel = labelFor('癒療III/分鐘', c3perMin);
         outerDiv.appendChild(quickElement("div", ['labeled-item'], [c3perMinLabel, c3perMin]));
 
         return outerDiv;

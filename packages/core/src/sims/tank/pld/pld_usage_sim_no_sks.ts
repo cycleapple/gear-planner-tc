@@ -4,7 +4,7 @@ import * as Actions from "./pld_actions_no_sks";
 import {ExternalCountSettings, CountSimResult, BaseUsageCountSim, SkillCount} from "@xivgear/core/sims/processors/count_sim";
 
 export const pldUsageSimSpec: SimSpec<PldUsageSim, PldUsageSimSettings> = {
-    displayName: "PLD Usage Sim (sks not fully supported)",
+    displayName: "騎士用量模擬（技速未完全支援）",
     loadSavedSimInstance(exported: ExternalCountSettings<PldUsageSimSettings>) {
         return new PldUsageSim(exported);
     },

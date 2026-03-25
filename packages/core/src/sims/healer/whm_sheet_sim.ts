@@ -42,7 +42,7 @@ export interface WhmSheetSettings extends SimSettings {
 }
 
 export const whmSheetSpec: SimSpec<WhmSheetSim, WhmSheetSettings> = {
-    displayName: "WHM (Deprecated)",
+    displayName: "白魔（已棄用）",
     loadSavedSimInstance(exported: WhmSheetSettings) {
         return new WhmSheetSim(exported);
     },

@@ -41,8 +41,10 @@ export class AbilityIcon extends HTMLImageElement {
 
 export function actionNameTranslated(ability: Ability): HTMLSpanElement {
     const text = quickElement('span', ['ability-name'], [ability.name]);
-    // Don't translate 'auto-attack' in en, just leave it as the original string
-    const shouldTranslate: boolean = ability.translate ?? getCurrentLanguage() !== 'en';
+    const lang = getCurrentLanguage();
+    // TC names are already translated in the code, don't override with XIVAPI
+    // For en, don't translate auto-attack
+    const shouldTranslate: boolean = lang !== 'tc' && (ability.translate ?? lang !== 'en');
     if (shouldTranslate) {
         getDataFor(ability.id).then(data => {
             text.textContent = data.Name;

@@ -3,7 +3,7 @@ import * as Actions from "./vpr_actions";
 import {noStatusId} from "../../buff_helpers";
 
 export const HonedReavers: PersonalBuff = {
-    name: "Honed Reavers",
+    name: "蛇銳牙【穿裂】 ",
     saveKey: "Honed Reavers",
     duration: 60,
     selfOnly: true,
@@ -22,7 +22,7 @@ export const HonedReavers: PersonalBuff = {
 };
 
 export const HonedSteel: PersonalBuff = {
-    name: "Honed Steel",
+    name: "蛇銳牙【咬創】 ",
     saveKey: "Honed Steel",
     duration: 60,
     selfOnly: true,
@@ -52,7 +52,7 @@ export const HuntersInstinct: PersonalBuff = {
 };
 
 export const Swiftscaled: PersonalBuff = {
-    name: "Swiftscaled",
+    name: "疾速",
     saveKey: "SwiftScaled",
     duration: 40,
     selfOnly: true,
@@ -79,7 +79,7 @@ const ComboFinisherBaseBuff = {
 
 export const FlankstungVenom: PersonalBuff = {
     ...ComboFinisherBaseBuff,
-    name: "Flankstung Venom",
+    name: "銳牙【側擊】",
     saveKey: "Flankstung Venom",
     appliesTo: ability => ability.id === Actions.FlankstingStrike.id,
     statusId: 3645,
@@ -87,7 +87,7 @@ export const FlankstungVenom: PersonalBuff = {
 
 export const FlanksbaneVenom: PersonalBuff = {
     ...ComboFinisherBaseBuff,
-    name: "Flanksbane Venom",
+    name: "銳牙【側裂】",
     saveKey: "Flanksbane Venom",
     appliesTo: ability => ability.id === Actions.FlanksbaneFang.id,
     statusId: 3646,
@@ -95,7 +95,7 @@ export const FlanksbaneVenom: PersonalBuff = {
 
 export const HindstungVenom: PersonalBuff = {
     ...ComboFinisherBaseBuff,
-    name: "Hindstung Venom",
+    name: "銳牙【背擊】",
     saveKey: "Hindstung Venom",
     appliesTo: ability => ability.id === Actions.HindstingStrike.id,
     statusId: 3647,
@@ -103,14 +103,14 @@ export const HindstungVenom: PersonalBuff = {
 
 export const HindsbaneVenom: PersonalBuff = {
     ...ComboFinisherBaseBuff,
-    name: "Hindsbane Venom",
+    name: "銳牙【背裂】",
     saveKey: "Hindsbane Venom",
     appliesTo: ability => ability.id === Actions.HindsbaneFang.id,
     statusId: 3648,
 };
 
 export const ReadyToReawaken: PersonalBuff = {
-    name: "Ready to Reawaken",
+    name: "祖靈降臨預備",
     saveKey: "Ready to Reawaken",
     duration: 30,
     selfOnly: true,
@@ -167,7 +167,7 @@ export const SwiftskinsVenom: PersonalBuff = {
 };
 
 export const PoisedForTwinfang: PersonalBuff = {
-    name: "Poised for Twinfang",
+    name: "飛銳尾【連尾】",
     saveKey: "Poised for Twinfang",
     duration: 60,
     selfOnly: true,
@@ -186,7 +186,7 @@ export const PoisedForTwinfang: PersonalBuff = {
 };
 
 export const PoisedForTwinblood: PersonalBuff = {
-    name: "Poised for Twinblood",
+    name: "飛銳尾【亂尾】",
     saveKey: "Poised for Twinblood",
     duration: 60,
     selfOnly: true,

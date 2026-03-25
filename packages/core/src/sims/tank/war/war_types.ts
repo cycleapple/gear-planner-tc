@@ -34,7 +34,7 @@ export type WarExtraData = {
 };
 
 export const NascentChaosBuff: Buff = {
-    name: "Nascent Chaos",
+    name: "原初的混沌",
     duration: 30,
     selfOnly: true,
     effects: {
@@ -48,7 +48,7 @@ export const NascentChaosBuff: Buff = {
 };
 
 export const SurgingTempest: PersonalBuff = {
-    name: "Surging Tempest",
+    name: "戰場風暴",
     saveKey: "Surging Tempest",
     duration: 30,
     selfOnly: true,
@@ -60,7 +60,7 @@ export const SurgingTempest: PersonalBuff = {
 };
 
 export const InnerReleaseBuff: Buff = {
-    name: "Inner Release",
+    name: "原初的解放",
     duration: 15,
     selfOnly: true,
     effects: {
@@ -78,7 +78,7 @@ export const InnerReleaseBuff: Buff = {
 };
 
 export const PrimalRendReadyBuff: Buff = {
-    name: "Primal Rend Ready",
+    name: "蠻荒崩裂預備",
     duration: 30,
     selfOnly: true,
     effects: {
@@ -95,7 +95,7 @@ export const PrimalRendReadyBuff: Buff = {
 };
 
 export const PrimalRuinationReadyBuff: Buff = {
-    name: "Primal Ruination Ready",
+    name: "盡毀預備",
     duration: 20,
     selfOnly: true,
     effects: {
@@ -112,7 +112,7 @@ export const PrimalRuinationReadyBuff: Buff = {
 };
 
 export const WrathfulBuff: Buff = {
-    name: "Wrathful",
+    name: "原初的怒震預備",
     duration: 30,
     selfOnly: true,
     effects: {

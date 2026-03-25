@@ -63,7 +63,7 @@ export interface DrgSettingsExternal extends ExternalCycleSettings<DrgSettings> 
 
 export const drgSpec: SimSpec<DrgSim, DrgSettingsExternal> = {
     stub: "drg-sim",
-    displayName: "DRG Sim",
+    displayName: "龍騎模擬",
     description: `Simulates a DRG rotation for levels 100/90/80/70.
 If potions are enabled, pots in the burst window every 6m (i.e. 0m, 6m, 12m, etc).
 Defaults to simulating a killtime of 8m 30s (510s).`,

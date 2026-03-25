@@ -38,26 +38,26 @@ export class pldSKSSimGui extends BaseMultiCycleSimGui<PldSKSSheetSimResult, Pld
         const opt3 = document.createElement("options3");
         const space3 = document.createElement("space3");
 
-        behaviorDiv.appendChild(labeledCheckbox('Adjust Rotation for Skill Speed', sksCheck));
-        behaviorDiv.appendChild(labelFor("Strategy Options:", opt1));
-        behaviorDiv.appendChild(labeledCheckbox('Force just minimise drifting & 8s', justMinimiseCheck));
-        behaviorDiv.appendChild(labeledCheckbox('Force trying for 9/8 at 2.47+', tryCheck));
-        behaviorDiv.appendChild(labeledCheckbox('Force always late FOF at 2.43+', lateCheck));
-        behaviorDiv.appendChild(labeledCheckbox('Avoid 2x & early HS in 9 GCD FOFs', avoidDoubleHS9sCheck));
-        behaviorDiv.appendChild(labeledCheckbox('Assume perfect FOF late weaves', hyperRobotCheck));
-        behaviorDiv.appendChild(labeledCheckbox('Simulate always missing 9th GCD', neverGet9Check));
+        behaviorDiv.appendChild(labeledCheckbox('依技能速度調整循環', sksCheck));
+        behaviorDiv.appendChild(labelFor("策略選項:", opt1));
+        behaviorDiv.appendChild(labeledCheckbox('強制僅最小化漂移 & 8連', justMinimiseCheck));
+        behaviorDiv.appendChild(labeledCheckbox('強制在2.47+嘗試9/8連', tryCheck));
+        behaviorDiv.appendChild(labeledCheckbox('強制在2.43+始終延遲FOF', lateCheck));
+        behaviorDiv.appendChild(labeledCheckbox('避免9 GCD FOF中的雙重及提前HS', avoidDoubleHS9sCheck));
+        behaviorDiv.appendChild(labeledCheckbox('假設完美FOF延遲織入', hyperRobotCheck));
+        behaviorDiv.appendChild(labeledCheckbox('模擬始終錯過第9個GCD', neverGet9Check));
         behaviorDiv.appendChild(labelFor("-", space1));
 
-        openerDiv.appendChild(labelFor("Start & End:", opt2));
-        openerDiv.appendChild(labeledCheckbox('Include a hardcast HS in the opener', hcOpenCheck));
-        openerDiv.appendChild(labeledCheckbox('Use opener 1 GCD earlier', earlyOpenCheck));
-        openerDiv.appendChild(labeledCheckbox('Disable 20s burn down optimisation', disableBurnCheck));
+        openerDiv.appendChild(labelFor("開始與結束:", opt2));
+        openerDiv.appendChild(labeledCheckbox('在起手中包含硬讀條HS', hcOpenCheck));
+        openerDiv.appendChild(labeledCheckbox('提前1個GCD使用起手', earlyOpenCheck));
+        openerDiv.appendChild(labeledCheckbox('停用20秒收尾優化', disableBurnCheck));
         openerDiv.appendChild(labelFor("-", space2));
 
-        oddbinsDiv.appendChild(labelFor("Odd Options:", opt3));
-        oddbinsDiv.appendChild(labeledCheckbox('What if? Use Endwalker 12312 Prio', disableNewPrioCheck));
-        oddbinsDiv.appendChild(labeledCheckbox('Use Potencies from 7.01', use701potenciesCheck));
-        oddbinsDiv.appendChild(labeledCheckbox('Hide All Extra Comments on Sheet', hideCommentsCheck));
+        oddbinsDiv.appendChild(labelFor("特殊選項:", opt3));
+        oddbinsDiv.appendChild(labeledCheckbox('假設？使用曉月12312優先順序', disableNewPrioCheck));
+        oddbinsDiv.appendChild(labeledCheckbox('使用7.01版威力', use701potenciesCheck));
+        oddbinsDiv.appendChild(labeledCheckbox('隱藏表上所有額外註解', hideCommentsCheck));
         oddbinsDiv.appendChild(labelFor("-", space3));
 
         // Add our 3 sets of options:

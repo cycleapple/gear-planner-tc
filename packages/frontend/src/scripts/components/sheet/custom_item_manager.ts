@@ -92,7 +92,7 @@ export class CustomItemTable extends CustomTable<CustomItem> {
             },
             {
                 shortName: 'name',
-                displayName: 'Name',
+                displayName: '名稱',
                 getter: item => item,
                 renderer: (item: CustomItem) => {
                     return new FieldBoundTextField(item.customData, 'name');
@@ -102,12 +102,12 @@ export class CustomItemTable extends CustomTable<CustomItem> {
                 headerStyler: setTitle('Name of the item'),
             }, {
                 shortName: 'slot',
-                displayName: 'Slot',
+                displayName: '部位',
                 getter: item => item.occGearSlotName,
                 initialWidth: 85,
             }, {
                 shortName: 'ilvl',
-                displayName: 'ilvl (cap?)',
+                displayName: '品級 (上限?)',
                 getter: item => item,
                 renderer: (item: CustomItem) => {
                     const ilvlInput = new FieldBoundIntField(item, 'ilvl', {
@@ -122,7 +122,7 @@ export class CustomItemTable extends CustomTable<CustomItem> {
                             ilvlInput._validationMessage = undefined;
                         }
                     };
-                    capBox.title = 'Apply caps based on the ilvl of the sheet.';
+                    capBox.title = '根據配裝表的裝備等級套用上限。';
                     ilvlInput.addListener(recheck);
                     capBox.addListener(() => recheck(item.ilvl));
                     recheck(item.ilvl);
@@ -130,15 +130,15 @@ export class CustomItemTable extends CustomTable<CustomItem> {
                     const holder = quickElement("div", [], [ilvlInput, capBox]);
                     holder.style.display = 'flex';
                     ilvlInput.style.minWidth = '40px';
-                    ilvlInput.title = 'Item level. Checkbox controls whether caps are applied based on the ilvl of the sheet.';
+                    ilvlInput.title = '裝備等級。核取方塊控制是否根據配裝表的裝備等級套用上限。';
                     return holder;
                 },
                 initialWidth: 80,
-                headerStyler: setTitle('Item level. Checkbox controls whether caps are applied based on the ilvl of the sheet.'),
+                headerStyler: setTitle('裝備等級。核取方塊控制是否根據配裝表的裝備等級套用上限。'),
             },
             {
                 shortName: 'mat-large',
-                displayName: 'Lg Mat',
+                displayName: '大魔晶石',
                 getter: item => item,
                 renderer: (item: CustomItem) => {
                     return new FieldBoundIntField(item.customData, 'largeMateriaSlots', {
@@ -150,7 +150,7 @@ export class CustomItemTable extends CustomTable<CustomItem> {
                 colStyler: setTitle('Number of normal materia slots'),
             }, {
                 shortName: 'mat-small',
-                displayName: 'Sm Mat',
+                displayName: '小魔晶石',
                 getter: item => item,
                 renderer: (item: CustomItem) => {
                     return new FieldBoundIntField(item.customData, 'smallMateriaSlots', {
@@ -207,7 +207,7 @@ export class CustomItemTable extends CustomTable<CustomItem> {
                 });
             }), col({
                 shortName: 'haste',
-                displayName: 'Haste',
+                displayName: '加速',
                 getter: item => item,
                 renderer: (item: CustomItem) => {
                     return new FieldBoundIntField(item.customData.stats, 'gearHaste', {
@@ -217,16 +217,16 @@ export class CustomItemTable extends CustomTable<CustomItem> {
                 initialWidth: 60,
                 colStyler: (_, cell) => {
                     cell.classList.add('irrelevant-stat');
-                    cell.title = 'Haste (percentage)';
+                    cell.title = '加速（百分比）';
                 },
                 headerStyler: (_, cell) => {
                     cell.classList.add('irrelevant-stat');
-                    cell.title = 'Haste (percentage)';
+                    cell.title = '加速（百分比）';
                 },
             }),
             {
                 shortName: 'wdPhys',
-                displayName: 'WdP',
+                displayName: '物攻',
                 getter: item => item,
                 renderer: ifWeapon((item: CustomItem) => {
                     return new FieldBoundIntField(item.customData.stats, "wdPhys", {
@@ -234,11 +234,11 @@ export class CustomItemTable extends CustomTable<CustomItem> {
                     });
                 }),
                 initialWidth: 40,
-                headerStyler: setTitle('Physical Weapon Damage'),
-                colStyler: setTitle('Physical Weapon Damage'),
+                headerStyler: setTitle('物理基本性能'),
+                colStyler: setTitle('物理基本性能'),
             }, {
                 shortName: 'wdMag',
-                displayName: 'WdM',
+                displayName: '魔攻',
                 getter: item => item,
                 renderer: ifWeapon((item: CustomItem) => {
                     return new FieldBoundIntField(item.customData.stats, "wdMag", {
@@ -246,17 +246,17 @@ export class CustomItemTable extends CustomTable<CustomItem> {
                     });
                 }),
                 initialWidth: 40,
-                headerStyler: setTitle('Magical Weapon Damage'),
-                colStyler: setTitle('Magical Weapon Damage'),
+                headerStyler: setTitle('魔法基本性能'),
+                colStyler: setTitle('魔法基本性能'),
             }, {
                 shortName: 'wDelay',
-                displayName: 'Wpn Dly',
+                displayName: '攻擊間隔',
                 getter: item => item,
                 renderer: ifWeapon((item: CustomItem) => {
                     const out = new FieldBoundFloatField(item.customData.stats, "weaponDelay", {
                         postValidators: [nonNegative],
                     });
-                    out.title = 'Enter weapon delay in seconds (e.g. 3.125)';
+                    out.title = '輸入攻擊間隔秒數（例如 3.125）';
 
                     const exampleWeapon = this.sheet.highestIlvlItemForSlot(item.occGearSlotName);
                     const suggestions = [exampleWeapon.stats.weaponDelay];
@@ -273,8 +273,8 @@ export class CustomItemTable extends CustomTable<CustomItem> {
                     return out;
                 }),
                 initialWidth: 80,
-                headerStyler: setTitle('Weapon Delay (Seconds)'),
-                colStyler: setTitle('Weapon Delay (Seconds)'),
+                headerStyler: setTitle('攻擊間隔（秒）'),
+                colStyler: setTitle('攻擊間隔（秒）'),
             }];
 
         this.refresh();
@@ -305,7 +305,7 @@ export class CustomItemPopup extends BaseModal {
 
     constructor(private readonly sheet: GearPlanSheetGui) {
         super();
-        this.headerText = 'Custom Items';
+        this.headerText = '自訂裝備';
         const table = new CustomItemTable(sheet);
         this.contentArea.appendChild(table);
 
@@ -390,7 +390,7 @@ export class CustomFoodTable extends CustomTable<CustomFood> {
             },
             {
                 shortName: 'name',
-                displayName: 'Name',
+                displayName: '名稱',
                 getter: item => item,
                 renderer: (item: CustomFood) => {
                     return new FieldBoundTextField(item.customData, 'name');
@@ -400,7 +400,7 @@ export class CustomFoodTable extends CustomTable<CustomFood> {
                 colStyler: setTitle('Name of the item'),
             }, {
                 shortName: 'ilvl',
-                displayName: 'ilvl',
+                displayName: '品級',
                 getter: item => item,
                 renderer: (item: CustomFood) => {
                     return new FieldBoundIntField(item.customData, 'ilvl', {
@@ -412,7 +412,7 @@ export class CustomFoodTable extends CustomTable<CustomFood> {
                 colStyler: setTitle('Item level'),
             }, {
                 shortName: 'vitality-percent',
-                displayName: 'Vit %',
+                displayName: '耐力 %',
                 getter: item => item,
                 renderer: (item: CustomFood) => {
                     return new FieldBoundIntField(item.customData.vitalityBonus, 'percentage', {postValidators: [nonNegative]});
@@ -422,7 +422,7 @@ export class CustomFoodTable extends CustomTable<CustomFood> {
                 colStyler: setTitle('Vitality bonus percentage'),
             }, {
                 shortName: 'vitality-cap',
-                displayName: 'Vit Max',
+                displayName: '耐力上限',
                 getter: item => item,
                 renderer: (item: CustomFood) => {
                     return new FieldBoundIntField(item.customData.vitalityBonus, 'max', {postValidators: [nonNegative]});
@@ -432,7 +432,7 @@ export class CustomFoodTable extends CustomTable<CustomFood> {
                 colStyler: setTitle('Vitality bonus cap'),
             }, {
                 shortName: 'primary-stat',
-                displayName: '1st Stat',
+                displayName: '第一屬性',
                 getter: item => item,
                 renderer: (item: CustomFood) => {
                     return new FieldBoundDataSelect(item.customData, 'primaryStat', value => value ? STAT_FULL_NAMES[value] : 'None', [null, ...ALL_SUB_STATS]);
@@ -462,7 +462,7 @@ export class CustomFoodTable extends CustomTable<CustomFood> {
                 colStyler: setTitle('The primary sub-stat bonus cap'),
             }, {
                 shortName: 'secondary-stat',
-                displayName: '2nd Stat',
+                displayName: '第二屬性',
                 getter: item => item,
                 renderer: (item: CustomFood) => {
                     return new FieldBoundDataSelect(item.customData, 'secondaryStat', value => value ? STAT_FULL_NAMES[value] : 'None', [null, ...ALL_SUB_STATS]);
@@ -520,7 +520,7 @@ export class CustomFoodTable extends CustomTable<CustomFood> {
 export class CustomFoodPopup extends BaseModal {
     constructor(private readonly sheet: GearPlanSheetGui) {
         super();
-        this.headerText = 'Custom Food';
+        this.headerText = '自訂食物';
         const table = new CustomFoodTable(sheet);
         this.contentArea.appendChild(table);
 

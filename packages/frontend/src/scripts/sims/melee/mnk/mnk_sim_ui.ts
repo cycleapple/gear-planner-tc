@@ -12,7 +12,7 @@ export class MnkSimGui extends BaseMultiCycleSimGui<MnkSimResult, MnkSettings> {
         return [
             {
                 shortName: 'chakra',
-                displayName: 'Chakra',
+                displayName: '鬥氣',
                 getter: used => isFinalizedAbilityUse(used) ? used.original : null,
                 renderer: extraDataDiscreteGaugeRenderer<MNKExtraData>((_, extra) => {
                     const chakra = extra.gauge.chakra;
@@ -34,7 +34,7 @@ export class MnkSimGui extends BaseMultiCycleSimGui<MnkSimResult, MnkSettings> {
             },
             {
                 shortName: 'fury',
-                displayName: "Beast Fury",
+                displayName: '獸性',
                 getter: used => isFinalizedAbilityUse(used) ? used.original : null,
                 renderer: extraDataDiscreteGaugeRenderer<MNKExtraData>((_, extra) => {
                     const gauge = extra.gauge;
@@ -59,7 +59,7 @@ export class MnkSimGui extends BaseMultiCycleSimGui<MnkSimResult, MnkSettings> {
             },
             {
                 shortName: 'nadi',
-                displayName: "Nadi",
+                displayName: '脈輪',
                 getter: used => isFinalizedAbilityUse(used) ? used.original : null,
                 renderer: extraDataDiscreteGaugeRenderer<MNKExtraData>((_, extra) => {
                     const lNadi = extra.gauge.lunarNadi;
@@ -79,7 +79,7 @@ export class MnkSimGui extends BaseMultiCycleSimGui<MnkSimResult, MnkSettings> {
                 }),
             }, {
                 shortName: 'beastChakra',
-                displayName: "Beast Chakra",
+                displayName: '獸鬥氣',
                 getter: used => isFinalizedAbilityUse(used) ? used.original : null,
                 renderer: extraDataDiscreteGaugeRenderer<MNKExtraData>((_, extra) => {
                     const chakra = extra.gauge.beastChakra;

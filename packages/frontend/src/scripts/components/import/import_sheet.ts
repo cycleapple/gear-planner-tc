@@ -15,10 +15,10 @@ export class ImportSheetArea extends NamedSection {
     private readonly textArea: HTMLTextAreaElement;
 
     constructor(private sheetOpenCallback: (sheet: GearPlanSheetGui) => Promise<void>) {
-        super('Import Sheet');
+        super('匯入配裝表');
 
         const explanation = document.createElement('p');
-        explanation.textContent = 'This will import into a new sheet. You can paste a gear planner link, gear planner JSON, or an Etro link.';
+        explanation.textContent = '這將匯入為新的配裝表。你可以貼上配裝規劃器連結、配裝規劃器 JSON 或 Etro 連結。';
         this.contentArea.appendChild(explanation);
 
         const textAreaDiv = document.createElement("div");
@@ -26,7 +26,7 @@ export class ImportSheetArea extends NamedSection {
 
         this.textArea = document.createElement("textarea");
         this.textArea.id = 'set-import-textarea';
-        this.textArea.placeholder = 'Paste the link or JSON here';
+        this.textArea.placeholder = '在此貼上連結或 JSON';
         textAreaDiv.appendChild(this.textArea);
         this.loader = new LoadingBlocker();
         this.loader.classList.add('with-bg');
@@ -36,7 +36,7 @@ export class ImportSheetArea extends NamedSection {
         this.contentArea.appendChild(textAreaDiv);
         textAreaDiv.appendChild(document.createElement("br"));
 
-        this.importButton = makeActionButton("Import", () => this.doImport());
+        this.importButton = makeActionButton("匯入", () => this.doImport());
         this.contentArea.appendChild(this.importButton);
         this.ready = true;
     }
@@ -64,7 +64,7 @@ export class ImportSheetArea extends NamedSection {
                     }
                     catch (e) {
                         console.error('Import error', e);
-                        alert('Error importing');
+                        alert('匯入錯誤');
                     }
                     return;
                 case "shortlink":
@@ -76,7 +76,7 @@ export class ImportSheetArea extends NamedSection {
                         const jobs = new Set<JobName>();
                         sets.forEach(set => jobs.add(set.job));
                         if (jobs.size > 1) {
-                            const confirmed = confirm(`The sets provided do not have the same job. The sheet will be imported as a ${sets[0].job} sheet based on the first link provided. To change jobs, re-order the URLs, or 'Save As' the sheet after creation.`);
+                            const confirmed = confirm(`提供的套裝職業不一致。配裝表將根據第一個連結設定為 ${sets[0].job} 配裝表。若要更改職業，請重新排列 URL，或建立後使用「另存為」。`);
                             if (!confirmed) {
                                 this.ready = true;
                                 return;
@@ -88,7 +88,7 @@ export class ImportSheetArea extends NamedSection {
                     }, err => {
                         this.ready = true;
                         console.error("Error loading set from Etro", err);
-                        alert('Error loading Etro set');
+                        alert('載入 Etro 套裝時發生錯誤');
                     });
                     return;
                 case "bis":
@@ -97,7 +97,7 @@ export class ImportSheetArea extends NamedSection {
             }
         }
         console.error("Error loading imported data", text);
-        alert('That doesn\'t look like a valid import.');
+        alert('這看起來不是有效的匯入資料。');
     }
 
     doAsyncImport(provider: () => Promise<string>, onlySetIndex: number | undefined) {
@@ -107,7 +107,7 @@ export class ImportSheetArea extends NamedSection {
         }, err => {
             this.ready = true;
             console.error("Error importing set/sheet", err);
-            alert('Error loading set/sheet');
+            alert('載入套裝/配裝表時發生錯誤');
         });
     }
 
@@ -130,7 +130,7 @@ export class ImportSheetArea extends NamedSection {
             this.sheetOpenCallback(GRAPHICAL_SHEET_PROVIDER.fromSetExport(rawImport));
         }
         else {
-            alert("That doesn't look like a valid sheet or set");
+            alert("這看起來不是有效的配裝表或套裝");
         }
     }
 }

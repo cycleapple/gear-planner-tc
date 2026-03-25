@@ -85,13 +85,13 @@ export class AllSlotMateriaManager extends HTMLElement {
                 this.classList.remove("materia-manager-equipped");
                 const textSpan = document.createElement("span");
                 if (equipSlot.gearItem.isCustomRelic) {
-                    textSpan.textContent = "Click into cells to edit relic stats";
+                    textSpan.textContent = "點擊欄位以編輯肝武屬性";
                 }
                 else if (equipSlot.gearItem.isSyncedDown) {
-                    textSpan.textContent = "Melds unavailable due to ilvl sync";
+                    textSpan.textContent = "因裝備等級同步，無法鑲嵌";
                 }
                 else {
-                    textSpan.textContent = "No materia slots on this item";
+                    textSpan.textContent = "此裝備無魔晶石槽位";
                 }
                 this.replaceChildren(textSpan);
                 this._children = [];
@@ -106,7 +106,7 @@ export class AllSlotMateriaManager extends HTMLElement {
         }
         else {
             const textSpan = document.createElement("span");
-            textSpan.textContent = "No item selected";
+            textSpan.textContent = "未選擇裝備";
             this.replaceChildren(textSpan);
             this.classList.add("materia-slot-no-equip");
             this.classList.remove("materia-slot-no-slots");
@@ -207,32 +207,32 @@ export class SlotMateriaManager extends HTMLElement {
             this.classList.add("materia-slot-full");
             title = formatMateriaTitle(currentMat);
             if (editable) {
-                title += `\n\nAlt-click to remove.`;
+                title += `\n\nAlt+點擊移除。`;
             }
         }
         else {
             this.image.style.display = 'none';
             this.image.src = '';
-            this.text.textContent = 'Empty';
+            this.text.textContent = '空';
             this.classList.remove('materia-normal', 'materia-overcap', 'materia-overcap-major', 'materia-slot-full');
             // this.classList.remove('materia-slot-full', 'materia-normal', 'materia-overcap', 'materia-overcap-major')
             this.classList.add("materia-slot-empty");
             if (editable) {
-                title = 'Click to select materia\n';
+                title = '點擊選擇魔晶石\n';
             }
             else {
-                title = 'Empty';
+                title = '空';
             }
         }
         if (editable) {
-            title += `\nCtrl-click to ${this.materiaSlot.locked ? 'unlock' : 'prevent auto-fill/solving from affecting this slot.'}.`;
+            title += `\nCtrl+點擊${this.materiaSlot.locked ? '解鎖' : '鎖定此槽位，防止自動填充/求解器影響'}。`;
         }
         const locked = this.materiaSlot.locked;
         const displayAsLocked = locked && editable;
         this.classList.toggle('materia-slot-locked', displayAsLocked);
         this.classList.toggle('materia-slot-unlocked', !displayAsLocked);
         if (locked && editable) {
-            title = 'This slot is LOCKED. It will not be affected by auto-fill nor the solver.\n' + title;
+            title = '此槽位已鎖定。自動填充和求解器不會影響此槽位。\n' + title;
         }
         this.title = title;
     }
@@ -335,7 +335,7 @@ export class SlotMateriaManagerPopup extends HTMLElement {
         // Blank top-left
         const trash = el('div', {
             classes: ['materia-picker-remove', 'materia-picker-special-button'],
-            title: 'Remove this materia',
+            title: '移除此魔晶石',
         }, [makeTrashIcon()]);
         trash.addEventListener('mousedown', (ev) => {
             this.submit(undefined);
@@ -351,12 +351,12 @@ export class SlotMateriaManagerPopup extends HTMLElement {
             if (slot.locked) {
                 lock.classList.add('locked');
                 lock.classList.remove('unlocked');
-                lock.title = 'This slot is LOCKED. It will not be affected by auto-fill nor the solver.\n\nClick to unlock.';
+                lock.title = '此槽位已鎖定。自動填充和求解器不會影響此槽位。\n\n點擊解鎖。';
             }
             else {
                 lock.classList.add('unlocked');
                 lock.classList.remove('locked');
-                lock.title = 'This slot is unlocked. It may be affected by auto-fill and the solver.\n\nClick to lock.';
+                lock.title = '此槽位未鎖定。可能被自動填充和求解器影響。\n\n點擊鎖定。';
             }
         }
         lock.addEventListener('mousedown', (ev) => {
@@ -439,77 +439,77 @@ export class MateriaPriorityPicker extends HTMLElement {
         super();
         // this.appendChild(document.createTextNode('Materia Prio Thing Here'));
         const header = document.createElement('span');
-        header.textContent = 'Mat Prio: ';
+        header.textContent = '魔晶石優先: ';
         const fillModeDropdown = new FieldBoundDataSelect<MateriaAutoFillController, MateriaFillMode>(prioController, 'autoFillMode',
             (val: MateriaFillMode) => {
                 switch (val) {
                     case "leave_empty":
-                        return "Leave Empty";
+                        return "保持空位";
                     case "autofill":
-                        return "Prio Fill";
+                        return "優先填充";
                     case "retain_slot_else_prio":
-                        return "Keep Slot > Prio";
+                        return "保留槽位 > 優先";
                     case "retain_item_else_prio":
-                        return "Keep Item > Prio";
+                        return "保留裝備 > 優先";
                     case "retain_slot":
-                        return "Keep Slot > None";
+                        return "保留槽位 > 無";
                     case "retain_item":
-                        return "Keep Item > None";
+                        return "保留裝備 > 無";
                     default:
                         return "?";
                 }
             }, [...MATERIA_FILL_MODES]);
-        fillModeDropdown.title = 'Control what happens when an item is selected.\n' +
-            'Leave Empty: Do not fill any materia when selecting an item.\n' +
-            'Prio Fill: Fill materia slots according to the priority above.\n' +
-            'Keep Slot, else Prio: Keep the same materia as the previously item in that slot. If none equipped, use priority.\n' +
-            'Keep Item, else Prio: Remember what materia was equipped to each item. If none equipped, use priority.\n' +
-            'Keep Slot, else None: Keep the same materia as the previously item in that slot. If none equipped, leave empty.\n' +
-            'Keep Item, else None: Remember what materia was equipped to each item. If none equipped, leave empty.';
-        const fillModeLabel = labelFor("Fill Mode:", fillModeDropdown);
+        fillModeDropdown.title = '控制選擇裝備時的行為。\n' +
+            '保持空位: 選擇裝備時不填充任何魔晶石。\n' +
+            '優先填充: 根據上方的優先順序填充魔晶石槽位。\n' +
+            '保留槽位 > 優先: 保留該槽位上一件裝備的魔晶石。若無已裝備的魔晶石，則使用優先順序。\n' +
+            '保留裝備 > 優先: 記住每件裝備上裝備的魔晶石。若無已裝備的魔晶石，則使用優先順序。\n' +
+            '保留槽位 > 無: 保留該槽位上一件裝備的魔晶石。若無已裝備的魔晶石，則保持空位。\n' +
+            '保留裝備 > 無: 記住每件裝備上裝備的魔晶石。若無已裝備的魔晶石，則保持空位。';
+        const fillModeLabel = labelFor("填充模式:", fillModeDropdown);
         fillModeDropdown.addListener((newValue) => {
             recordEvent("fillMode", {
                 'mode': newValue,
             });
         });
 
-        const fillEmptyNow = makeActionButton([makePlusIcon(), 'Fill Empty'], () => {
+        const fillEmptyNow = makeActionButton([makePlusIcon(), '填充空位'], () => {
             prioController.fillEmpty();
             recordEvent("fillEmpty");
-        }, 'Fill all empty materia slots according to the chosen priority.');
+        }, '根據選定的優先順序填充所有空的魔晶石槽位。');
         fillEmptyNow.classList.add('materia-fill-button');
-        const fillAllNow = makeActionButton([makeNewSheetIcon(), 'Fill All'], () => {
+        const fillAllNow = makeActionButton([makeNewSheetIcon(), '全部填充'], () => {
             prioController.fillAll();
             recordEvent("fillAll");
-        }, 'Empty out and re-fill all materia slots according to the chosen priority.');
+        }, '清空並根據選定的優先順序重新填充所有魔晶石槽位。');
         fillAllNow.classList.add('materia-fill-button');
 
-        const lockAllEquipped = makeActionButton('Lock Filled', () => {
+        const lockAllEquipped = makeActionButton('鎖定已填', () => {
             prioController.lockFilled();
-        }, 'Lock all equipped materia');
+        }, '鎖定所有已裝備的魔晶石');
         lockAllEquipped.classList.add('narrow-button');
 
-        const lockAllEmpty = makeActionButton('Lock Empty', () => {
+        const lockAllEmpty = makeActionButton('鎖定空位', () => {
             prioController.lockEmpty();
-        }, 'Lock all empty materia slots');
+        }, '鎖定所有空的魔晶石槽位');
         lockAllEmpty.classList.add('narrow-button');
 
-        const unlockAll = makeActionButton('Unlock All', () => {
+        const unlockAll = makeActionButton('全部解鎖', () => {
             prioController.unlockAll();
-        }, 'Unlock all slots');
+        }, '解鎖所有槽位');
         unlockAll.classList.add('narrow-button');
 
-        const unequipAll = makeActionButton('Remove Unlocked', () => {
+        const unequipAll = makeActionButton('移除未鎖定', () => {
             prioController.unequipUnlocked();
-        }, 'Unequip all unlocked materia');
+        }, '移除所有未鎖定的魔晶石');
         unequipAll.classList.add('narrow-button');
 
-        const tips = quickElement('div', ['meld-solver-tips'], ['Tip: Ctrl-click a materia slot to lock/unlock it. Alt-click to remove materia.']);
+        const tips = quickElement('div', ['meld-solver-tips'], ['提示: Ctrl+點擊魔晶石槽位可鎖定/解鎖。Alt+點擊可移除魔晶石。']);
 
         const drag = new MateriaDragList(prioController);
 
         const minGcdText = document.createElement('span');
-        minGcdText.textContent = 'Min GCD: ';
+        minGcdText.textContent = '最低GCD: ';
 
         const minGcdInput = new FieldBoundFloatField(prioController.prio, 'minGcd', {
             postValidators: [ctx => {
@@ -532,7 +532,7 @@ export class MateriaPriorityPicker extends HTMLElement {
                 gcd: val,
             });
         });
-        minGcdInput.title = 'Enter the minimum desired GCD in the form x.yz.\nSkS/SpS materia will be de-prioritized once this target GCD is met.';
+        minGcdInput.title = '輸入所需的最低GCD，格式為 x.yz。\n達到目標GCD後，技能速度/詠唱速度魔晶石將被降低優先。';
         minGcdInput.classList.add('min-gcd-input');
         this.replaceChildren(header, drag,
             document.createElement('br'),
@@ -562,7 +562,7 @@ class MateriaDragger extends HTMLElement {
         this.inner = document.createElement('div');
         const span = document.createElement('span');
         const abbrev = STAT_ABBREVIATIONS[stat];
-        this.title = `Drag to change the priority of ${abbrev} materia relative to other types.`;
+        this.title = `拖動以更改 ${abbrev} 魔晶石相對於其他類型的優先順序。`;
         span.textContent = abbrev;
         this.inner.appendChild(span);
         this.inner.classList.add('materia-dragger-inner');
@@ -738,7 +738,7 @@ export class MateriaTotalsDisplay extends HTMLElement {
             }
             return primary;
         });
-        const totalsText = quickElement('div', ['materia-totals-label'], ['Totals:']);
+        const totalsText = quickElement('div', ['materia-totals-label'], ['合計:']);
         const inner = quickElement('div', ['materia-totals-inner'], elements);
         this.replaceChildren(totalsText, inner);
         this.empty = elements.length === 0;

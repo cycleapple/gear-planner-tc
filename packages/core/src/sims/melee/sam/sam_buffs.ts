@@ -16,7 +16,7 @@ const MEIKYO_ACTIONS: string[] = [
 ];
 
 export const Fuka: Buff = {
-    name: "Fuka",
+    name: "風花",
     selfOnly: true,
     effects: {
         haste: 13,
@@ -26,7 +26,7 @@ export const Fuka: Buff = {
 };
 
 export const Fugetsu: Buff = {
-    name: "Fugetsu",
+    name: "風月",
     selfOnly: true,
     effects: {
         dmgIncrease: 0.13,
@@ -36,7 +36,7 @@ export const Fugetsu: Buff = {
 };
 
 export const MeikyoShisuiBuff: Buff = {
-    name: "Meikyo Shisui",
+    name: "明鏡止水",
     selfOnly: true,
     effects: {
         // Only applies to some combo actions

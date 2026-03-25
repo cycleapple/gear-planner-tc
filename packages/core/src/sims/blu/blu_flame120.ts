@@ -14,7 +14,7 @@ export interface BluFlame120SettingsExternal extends ExternalCycleSettings<BluFl
 }
 
 export const BluFlame120Spec: SimSpec<BluFlame120Sim, BluFlame120SettingsExternal> = {
-    displayName: "BLU Flame 120s",
+    displayName: "青魔烈焰120秒",
     stub: "blu-flame120",
     supportedJobs: ["BLU"],
     isDefaultSim: false,

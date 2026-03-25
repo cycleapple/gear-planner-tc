@@ -60,7 +60,7 @@ export class BaseMultiCycleSimGui<ResultType extends CycleSimResult, InternalSet
         const custom = this.makeCustomConfigInterface(settings, updateCallback);
         if (custom) {
             custom.classList.add('custom-sim-settings-area');
-            const section = new NamedSection('Sim-Specific Settings');
+            const section = new NamedSection('模擬專屬設定');
             section.contentArea.append(custom);
             div.appendChild(section);
         }
@@ -79,13 +79,13 @@ export class BaseMultiCycleSimGui<ResultType extends CycleSimResult, InternalSet
     makeMainResultDisplay(result: ResultType, includeRotationName: boolean = false): HTMLElement {
         // noinspection JSNonASCIINames
         const data: AnyStringIndex = {
-            "Expected DPS": result.mainDpsFull.expected,
-            "Std Deviation": result.mainDpsFull.stdDev,
-            "Expected +1σ": applyStdDev(result.mainDpsFull, 1),
-            "Expected +2σ": applyStdDev(result.mainDpsFull, 2),
-            "Expected +3σ": applyStdDev(result.mainDpsFull, 3),
-            "Unbuffed PPS": result.unbuffedPps,
-            "Time Taken": result.totalTime,
+            "預期DPS": result.mainDpsFull.expected,
+            "標準差": result.mainDpsFull.stdDev,
+            "預期+1σ": applyStdDev(result.mainDpsFull, 1),
+            "預期+2σ": applyStdDev(result.mainDpsFull, 2),
+            "預期+3σ": applyStdDev(result.mainDpsFull, 3),
+            "無增益PPS": result.unbuffedPps,
+            "模擬時間": result.totalTime,
         };
         if (includeRotationName) {
             data["Rotation"] = result.label;
@@ -100,7 +100,7 @@ export class BaseMultiCycleSimGui<ResultType extends CycleSimResult, InternalSet
         out.columns = [
             col({
                 shortName: 'rotname',
-                displayName: 'Rotation',
+                displayName: '循環',
                 getter: item => item.label,
             }), col({
                 shortName: 'dps',

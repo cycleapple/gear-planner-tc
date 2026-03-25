@@ -46,7 +46,7 @@ export type DrkExtraData = {
 };
 
 export const ScornBuff: Buff = {
-    name: "Scorn",
+    name: "掠影的蔑視預備",
     duration: 30,
     selfOnly: true,
     effects: {
@@ -58,7 +58,7 @@ export const ScornBuff: Buff = {
 };
 
 export const SaltedEarthBuff: Buff = {
-    name: "Salted Earth",
+    name: "腐穢大地",
     duration: 15,
     selfOnly: true,
     effects: {
@@ -68,7 +68,7 @@ export const SaltedEarthBuff: Buff = {
 };
 
 export const BloodWeaponBuff: Buff = {
-    name: "Blood Weapon",
+    name: "嗜血",
     duration: 15,
     selfOnly: true,
     effects: {
@@ -104,7 +104,7 @@ export const BloodWeaponBuff: Buff = {
 };
 
 export const DeliriumBuff: Buff = {
-    name: "Delirium",
+    name: "錯亂劍",
     duration: 15,
     selfOnly: true,
     effects: {

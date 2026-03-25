@@ -43,6 +43,27 @@ import {BaseParamMap, DataManager, DmJobs} from "./datamanager";
 import {applyStatCaps} from "./gear";
 import {toTranslatable, TranslatableString} from "@xivgear/i18n/translation";
 import {ApiFoodData, ApiItemData, ApiMateriaData, checkResponse, DATA_API_CLIENT} from "./data_api_client";
+import {TC_ITEM_NAMES} from "./tc_names";
+import {XivApiLangValueString} from "@xivgear/data-api-client/dataapi";
+import {getCurrentLanguage} from "@xivgear/i18n/translation";
+
+/**
+ * Check if an item has a TC translation available.
+ */
+function hasTcName(id: number): boolean {
+    return getCurrentLanguage() !== 'tc' || id in TC_ITEM_NAMES;
+}
+
+/**
+ * Inject TC name into nameTranslations if available in the local TC name map.
+ */
+function withTcName(id: number, translations: XivApiLangValueString): XivApiLangValueString & { tc?: string } {
+    const tcName = TC_ITEM_NAMES[id];
+    if (tcName) {
+        return { ...translations, tc: tcName };
+    }
+    return translations;
+}
 import {addStats} from "@xivgear/xivmath/xivstats";
 import {arrayEqTyped} from "@xivgear/util/array_utils";
 import {xivApiIconUrl} from "./external/xivapi";
@@ -276,8 +297,9 @@ export class NewApiDataManager implements DataManager {
                     .filter(i => {
                         // TODO: can this just be server-side?
                         try {
-                            return Object.keys(i.baseParamMapHQ).length > 0
-                                || (i.classJobs.includes('BLU') && i.equipSlotCategory.mainHand === 1); // Don't filter out BLU weapons
+                            return (Object.keys(i.baseParamMapHQ).length > 0
+                                || (i.classJobs.includes('BLU') && i.equipSlotCategory.mainHand === 1)) // Don't filter out BLU weapons
+                                && hasTcName(i.rowId); // Filter items without TC translation
                         }
                         catch (e) {
                             console.log(e);
@@ -344,7 +366,8 @@ export class NewApiDataManager implements DataManager {
                     .filter(i => i.value[MATERIA_LEVEL_MAX_NORMAL - 1])
                     .flatMap(item => {
                         return processRawMateriaInfo(item);
-                    });
+                    })
+                    .filter(m => hasTcName(m.id));
                 console.log(`Processed ${this._allMateria.length} total Materia items`);
             });
         console.log("Loading food");
@@ -360,7 +383,7 @@ export class NewApiDataManager implements DataManager {
                     return new DataApiFoodInfo(item);
                 });
             })
-            .then((processedFoods) => processedFoods.filter(food => Object.keys(food.bonuses).length > 1))
+            .then((processedFoods) => processedFoods.filter(food => Object.keys(food.bonuses).length > 1 && hasTcName(food.id)))
             .then((foods) => this._allFoodItems = foods);
         console.log("Loading jobs");
         const jobsPromise = this.apiClient.jobs.jobs()
@@ -606,13 +629,14 @@ export class DataApiGearInfo implements GearItem {
         this.jobs = data.classJobs as JobName[];
         this.isNqVersion = forceNq;
         this.id = data.rowId;
+        const tcTranslations = withTcName(data.rowId, data.nameTranslations);
         if (forceNq) {
             this.name = '(NQ) ' + data.name;
-            this.nameTranslation = toTranslatable(data.name, data.nameTranslations, i => `(NQ) ${i}`);
+            this.nameTranslation = toTranslatable(data.name, tcTranslations, i => `(NQ) ${i}`);
         }
         else {
             this.name = data.name;
-            this.nameTranslation = toTranslatable(data.name, data.nameTranslations);
+            this.nameTranslation = toTranslatable(data.name, tcTranslations);
         }
         this.equipLvl = data.equipLevel;
         this.ilvl = data.ilvl;
@@ -900,7 +924,7 @@ export class DataApiFoodInfo implements FoodItem {
         this.name = requireString(data.name);
         this.iconUrl = new URL(data.icon.url);
         this.ilvl = requireNumber(data.levelItem);
-        this.nameTranslation = toTranslatable(this.name, data.nameTranslations);
+        this.nameTranslation = toTranslatable(this.name, withTcName(requireNumber(data.rowId), data.nameTranslations));
         for (const rawKey in data.bonusesHQ) {
             if (rawKey === '0') {
                 continue;
@@ -934,7 +958,7 @@ export function processRawMateriaInfo(data: ApiMateriaData): Materia[] {
         const grade = (i + 1);
         out.push({
             name: itemName,
-            nameTranslation: toTranslatable(itemName, itemData.nameTranslations),
+            nameTranslation: toTranslatable(itemName, withTcName(itemId, itemData.nameTranslations)),
             id: itemId,
             iconUrl: new URL(itemData.icon.url),
             stats: stats,

@@ -287,14 +287,14 @@ declare global {
 
 window.startExport = startExport;
 
-const DEFAULT_EXPORT_TEXT = 'Choose an export type from above, then click "Generate" below.\n\nYou can also click "Preview" to get an idea of what your sheet/set will look like after exporting.';
+const DEFAULT_EXPORT_TEXT = '從上方選擇匯出類型，然後點擊下方的「產生」。\n\n你也可以點擊「預覽」來查看匯出後的配裝表/套裝外觀。';
 
 class SimExportChooser extends HTMLElement {
     constructor(sheet: GearPlanSheet, callback: () => void) {
         super();
         const header = document.createElement('h3');
         if (!sheet.isViewOnly && sheet.sims.length > 0) {
-            header.textContent = 'Choose Sims to Export';
+            header.textContent = '選擇要匯出的模擬';
             this.appendChild(header);
             const inner = document.createElement('div');
             sheet.sims.forEach(sim => {
@@ -341,7 +341,7 @@ abstract class ExportModal<X> extends BaseModal {
 
         this.contentArea.appendChild(fieldset);
 
-        const previewButton = makeActionButton('Preview', () => this.doPreview());
+        const previewButton = makeActionButton('預覽', () => this.doPreview());
 
         this.textBox = document.createElement('textarea');
         this.textBox.readOnly = true;
@@ -398,17 +398,17 @@ abstract class ExportModal<X> extends BaseModal {
             this.setResultData(selectedType, content);
         }
         else {
-            this.variableButton.textContent = 'Generate';
+            this.variableButton.textContent = '產生';
             this.textValue = DEFAULT_EXPORT_TEXT;
             this.varButtonAction = () => {
                 // TODO: loading blocker
-                this.variableButton.textContent = 'Wait...';
-                this.textValue = 'Wait...';
+                this.variableButton.textContent = '請稍候...';
+                this.textValue = '請稍候...';
                 this.doExport(selectedType).then(value => {
                     this.setResultData(selectedType, value);
                 }, err => {
                     console.error(err);
-                    this.setResultData(selectedType, "Error!");
+                    this.setResultData(selectedType, "錯誤！");
                 });
             };
         }
@@ -427,11 +427,11 @@ abstract class ExportModal<X> extends BaseModal {
     setResultData(exportType: ExportMethod<X>, data: string): void {
         this.textValue = data;
         if (exportType.openInsteadOfCopy) {
-            this.variableButton.textContent = 'Go';
+            this.variableButton.textContent = '前往';
             this.varButtonAction = () => window.open(data, '_blank');
         }
         else {
-            this.variableButton.textContent = 'Copy';
+            this.variableButton.textContent = '複製';
             this.varButtonAction = () => navigator.clipboard.writeText(data);
         }
     }
@@ -439,7 +439,7 @@ abstract class ExportModal<X> extends BaseModal {
 
 class SheetExportModal extends ExportModal<GearPlanSheet> {
     constructor(sheet: GearPlanSheet) {
-        super('Export Full Sheet', SHEET_EXPORT_OPTIONS, sheet, sheet);
+        super('匯出完整配裝表', SHEET_EXPORT_OPTIONS, sheet, sheet);
     }
 
     get previewUrl(): string {
@@ -462,7 +462,7 @@ class SheetExportModal extends ExportModal<GearPlanSheet> {
 
 class SetExportModal extends ExportModal<CharacterGearSet> {
     constructor(set: CharacterGearSet) {
-        super('Export Individual Set', SET_EXPORT_OPTIONS, set.sheet, set);
+        super('匯出單一套裝', SET_EXPORT_OPTIONS, set.sheet, set);
     }
 
     get previewUrl(): string {
